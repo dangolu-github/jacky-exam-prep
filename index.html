@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Module 1 — Prompt to Research Map · Student</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css">
+:root {
+--ink: #172033;
+--muted: #5d687b;
+--paper: #fffdf8;
+--navy: #18324a;
+--teal: #167b7a;
+--teal-soft: #e7f5f3;
+--gold: #d99b2b;
+--gold-soft: #fff4d7;
+--rose: #b64f64;
+--rose-soft: #fff0f3;
+--line: #d7dde5;
+--scope: #b388ff;
+--evidence: #ffd54f;
+--reasoning: #64b5f6;
+--caution: #ff8a9a;
+--implication: #81c784;
+}
+* { box-sizing: border-box; }
+html {
+background: #eef1f4;
+color: var(--ink);
+scroll-behavior: smooth;
+}
+body {
+width: min(1080px, calc(100% - 28px));
+margin: 24px auto 64px;
+padding: 54px 64px 72px;
+background: var(--paper);
+border: 1px solid #e3e6ea;
+border-radius: 18px;
+box-shadow: 0 22px 60px rgba(28, 43, 58, 0.12);
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+font-size: 16px;
+line-height: 1.62;
+}
+body::before {
+content: "ACADEMIC ENGLISH · CW3 MODULAR WORKBOOK";
+display: block;
+margin: -54px -64px 42px;
+padding: 18px 64px;
+border-radius: 18px 18px 0 0;
+background: linear-gradient(110deg, var(--navy), #214e69 62%, var(--teal));
+color: #fff;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 0.13em;
+}
+h1, h2, h3, h4 {
+color: var(--navy);
+line-height: 1.2;
+break-after: avoid;
+}
+h1 {
+margin: 0 0 8px;
+font-size: clamp(2rem, 5vw, 3.2rem);
+letter-spacing: -0.035em;
+}
+h2 {
+margin-top: 48px;
+padding: 0 0 10px;
+border-bottom: 3px solid var(--teal);
+font-size: 1.62rem;
+}
+h3 {
+margin-top: 32px;
+font-size: 1.22rem;
+}
+h4 {
+margin: 24px 0 8px;
+font-size: 1rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+}
+p { margin: 0.7em 0; }
+a {
+color: #0e667b;
+text-decoration-thickness: 1px;
+text-underline-offset: 3px;
+}
+strong { color: #102c42; }
+hr {
+margin: 42px 0;
+border: 0;
+border-top: 1px solid var(--line);
+}
+blockquote {
+margin: 24px 0;
+padding: 18px 22px;
+border: 0;
+border-left: 6px solid var(--teal);
+border-radius: 8px;
+background: var(--teal-soft);
+color: #21394a;
+}
+blockquote blockquote,
+blockquote:has(strong:first-child) {
+border-left-color: var(--rose);
+background: var(--rose-soft);
+}
+code {
+padding: 0.12em 0.35em;
+border-radius: 4px;
+background: #eef2f5;
+color: #173e56;
+font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+font-size: 0.9em;
+}
+ul, ol { padding-left: 1.4em; }
+li { margin: 0.32em 0; }
+table {
+width: 100%;
+margin: 18px 0 28px;
+border-collapse: separate;
+border-spacing: 0;
+border: 1px solid var(--line);
+border-radius: 10px;
+overflow: hidden;
+font-size: 0.92rem;
+}
+thead {
+background: var(--navy);
+color: #fff;
+}
+th {
+padding: 10px 12px;
+border-right: 1px solid rgba(255,255,255,0.18);
+text-align: left;
+vertical-align: top;
+}
+td {
+padding: 10px 12px;
+border-top: 1px solid var(--line);
+border-right: 1px solid var(--line);
+vertical-align: top;
+}
+th:last-child, td:last-child { border-right: 0; }
+tbody tr:nth-child(even) { background: #f7f9fa; }
+.idea-table,
+.map-table {
+font-size: 0.86rem;
+}
+.idea-table ul,
+.map-table ul {
+margin: 0;
+padding-left: 1.15em;
+}
+.idea-table li,
+.map-table li {
+margin: 0.16em 0;
+}
+.map-table td[rowspan] {
+width: 15%;
+border-right: 3px solid #8fc8c3;
+background: var(--teal-soft);
+color: var(--navy);
+}
+.map-table td:nth-child(2) {
+min-width: 150px;
+}
+.structure-map {
+display: grid;
+grid-template-columns: repeat(6, minmax(110px, 1fr));
+gap: 10px;
+margin: 16px 0 10px;
+}
+.structure-step {
+min-height: 88px;
+padding: 13px 12px;
+border: 1px solid #b9cbd7;
+border-top: 4px solid var(--teal);
+border-radius: 9px;
+background: #f7fbfc;
+color: var(--navy);
+font-family: inherit;
+font-size: 0.88rem;
+line-height: 1.35;
+text-decoration: none;
+}
+a.structure-step:hover,
+a.structure-step:focus-visible {
+border-color: var(--teal);
+background: var(--teal-soft);
+outline: 3px solid rgba(22, 123, 122, 0.18);
+}
+.structure-step strong {
+display: block;
+margin-top: 6px;
+}
+.structure-label {
+display: block;
+color: var(--muted);
+font-size: 0.7rem;
+font-weight: 800;
+letter-spacing: 0.035em;
+text-transform: uppercase;
+}
+.map-note {
+margin: 6px 0 22px;
+color: var(--muted);
+font-size: 0.82rem;
+}
+.reading-map .structure-step {
+display: grid;
+grid-template-columns: 26px 1fr;
+gap: 8px;
+align-items: center;
+min-height: 68px;
+border-top-color: #438fb8;
+}
+.reading-map .structure-step strong {
+margin: 0;
+}
+.step-number {
+display: grid;
+width: 25px;
+height: 25px;
+place-items: center;
+border-radius: 50%;
+background: var(--navy);
+color: #fff;
+font-size: 0.75rem;
+font-weight: 900;
+}
+.toggle-stack {
+display: grid;
+gap: 12px;
+margin: 18px 0 28px;
+}
+details.knowledge-toggle {
+border: 1px solid #cdd7de;
+border-radius: 10px;
+overflow: hidden;
+background: #fff;
+}
+details.knowledge-toggle summary {
+display: flex;
+gap: 10px;
+align-items: center;
+padding: 14px 16px;
+cursor: pointer;
+list-style: none;
+background: #f0f5f7;
+color: var(--navy);
+}
+details.knowledge-toggle summary::-webkit-details-marker {
+display: none;
+}
+details.knowledge-toggle summary::before {
+content: "+";
+display: grid;
+width: 24px;
+height: 24px;
+flex: 0 0 24px;
+place-items: center;
+border-radius: 50%;
+background: var(--navy);
+color: #fff;
+font-size: 1rem;
+font-weight: 900;
+}
+details.knowledge-toggle[open] summary::before {
+content: "−";
+background: var(--teal);
+}
+details.knowledge-toggle[open] summary {
+border-bottom: 1px solid #cdd7de;
+background: var(--teal-soft);
+}
+.toggle-title {
+min-width: 0;
+flex: 1 1 auto;
+font-weight: 850;
+}
+.toggle-meta {
+flex: 0 0 auto;
+color: var(--muted);
+font-size: 0.78rem;
+font-weight: 750;
+}
+.toggle-body {
+padding: 16px;
+}
+.toggle-body > table {
+margin: 0;
+}
+.source-rank {
+flex: 0 0 auto;
+padding: 3px 8px;
+border-radius: 999px;
+background: var(--navy);
+color: #fff;
+font-size: 0.72rem;
+font-weight: 900;
+}
+.section-scope {
+display: flex;
+gap: 12px;
+align-items: baseline;
+margin: 16px 0 10px;
+padding: 12px 15px;
+border-left: 5px solid #438fb8;
+border-radius: 7px;
+background: #eef7fb;
+}
+.section-scope span {
+color: #365569;
+}
+.source-card h3 {
+margin: 0 0 14px;
+font-size: 1.03rem;
+}
+.source-card h3 a {
+color: #0d6075;
+}
+.source-card-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 12px;
+}
+.source-card-grid section {
+padding: 13px 15px;
+border: 1px solid #d8e0e6;
+border-radius: 8px;
+background: #fbfcfd;
+}
+.source-card-grid h4 {
+margin: 0 0 8px;
+color: #35586b;
+font-size: 0.76rem;
+letter-spacing: 0.045em;
+}
+.source-card-grid ul {
+margin: 0;
+padding-left: 1.15em;
+}
+.keyword-list,
+.source-role-list {
+display: flex;
+flex-wrap: wrap;
+gap: 7px;
+}
+.keyword-map {
+display: inline-flex;
+gap: 4px;
+align-items: center;
+}
+.domain-mark {
+display: inline-block;
+white-space: nowrap;
+color: #8a5a12;
+font-size: 0.68rem;
+font-weight: 900;
+letter-spacing: 0.01em;
+}
+.theme-keyword,
+.source-role {
+display: inline-block;
+padding: 4px 8px;
+border-radius: 999px;
+font-size: 0.76rem;
+font-weight: 800;
+line-height: 1.25;
+scroll-margin-top: 32px;
+}
+.theme-keyword {
+border: 1px solid #a9c8d5;
+background: #eef7fb;
+color: #214a60;
+}
+.theme-keyword:target {
+outline: 4px solid rgba(217, 155, 43, 0.34);
+background: var(--gold-soft);
+}
+.jump-link {
+color: #0a667b;
+font-weight: 750;
+text-decoration-style: dotted;
+}
+.source-role {
+text-decoration: none;
+}
+.source-role.main {
+border: 1px solid #69aaa5;
+background: var(--teal-soft);
+color: #125e5d;
+}
+.source-role.sub {
+border: 1px solid #bdc9d2;
+background: #f1f4f6;
+color: #465b69;
+}
+.table3-stack {
+margin-top: 14px;
+}
+.combined-map {
+width: 100%;
+table-layout: fixed;
+}
+.combined-map .col-topic { width: 22%; }
+.combined-map .col-reading { width: 52%; }
+.combined-map .col-sources { width: 26%; }
+.combined-map td:first-child {
+color: var(--navy);
+font-size: 0.9rem;
+}
+.source-caution {
+display: block;
+margin-top: 10px;
+padding: 7px 9px;
+border-left: 3px solid #9ab8c8;
+background: #f4f8fa;
+color: #47616f;
+font-size: 0.76rem;
+line-height: 1.4;
+}
+.demo-target {
+transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+.demo-target.demo-selected {
+border-radius: 5px;
+background: #d6effa;
+box-shadow: 0 0 0 3px #d6effa;
+}
+li.demo-target.demo-selected {
+margin-top: 3px;
+margin-bottom: 3px;
+padding: 3px 6px;
+}
+summary.demo-target.demo-selected {
+border-radius: 0;
+background: #dff3fb;
+box-shadow: inset 5px 0 0 #438fb8;
+}
+.paragraph-demo {
+margin: 16px 0 28px;
+padding: 18px;
+border: 1px solid #b9d6e4;
+border-radius: 12px;
+background: #f8fbfd;
+}
+.demo-steps {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 12px;
+}
+.demo-step {
+display: grid;
+grid-template-columns: 32px minmax(0, 1fr);
+gap: 10px;
+align-items: start;
+min-height: 84px;
+padding: 12px;
+border: 1px solid #b9d6e4;
+border-top: 4px solid #438fb8;
+border-radius: 9px;
+background: #fff;
+color: var(--navy);
+font: inherit;
+text-align: left;
+cursor: pointer;
+}
+.demo-step:hover,
+.demo-step:focus-visible {
+border-color: var(--teal);
+outline: 3px solid rgba(22, 123, 122, 0.18);
+}
+.demo-step[aria-pressed="true"] {
+border-color: #438fb8;
+background: #eaf6fb;
+}
+.demo-step strong {
+display: block;
+line-height: 1.25;
+}
+.demo-choice {
+display: block;
+margin-top: 7px;
+color: #31586d;
+font-size: 0.82rem;
+font-weight: 650;
+line-height: 1.35;
+}
+.demo-outline {
+margin-top: 16px;
+padding: 15px 17px;
+border-left: 5px solid #438fb8;
+border-radius: 7px;
+background: #eaf6fb;
+}
+.demo-outline-root {
+display: grid;
+gap: 10px;
+margin: 10px 0 0;
+padding: 0;
+list-style: none;
+}
+.demo-outline-group {
+padding: 10px 12px;
+border: 1px solid #b9d6e4;
+border-radius: 7px;
+background: #fff;
+}
+.demo-outline-group > ul {
+margin: 7px 0 0;
+padding-left: 1.25em;
+}
+.demo-outline-item {
+margin: 6px 0;
+}
+.research-gap {
+margin-top: 5px;
+padding: 5px 7px;
+border-radius: 5px;
+background: var(--gold-soft);
+color: #765018;
+font-family: inherit;
+font-size: 0.8rem;
+font-style: italic;
+}
+.lesson-meta,
+.teacher-panel,
+.answer-panel,
+.model-card,
+.practice-card,
+.checkpoint {
+margin: 22px 0;
+padding: 18px 22px;
+border-radius: 10px;
+break-inside: avoid;
+}
+.lesson-meta {
+border: 1px solid #b9d9d7;
+background: var(--teal-soft);
+}
+.knowledge-strip {
+display: grid;
+grid-template-columns: max-content 1fr;
+gap: 14px;
+align-items: start;
+margin: 20px 0;
+padding: 14px 18px;
+border-left: 6px solid var(--teal);
+border-radius: 8px;
+background: #edf7f6;
+}
+.knowledge-strip strong {
+color: #0f5f5e;
+font-size: 0.78rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+.knowledge-strip.warning {
+border-left-color: var(--gold);
+background: var(--gold-soft);
+}
+.knowledge-strip.warning strong { color: #80570c; }
+.teacher-panel {
+border: 1px solid #e8b9c4;
+border-left: 6px solid var(--rose);
+background: var(--rose-soft);
+}
+.teacher-panel::before {
+content: "CRYSTAL NOTE";
+display: block;
+margin-bottom: 7px;
+color: #983b50;
+font-size: 0.75rem;
+font-weight: 900;
+letter-spacing: 0.1em;
+}
+.answer-panel {
+border: 1px solid #e5c77f;
+border-left: 6px solid var(--gold);
+background: var(--gold-soft);
+}
+.answer-panel::before {
+content: "ANSWER / CHECK";
+display: block;
+margin-bottom: 7px;
+color: #80570c;
+font-size: 0.75rem;
+font-weight: 900;
+letter-spacing: 0.1em;
+}
+.model-card {
+border: 1px solid #aecbdc;
+border-left: 6px solid #438fb8;
+background: #eef7fb;
+}
+.practice-card {
+border: 1px dashed #9ca8b6;
+background: #fbfcfd;
+}
+.checkpoint {
+border: 2px solid var(--teal);
+background: #f5fbfa;
+}
+.write-lines {
+min-height: 86px;
+margin: 12px 0 22px;
+background-image: repeating-linear-gradient(
+to bottom,
+transparent 0,
+transparent 29px,
+#b9c2cc 30px
+);
+}
+.write-lines.short { min-height: 56px; }
+.write-lines.tall { min-height: 145px; }
+.annotation-key {
+display: grid;
+grid-template-columns: repeat(5, minmax(135px, 1fr));
+gap: 12px;
+margin: 18px 0 26px;
+}
+.key-card {
+display: flex;
+flex-direction: column;
+gap: 7px;
+min-height: 152px;
+padding: 14px;
+border-radius: 8px;
+border: 1px solid rgba(23,32,51,0.12);
+font-size: 0.85rem;
+}
+.key-card strong {
+font-size: 0.78rem;
+letter-spacing: 0.035em;
+}
+.key-card .key-question {
+min-height: 3.5em;
+padding-bottom: 7px;
+border-bottom: 1px solid rgba(23,32,51,0.15);
+color: #20344a;
+font-weight: 750;
+line-height: 1.35;
+}
+.key-card.scope { background: color-mix(in srgb, var(--scope) 38%, white); }
+.key-card.evidence { background: color-mix(in srgb, var(--evidence) 45%, white); }
+.key-card.reasoning { background: color-mix(in srgb, var(--reasoning) 40%, white); }
+.key-card.caution { background: color-mix(in srgb, var(--caution) 38%, white); }
+.key-card.implication { background: color-mix(in srgb, var(--implication) 40%, white); }
+.annotation-logic {
+display: grid;
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 12px;
+margin: 18px 0;
+}
+.logic-step {
+display: grid;
+grid-template-columns: 36px 1fr;
+gap: 11px;
+align-items: start;
+padding: 15px;
+border: 1px solid #b9cbd5;
+border-radius: 10px;
+background: #f5f8fa;
+}
+.logic-step p {
+margin: 5px 0 0;
+color: #415267;
+font-size: 0.9rem;
+line-height: 1.45;
+}
+.step-number {
+display: grid;
+width: 32px;
+height: 32px;
+place-items: center;
+border-radius: 50%;
+background: var(--navy);
+color: #fff;
+font-weight: 900;
+}
+.worked-code {
+display: grid;
+gap: 7px;
+margin: 22px 0 28px;
+padding: 18px 20px;
+border: 1px solid #a9c7d9;
+border-left: 6px solid #438fb8;
+border-radius: 10px;
+background: #f0f7fb;
+}
+.worked-code > strong {
+margin-bottom: 3px;
+font-size: 1rem;
+}
+.worked-code span {
+padding-left: 14px;
+border-left: 2px solid #b9d4e3;
+}
+.screening-map {
+grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.source-screen-card {
+margin: 16px 0 26px;
+border: 1px solid #b9d6e4;
+border-radius: 10px;
+background: #f8fbfd;
+overflow: hidden;
+}
+.source-screen-card dl,
+.source-profile dl {
+margin: 0;
+}
+.source-screen-card dl > div {
+display: grid;
+grid-template-columns: 150px 1fr;
+border-bottom: 1px solid #dce7ed;
+}
+.source-screen-card dl > div:last-child {
+border-bottom: 0;
+}
+.source-screen-card dt,
+.source-screen-card dd,
+.source-profile dt,
+.source-profile dd {
+margin: 0;
+padding: 10px 12px;
+}
+.source-screen-card dt,
+.source-profile dt {
+color: var(--navy);
+font-weight: 850;
+}
+.method-note {
+display: grid;
+grid-template-columns: max-content 1fr;
+gap: 13px;
+align-items: start;
+margin: 18px 0 28px;
+padding: 14px 16px;
+border: 1px solid #c8d0d7;
+border-left: 5px solid #7d8791;
+border-radius: 8px;
+background: #f5f6f7;
+}
+.method-note p {
+margin: 4px 0 0;
+color: #56616c;
+font-size: 0.86rem;
+}
+.source-profile-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 14px;
+margin: 18px 0 28px;
+}
+.source-profile {
+padding: 16px;
+border: 1px solid #b9d6e4;
+border-top: 5px solid #438fb8;
+border-radius: 10px;
+background: #f8fbfd;
+}
+.source-profile h3 {
+margin: 8px 0 12px;
+font-size: 1rem;
+}
+.source-profile dl > div {
+border-top: 1px solid #dce7ed;
+}
+.source-profile dt {
+padding: 8px 0 2px;
+font-size: 0.76rem;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+}
+.source-profile dd {
+padding: 0 0 8px;
+font-size: 0.86rem;
+}
+.evidence-role-map {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 12px;
+margin: 16px 0 24px;
+}
+.evidence-role-map > div,
+.essay-plan-strip > div {
+padding: 12px;
+border: 1px solid #c6d8e2;
+border-radius: 8px;
+background: #f5f9fb;
+}
+.evidence-role-map strong,
+.essay-plan-strip strong {
+display: block;
+color: var(--navy);
+}
+.evidence-role-map span,
+.essay-plan-strip span {
+display: block;
+margin-top: 4px;
+color: #566574;
+font-size: 0.82rem;
+line-height: 1.35;
+}
+.essay-plan-strip {
+display: grid;
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 10px;
+margin: 16px 0 24px;
+}
+details.note-group {
+margin: 16px 0;
+border: 1px solid var(--line);
+border-radius: 10px;
+background: #fff;
+overflow: hidden;
+}
+details.note-group summary {
+padding: 14px 18px;
+cursor: pointer;
+background: #f1f5f7;
+color: var(--navy);
+font-weight: 800;
+}
+details.note-group[open] summary {
+border-bottom: 1px solid var(--line);
+background: #e8f2f2;
+}
+.note-wrap { overflow-x: auto; }
+.note-table {
+margin: 0;
+border: 0;
+border-radius: 0;
+table-layout: fixed;
+font-size: 0.78rem;
+}
+.student-note-table { min-width: 1040px; }
+.teacher-note-table { min-width: 1420px; }
+.note-table th {
+white-space: normal;
+vertical-align: bottom;
+}
+.note-table td {
+vertical-align: top;
+}
+.note-table td:first-child {
+white-space: nowrap;
+font-weight: 800;
+}
+.student-note-table th:nth-child(1) { width: 7%; }
+.student-note-table th:nth-child(2) { width: 13%; }
+.student-note-table th:nth-child(3) { width: 11%; }
+.student-note-table th:nth-child(4) { width: 25%; }
+.student-note-table th:nth-child(5) { width: 44%; }
+.teacher-note-table th:nth-child(1) { width: 5%; }
+.teacher-note-table th:nth-child(2) { width: 10%; }
+.teacher-note-table th:nth-child(3) { width: 8%; }
+.teacher-note-table th:nth-child(4) { width: 9%; }
+.teacher-note-table th:nth-child(5) { width: 19%; }
+.teacher-note-table th:nth-child(6) { width: 34%; }
+.teacher-note-table th:nth-child(7) { width: 15%; }
+.ref-label {
+display: inline-block;
+padding: 3px 7px;
+border-radius: 999px;
+background: var(--navy);
+color: #fff;
+font-size: 0.72rem;
+font-weight: 900;
+line-height: 1.2;
+}
+.ref-name {
+display: block;
+margin-top: 6px;
+color: #526273;
+font-size: 0.74rem;
+line-height: 1.3;
+}
+.tag-stack {
+display: flex;
+flex-wrap: wrap;
+gap: 5px;
+}
+.tag-method {
+border: 1px solid #aeb6bd;
+background: #e7eaed;
+color: #3f4952;
+}
+.theme-linkage strong {
+display: block;
+color: var(--navy);
+line-height: 1.3;
+}
+.theme-linkage ul,
+.annotation-note-bullets,
+.teacher-check-list {
+margin: 6px 0 0;
+padding-left: 1.15em;
+}
+.theme-linkage li,
+.annotation-note-bullets li,
+.teacher-check-list li {
+margin: 4px 0;
+line-height: 1.35;
+}
+.annotation-note-bullets strong,
+.teacher-check-list strong {
+color: #31485c;
+}
+.annotation-id-button {
+padding: 4px 8px;
+border: 1px solid #7aa8bb;
+border-radius: 6px;
+background: #edf7fa;
+color: #0a5e75;
+font: inherit;
+font-size: 0.82rem;
+font-weight: 900;
+line-height: 1.2;
+text-decoration: underline;
+text-decoration-thickness: 1px;
+text-underline-offset: 2px;
+cursor: pointer;
+}
+.annotation-id-button:hover,
+.annotation-id-button:focus-visible,
+.annotation-id-button[aria-expanded="true"] {
+border-color: var(--teal);
+outline: 3px solid rgba(22, 123, 122, 0.18);
+background: #dff2f1;
+}
+.excerpt-popover[hidden] { display: none !important; }
+.excerpt-popover {
+position: fixed;
+z-index: 1000;
+width: min(430px, calc(100vw - 24px));
+max-height: min(72vh, 540px);
+overflow: auto;
+padding: 0;
+border: 1px solid #7891a3;
+border-radius: 12px;
+background: #fffef9;
+box-shadow: 0 18px 45px rgba(19, 39, 55, 0.28);
+}
+.excerpt-popover-head {
+display: flex;
+gap: 12px;
+align-items: center;
+justify-content: space-between;
+padding: 12px 14px;
+border-bottom: 1px solid #cfd8df;
+background: var(--navy);
+color: #fff;
+}
+.excerpt-popover-head strong { color: #fff; }
+.excerpt-close {
+display: grid;
+width: 30px;
+height: 30px;
+flex: 0 0 30px;
+place-items: center;
+padding: 0;
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 50%;
+background: transparent;
+color: #fff;
+font-size: 1.3rem;
+line-height: 1;
+cursor: pointer;
+}
+.excerpt-close:focus-visible {
+outline: 3px solid rgba(255,255,255,0.45);
+}
+.excerpt-source {
+margin: 0;
+padding: 11px 16px 0;
+color: #526175;
+font-size: 0.82rem;
+font-weight: 800;
+}
+.excerpt-quote {
+margin: 10px 16px 12px;
+padding: 14px 16px;
+border-left-color: var(--gold);
+background: #fff8e8;
+color: #24364a;
+font-family: Georgia, "Times New Roman", serif;
+font-size: 0.97rem;
+line-height: 1.55;
+}
+.excerpt-boundary {
+margin: 0;
+padding: 0 16px 14px;
+color: #697588;
+font-size: 0.75rem;
+}
+.tag {
+display: inline-block;
+padding: 3px 7px;
+border: 1px solid rgba(23,32,51,0.18);
+border-radius: 999px;
+color: #162438;
+font-size: 0.72rem;
+font-weight: 900;
+letter-spacing: 0.02em;
+white-space: nowrap;
+}
+.tag-scope { background: var(--scope); }
+.tag-evidence { background: var(--evidence); }
+.tag-reasoning { background: var(--reasoning); }
+.tag-caution { background: var(--caution); }
+.tag-implication { background: var(--implication); }
+.source-map {
+border-top: 5px solid var(--rose);
+}
+.source-map th { background: #703748; }
+.small {
+color: var(--muted);
+font-size: 0.84rem;
+}
+.status-badge {
+display: inline-block;
+margin: 4px 0 18px;
+padding: 5px 10px;
+border-radius: 999px;
+background: #e9edf2;
+color: #465468;
+font-size: 0.78rem;
+font-weight: 800;
+}
+@media (max-width: 760px) {
+body {
+width: 100%;
+margin: 0;
+padding: 34px 20px 54px;
+border: 0;
+border-radius: 0;
+box-shadow: none;
+}
+body::before {
+margin: -34px -20px 32px;
+padding: 15px 20px;
+border-radius: 0;
+}
+.knowledge-strip { grid-template-columns: 1fr; gap: 5px; }
+.annotation-logic { grid-template-columns: 1fr; }
+.annotation-key { grid-template-columns: 1fr 1fr; }
+.key-card { min-height: 0; }
+.key-card .key-question { min-height: 0; }
+.structure-map { grid-template-columns: 1fr 1fr; }
+.demo-steps { grid-template-columns: 1fr; }
+.source-card-grid { grid-template-columns: 1fr; }
+.source-profile-grid,
+.evidence-role-map,
+.essay-plan-strip { grid-template-columns: 1fr; }
+.source-screen-card dl > div { grid-template-columns: 1fr; }
+.source-screen-card dd { padding-top: 0; }
+details.knowledge-toggle summary { flex-wrap: wrap; }
+.toggle-meta { width: 100%; padding-left: 34px; }
+.section-scope { display: grid; gap: 3px; }
+table { display: block; overflow-x: auto; }
+}
+@page {
+size: A4;
+margin: 14mm;
+}
+@media print {
+html { background: #fff; }
+body {
+width: auto;
+margin: 0;
+padding: 0;
+border: 0;
+border-radius: 0;
+box-shadow: none;
+font-size: 10.5pt;
+}
+body::before {
+margin: 0 0 18px;
+padding: 10px 14px;
+border-radius: 0;
+}
+h1 { font-size: 24pt; }
+h2 { margin-top: 28px; font-size: 17pt; }
+h3 { font-size: 13pt; }
+a { color: inherit; text-decoration: none; }
+table { font-size: 8.4pt; }
+th, td { padding: 6px 7px; }
+.idea-table, .map-table { font-size: 7.8pt; }
+.idea-table tr, .map-table tr { break-inside: avoid; }
+.structure-map { grid-template-columns: repeat(3, 1fr); }
+.structure-step { min-height: 0; padding: 8px; }
+.demo-steps { grid-template-columns: repeat(2, 1fr); }
+.demo-step { min-height: 0; padding: 8px; }
+.demo-choice[hidden] { display: block !important; }
+.demo-outline-group[hidden],
+.demo-outline-item[hidden] { display: list-item !important; }
+.demo-target { background: #dff3fb !important; }
+details.knowledge-toggle { break-inside: auto; }
+details.source-toggle,
+details.idea-toggle {
+break-inside: avoid-page;
+page-break-inside: avoid;
+}
+details.knowledge-toggle summary { break-after: avoid; }
+details.knowledge-toggle summary::before { display: none; }
+details.knowledge-toggle > .toggle-body { display: block !important; }
+.source-card-grid { grid-template-columns: 1fr 1fr; }
+.source-card-grid section { break-inside: avoid; }
+.theme-keyword, .source-role { padding: 2px 5px; }
+.source-profile-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.source-profile { padding: 9px; }
+.source-profile dt,
+.source-profile dd { font-size: 7pt; }
+.evidence-role-map { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.essay-plan-strip { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+.note-table { font-size: 6.5pt; }
+.student-note-table,
+.teacher-note-table { min-width: 0; width: 100%; }
+.jump-link { color: inherit; text-decoration: none; }
+details.note-group > * { display: block !important; }
+details.note-group summary { break-after: avoid; }
+.annotation-id-button {
+padding: 0;
+border: 0;
+outline: 0;
+background: transparent;
+color: inherit;
+text-decoration: none;
+}
+.excerpt-popover { display: none !important; }
+.teacher-panel, .answer-panel, .model-card, .practice-card, .checkpoint {
+break-inside: avoid;
+}
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cw3-modular-writing-workbook">CW3 Modular Writing Workbook</h1>
+<h2 id="module-1--from-essay-prompt-to-research-map">Module 1 — From Essay Prompt to Research Map</h2>
+<h2 id="cw3-question">CW3 question</h2>
+<blockquote>
+<p>Australia has introduced a ban on social media for young people under the age of 16. Discuss the advantages and disadvantages of this policy and evaluate whether such a ban should have been implemented.</p>
+</blockquote>
+<h2 id="1-prompt-architecture">1. Prompt architecture</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Prompt element</th>
+<th>Decoding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Context</strong> <span id="prompt-context"></span></td>
+<td>Australia</td>
+</tr>
+<tr class="even">
+<td><strong>Population</strong> <span id="prompt-population"></span></td>
+<td>young people under 16</td>
+</tr>
+<tr class="odd">
+<td><strong>Policy</strong> <span id="prompt-policy"></span></td>
+<td>minimum-age restriction on covered social-media accounts</td>
+</tr>
+<tr class="even">
+<td><strong>Discussion</strong> <span id="prompt-discussion"></span></td>
+<td>advantages + disadvantages of the policy</td>
+</tr>
+<tr class="odd">
+<td><strong>Evaluation</strong> <span id="prompt-evaluation"></span></td>
+<td>effectiveness; proportionality; feasibility; fairness; unintended effects</td>
+</tr>
+<tr class="even">
+<td><strong>Final judgment</strong> <span id="prompt-judgment"></span></td>
+<td>justified / not justified / justified only with conditions</td>
+</tr>
+<tr class="odd">
+<td><strong>Core scope</strong> <span id="prompt-scope"></span></td>
+<td>policy effects; under-16 users; covered accounts; Australian implementation</td>
+</tr>
+<tr class="even">
+<td><strong>Outside scope</strong></td>
+<td>all internet use; adult screen habits; a general “social media: good or bad?” essay</td>
+</tr>
+</tbody>
+</table>
+<h3 id="argument-structure">Argument structure</h3>
+<div class="structure-map argument-map" aria-label="Argument structure mapped to the prompt">
+  <a class="structure-step" href="#prompt-policy">
+    <span class="structure-label">Prompt: Policy</span>
+    <strong>Policy aim</strong>
+  </a>
+  <a class="structure-step" href="#prompt-discussion">
+    <span class="structure-label">Prompt: Discussion</span>
+    <strong>Possible benefits</strong>
+  </a>
+  <a class="structure-step" href="#prompt-discussion">
+    <span class="structure-label">Prompt: Discussion</span>
+    <strong>Possible costs</strong>
+  </a>
+  <a class="structure-step" href="#prompt-evaluation">
+    <span class="structure-label">Prompt: Evaluation</span>
+    <strong>Real-world effectiveness</strong>
+  </a>
+  <a class="structure-step" href="#prompt-evaluation">
+    <span class="structure-label">Evaluation response</span>
+    <strong>Alternatives and safeguards</strong>
+  </a>
+  <a class="structure-step" href="#prompt-judgment">
+    <span class="structure-label">Prompt: Final judgment</span>
+    <strong>Justified?</strong>
+  </a>
+</div>
+
+<p class="map-note">Select a step to return to its matching prompt element.</p>
+
+<h2 id="2-table-1--first-round-idea-map">2. Table 1 — First-round idea map</h2>
+<p>These are research directions, not established facts.</p>
+<div class="toggle-stack">
+  <details class="knowledge-toggle idea-toggle" open>
+    <summary>
+      <span class="toggle-title">Support implementation</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="idea-table">
+        <thead>
+          <tr>
+            <th>Topic domain</th>
+            <th>Possible subthemes</th>
+            <th>Useful topic language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="domain-mark">[DM1]</span> <strong>Mental health and harmful exposure</strong></td>
+            <td>
+              <ul>
+                <li>cyberbullying</li>
+                <li>self-harm or violent content</li>
+                <li>body-image pressure</li>
+                <li>sleep disruption</li>
+                <li>problematic or compulsive use</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>reduce exposure to harm</li>
+                <li>delay access</li>
+                <li>protect vulnerable users</li>
+                <li>preventive public-health measure</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM2]</span> <strong>Development and time use</strong></td>
+            <td>
+              <ul>
+                <li>developmental vulnerability</li>
+                <li>habit formation</li>
+                <li>peer pressure</li>
+                <li>sleep, study, exercise, offline activity</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>precautionary approach</li>
+                <li>reclaimed time</li>
+                <li>opportunity cost</li>
+                <li>age-appropriate protection</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM3]</span> <strong>Platform responsibility</strong></td>
+            <td>
+              <ul>
+                <li>commercial design</li>
+                <li>content recommendation</li>
+                <li>age checks</li>
+                <li>duty placed on platforms</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>provider accountability</li>
+                <li>reasonable preventive steps</li>
+                <li>safety by design</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle idea-toggle">
+    <summary>
+      <span class="toggle-title">Oppose or limit implementation</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="idea-table">
+        <thead>
+          <tr>
+            <th>Topic domain</th>
+            <th>Possible subthemes</th>
+            <th>Useful topic language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="domain-mark">[DM4]</span> <strong>Social connection and access</strong></td>
+            <td>
+              <ul>
+                <li>peer connection</li>
+                <li>self-expression</li>
+                <li>mental-health information</li>
+                <li>support for hard-to-reach users</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>loss of beneficial use</li>
+                <li>access to support</li>
+                <li>online community</li>
+                <li>social inclusion</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM5]</span> <strong>Fairness and unequal effects</strong></td>
+            <td>
+              <ul>
+                <li>marginalised users</li>
+                <li>neurodiverse users</li>
+                <li>rural or isolated users</li>
+                <li>different family resources</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>unequal impact</li>
+                <li>one-size-fits-all policy</li>
+                <li>disproportionate burden</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM6]</span> <strong>Skills, disclosure, and hidden use</strong></td>
+            <td>
+              <ul>
+                <li>digital literacy</li>
+                <li>resilience</li>
+                <li>help-seeking</li>
+                <li>fear of admitting hidden use</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>does not build skills</li>
+                <li>reduced disclosure</li>
+                <li>unsupported return to online spaces</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle idea-toggle">
+    <summary>
+      <span class="toggle-title">Evaluate policy effectiveness</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="idea-table">
+        <thead>
+          <tr>
+            <th>Topic domain</th>
+            <th>Possible subthemes</th>
+            <th>Useful topic language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="domain-mark">[DM7]</span> <strong>Causal evidence</strong></td>
+            <td>
+              <ul>
+                <li>association versus causation</li>
+                <li>other causes of poor mental health</li>
+                <li>type and quality of use</li>
+                <li>different users and contexts</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>causal pathway</li>
+                <li>confounding factor</li>
+                <li>heterogeneous effects</li>
+                <li>evidence quality</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM8]</span> <strong>Compliance and circumvention</strong></td>
+            <td>
+              <ul>
+                <li>incomplete age checks</li>
+                <li>fake or borrowed accounts</li>
+                <li>VPNs and private browsers</li>
+                <li>movement to less-regulated platforms</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>implementation fidelity</li>
+                <li>circumvention</li>
+                <li>displacement effect</li>
+                <li>real-world compliance</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM9]</span> <strong>Privacy and feasibility</strong></td>
+            <td>
+              <ul>
+                <li>identity documents</li>
+                <li>biometric or behavioural data</li>
+                <li>accuracy of age decisions</li>
+                <li>data retention and breach risk</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>age assurance</li>
+                <li>data minimisation</li>
+                <li>necessary and proportionate</li>
+                <li>low-intrusion method</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle idea-toggle">
+    <summary>
+      <span class="toggle-title">Alternatives and safeguards</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="idea-table">
+        <thead>
+          <tr>
+            <th>Topic domain</th>
+            <th>Possible subthemes</th>
+            <th>Useful topic language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="domain-mark">[DM10]</span> <strong>Education and support</strong></td>
+            <td>
+              <ul>
+                <li>school digital-literacy programmes</li>
+                <li>parent guidance</li>
+                <li>help-seeking pathways</li>
+                <li>mental-health support</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>harm-minimisation approach</li>
+                <li>complementary measure</li>
+                <li>capacity building</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM11]</span> <strong>Platform design and accountability</strong></td>
+            <td>
+              <ul>
+                <li>safer recommendation systems</li>
+                <li>content moderation</li>
+                <li>reporting and support tools</li>
+                <li>provider responsibility</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>system-level prevention</li>
+                <li>safety by design</li>
+                <li>platform accountability</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="domain-mark">[DM12]</span> <strong>Targeted and privacy-preserving measures</strong></td>
+            <td>
+              <ul>
+                <li>target harmful content or problematic use</li>
+                <li>binary 16+ decisions</li>
+                <li>short retention periods</li>
+                <li>support for high-risk groups</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>targeted intervention</li>
+                <li>privacy-preserving safeguard</li>
+                <li>least-intrusive option</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+
+<h3 id="evidence-chart--what-would-test-each-direction">Evidence chart — What would test each direction?</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Research direction</th>
+<th>Evidence needed</th>
+<th>Useful source or method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mental-health or safety benefit</td>
+<td>outcome-specific harms; size of association; vulnerable groups; mechanism</td>
+<td>systematic/scoping review; longitudinal study; clinical or public-health evidence</td>
+</tr>
+<tr class="even">
+<td>Lost benefit or unequal effect</td>
+<td>who benefits online; which activities; which groups; possible exclusion</td>
+<td>subgroup research; qualitative evidence; review of positive uses</td>
+</tr>
+<tr class="odd">
+<td>Causal policy rationale</td>
+<td>whether social media causes the targeted harm; other explanations; moderators</td>
+<td>longitudinal evidence; stronger causal designs; critical reviews</td>
+</tr>
+<tr class="even">
+<td>Real-world effectiveness</td>
+<td>access before/after implementation; age-check exposure; compliance; circumvention</td>
+<td>Australian implementation study; platform or regulator data</td>
+</tr>
+<tr class="odd">
+<td>Privacy and feasibility</td>
+<td>data collected; accuracy; retention; security; proportionality</td>
+<td>government guidance; privacy law; technical evaluation</td>
+</tr>
+<tr class="even">
+<td>Alternatives and safeguards</td>
+<td>whether education, design changes, or targeted support reduce harm</td>
+<td>intervention study; programme evaluation; policy comparison</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-table-2--six-source-first-reading-map">3. Table 2 — Six-source first-reading map</h2>
+<div class="section-scope">
+  <strong>Reading scope</strong>
+  <span>Abstract · Introduction · Conclusion or equivalent closing section</span>
+</div>
+
+<div class="toggle-stack source-stack">
+  <details class="knowledge-toggle source-toggle" id="source-new1">
+    <summary>
+      <span class="source-rank">Ref1</span>
+      <span class="toggle-title">Barnes et al. (2026)</span>
+      <span class="toggle-meta">observational study</span>
+    </summary>
+    <div class="toggle-body source-card">
+      <h3><a href="https://doi.org/10.1136/bmj-2026-363695">Assessing early effects of Australia&#39;s Social Media Minimum Age Act</a></h3>
+      <div class="source-card-grid">
+        <section>
+          <h4>Research direction</h4>
+          <ul>
+            <li>early policy effectiveness <span class="domain-mark">[DM8]</span></li>
+            <li>implementation in Australia <span class="domain-mark">[DM8]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Source type / method</h4>
+          <ul>
+            <li>observational study</li>
+            <li>436 at baseline; 408 at follow-up</li>
+            <li>regression-discontinuity analysis</li>
+            <li>self-reported use</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Important idea</h4>
+          <ul>
+            <li>under-16 access remained common <span class="domain-mark">[DM8]</span></li>
+            <li>age-check exposure was incomplete <span class="domain-mark">[DM8]</span></li>
+            <li>no clear early threshold effect established <span class="domain-mark">[DM8]</span></li>
+            <li>longer-term effects remain uncertain <span class="domain-mark">[DM8]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Theme keywords</h4>
+          <div class="keyword-list">
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new1-effectiveness">effectiveness</span><span class="domain-mark">[DM8]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new1-compliance">compliance</span><span class="domain-mark">[DM8]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new1-circumvention">circumvention</span><span class="domain-mark">[DM8]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new1-displacement">displacement</span><span class="domain-mark">[DM8]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new1-uncertainty">uncertainty</span><span class="domain-mark">[DM8]</span></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle source-toggle" id="source-new2">
+    <summary>
+      <span class="source-rank">Ref2</span>
+      <span class="toggle-title">Blake et al. (2025)</span>
+      <span class="toggle-meta">viewpoint / review</span>
+    </summary>
+    <div class="toggle-body source-card">
+      <h3><a href="https://doi.org/10.1177/00048674241308692">Will restricting the age of access to social media reduce mental illness in Australian youth?</a></h3>
+      <div class="source-card-grid">
+        <section>
+          <h4>Research direction</h4>
+          <ul>
+            <li>causal-evidence test <span class="domain-mark">[DM7]</span></li>
+            <li>policy feasibility and unintended effects <span class="domain-mark">[DM7]</span> <span class="domain-mark">[DM9]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Source type / method</h4>
+          <ul>
+            <li>peer-reviewed viewpoint/review</li>
+            <li>reviews, measurement research, Australian evidence</li>
+            <li>no policy-effect dataset</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Important idea</h4>
+          <ul>
+            <li>specific harms matter <span class="domain-mark">[DM1]</span></li>
+            <li>current evidence does not prove one simple causal pathway <span class="domain-mark">[DM7]</span></li>
+            <li>policy must be feasible and avoid unintended harm <span class="domain-mark">[DM7]</span> <span class="domain-mark">[DM9]</span></li>
+            <li>real-world evaluation is needed <span class="domain-mark">[DM8]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Theme keywords</h4>
+          <div class="keyword-list">
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new2-causality">causality</span><span class="domain-mark">[DM7]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new2-measurement">measurement</span><span class="domain-mark">[DM7]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new2-heterogeneity">heterogeneity</span><span class="domain-mark">[DM7]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new2-beneficial-use">beneficial use</span><span class="domain-mark">[DM4]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new2-unintended-harm">unintended harm</span><span class="domain-mark">[DM5]</span></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle source-toggle" id="source-new3">
+    <summary>
+      <span class="source-rank">Ref3</span>
+      <span class="toggle-title">Champion et al. (2025)</span>
+      <span class="toggle-meta">debate / commentary</span>
+    </summary>
+    <div class="toggle-body source-card">
+      <h3><a href="https://doi.org/10.1111/camh.70032">Beyond the ban</a></h3>
+      <div class="source-card-grid">
+        <section>
+          <h4>Research direction</h4>
+          <ul>
+            <li>limits of prohibition <span class="domain-mark">[DM8]</span></li>
+            <li>harm-minimisation alternatives <span class="domain-mark">[DM10]</span> <span class="domain-mark">[DM11]</span> <span class="domain-mark">[DM12]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Source type / method</h4>
+          <ul>
+            <li>peer-reviewed debate/commentary</li>
+            <li>short research synthesis</li>
+            <li>policy analogy</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Important idea</h4>
+          <ul>
+            <li>possible protection and time benefits <span class="domain-mark">[DM1]</span> <span class="domain-mark">[DM2]</span></li>
+            <li>circumvention and lost benefits may weaken the policy <span class="domain-mark">[DM4]</span> <span class="domain-mark">[DM8]</span></li>
+            <li>restriction alone does not build digital skills <span class="domain-mark">[DM6]</span> <span class="domain-mark">[DM10]</span></li>
+            <li>coordinated response recommended <span class="domain-mark">[DM10]</span> <span class="domain-mark">[DM11]</span> <span class="domain-mark">[DM12]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Theme keywords</h4>
+          <div class="keyword-list">
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new3-circumvention">circumvention</span><span class="domain-mark">[DM8]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new3-social-support">social support</span><span class="domain-mark">[DM4]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new3-digital-literacy">digital literacy</span><span class="domain-mark">[DM6]</span><span class="domain-mark">[DM10]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new3-help-seeking">help-seeking</span><span class="domain-mark">[DM4]</span><span class="domain-mark">[DM6]</span><span class="domain-mark">[DM10]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new3-platform-accountability">platform accountability</span><span class="domain-mark">[DM3]</span><span class="domain-mark">[DM11]</span></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle source-toggle" id="source-new4">
+    <summary>
+      <span class="source-rank">Ref4</span>
+      <span class="toggle-title">Skinner and Foljambe (2025)</span>
+      <span class="toggle-meta">debate / commentary</span>
+    </summary>
+    <div class="toggle-body source-card">
+      <h3><a href="https://doi.org/10.1111/camh.70037">It is time to take a precautionary approach</a></h3>
+      <div class="source-card-grid">
+        <section>
+          <h4>Research direction</h4>
+          <ul>
+            <li>strongest case for restriction <span class="domain-mark">[DM1]</span> <span class="domain-mark">[DM2]</span></li>
+            <li>precaution under uncertainty <span class="domain-mark">[DM2]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Source type / method</h4>
+          <ul>
+            <li>peer-reviewed debate/commentary</li>
+            <li>clinical experience + cited studies and reports</li>
+            <li>UK perspective</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Important idea</h4>
+          <ul>
+            <li>serious possible harm justifies preventive action <span class="domain-mark">[DM1]</span></li>
+            <li>children are developmentally vulnerable <span class="domain-mark">[DM2]</span></li>
+            <li>platforms should carry greater safety responsibility <span class="domain-mark">[DM3]</span> <span class="domain-mark">[DM11]</span></li>
+            <li>restriction should include strict age checks and public-health support <span class="domain-mark">[DM8]</span> <span class="domain-mark">[DM10]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Theme keywords</h4>
+          <div class="keyword-list">
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new4-precaution">precautionary principle</span><span class="domain-mark">[DM2]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new4-vulnerability">vulnerability</span><span class="domain-mark">[DM2]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new4-harmful-content">harmful content</span><span class="domain-mark">[DM1]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new4-problematic-use">problematic use</span><span class="domain-mark">[DM1]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new4-platform-responsibility">platform responsibility</span><span class="domain-mark">[DM3]</span><span class="domain-mark">[DM11]</span></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle source-toggle" id="source-new5">
+    <summary>
+      <span class="source-rank">Ref5</span>
+      <span class="toggle-title">Agyapong-Opoku et al. (2025)</span>
+      <span class="toggle-meta">scoping review of reviews</span>
+    </summary>
+    <div class="toggle-body source-card">
+      <h3><a href="https://doi.org/10.3390/bs15050574">Effects of social media use on youth and adolescent mental health</a></h3>
+      <div class="source-card-grid">
+        <section>
+          <h4>Research direction</h4>
+          <ul>
+            <li>broad harms-and-benefits evidence <span class="domain-mark">[DM1]</span> <span class="domain-mark">[DM4]</span></li>
+            <li>why outcomes differ <span class="domain-mark">[DM5]</span> <span class="domain-mark">[DM7]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Source type / method</h4>
+          <ul>
+            <li>scoping review of reviews</li>
+            <li>43 reviews from 1,005 records</li>
+            <li>four research databases</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Important idea</h4>
+          <ul>
+            <li>negative associations appear often <span class="domain-mark">[DM1]</span></li>
+            <li>positive, mixed, and null findings also occur <span class="domain-mark">[DM4]</span> <span class="domain-mark">[DM7]</span></li>
+            <li>pattern, purpose, user, and context matter <span class="domain-mark">[DM5]</span> <span class="domain-mark">[DM7]</span></li>
+            <li>targeted research and digital-literacy responses are needed <span class="domain-mark">[DM6]</span> <span class="domain-mark">[DM10]</span> <span class="domain-mark">[DM12]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Theme keywords</h4>
+          <div class="keyword-list">
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new5-depression-anxiety">depression and anxiety</span><span class="domain-mark">[DM1]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new5-problematic-passive-use">problematic or passive use</span><span class="domain-mark">[DM1]</span><span class="domain-mark">[DM12]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new5-social-support">social support</span><span class="domain-mark">[DM4]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new5-moderators">moderators</span><span class="domain-mark">[DM5]</span><span class="domain-mark">[DM7]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new5-targeted-response">targeted response</span><span class="domain-mark">[DM12]</span></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle source-toggle" id="source-new6">
+    <summary>
+      <span class="source-rank">Ref6</span>
+      <span class="toggle-title">OAIC (2025)</span>
+      <span class="toggle-meta">Australian Government guidance</span>
+    </summary>
+    <div class="toggle-body source-card">
+      <h3><a href="https://www.oaic.gov.au/privacy/privacy-legislation/related-legislation/social-media-minimum-age">Privacy guidance on Part 4A</a></h3>
+      <div class="source-card-grid">
+        <section>
+          <h4>Research direction</h4>
+          <ul>
+            <li>policy scope <span class="domain-mark">[DM3]</span> <span class="domain-mark">[DM9]</span></li>
+            <li>privacy cost and safeguards <span class="domain-mark">[DM9]</span> <span class="domain-mark">[DM12]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Source type / method</h4>
+          <ul>
+            <li>Australian Government guidance</li>
+            <li>legal and regulatory interpretation</li>
+            <li>not an outcome study</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Important idea</h4>
+          <ul>
+            <li>platforms must take reasonable steps <span class="domain-mark">[DM3]</span> <span class="domain-mark">[DM11]</span></li>
+            <li>age assurance can create privacy and accuracy risks <span class="domain-mark">[DM9]</span></li>
+            <li>methods should be necessary and proportionate <span class="domain-mark">[DM9]</span> <span class="domain-mark">[DM12]</span></li>
+            <li>collection and retention should be minimised <span class="domain-mark">[DM9]</span> <span class="domain-mark">[DM12]</span></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Theme keywords</h4>
+          <div class="keyword-list">
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new6-age-assurance">age assurance</span><span class="domain-mark">[DM9]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new6-privacy">privacy</span><span class="domain-mark">[DM9]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new6-data-minimisation">data minimisation</span><span class="domain-mark">[DM9]</span><span class="domain-mark">[DM12]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new6-accuracy">accuracy</span><span class="domain-mark">[DM9]</span></span>
+            <span class="keyword-map"><span class="theme-keyword" id="kw-new6-proportionality">proportionality</span><span class="domain-mark">[DM9]</span><span class="domain-mark">[DM12]</span></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </details>
+</div>
+
+<h2 id="4-table-3--combined-argument-and-reading-map">4. Table 3 — Combined argument and reading map</h2>
+<div class="toggle-stack table3-stack">
+  <details class="knowledge-toggle map-toggle">
+    <summary>
+      <span class="toggle-title">Support implementation</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="map-table combined-map">
+        <colgroup><col class="col-topic"><col class="col-reading"><col class="col-sources"></colgroup>
+        <thead><tr><th>Topic-domain subtheme</th><th>Sub-subthemes for detailed reading</th><th>Sources</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Mental health and harmful exposure</strong></td>
+            <td><ul><li>cyberbullying</li><li>self-harm content</li><li>body image</li><li>sleep</li><li><a class="jump-link" href="#kw-new4-problematic-use">problematic use</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new5">Ref5 · Main</a><a class="source-role sub jump-link" href="#source-new4">Ref4 · Sub</a><a class="source-role sub jump-link" href="#source-new2">Ref2 · Sub</a></div></td>
+          </tr>
+          <tr>
+            <td><strong>Developmental vulnerability</strong></td>
+            <td><ul><li>burden of proof</li><li>severity of possible harm</li><li><a class="jump-link" href="#kw-new4-precaution">precautionary principle</a></li><li>action under uncertainty</li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new4">Ref4 · Main</a><a class="source-role sub jump-link" href="#source-new5">Ref5 · Sub</a></div></td>
+          </tr>
+          <tr>
+            <td><strong>Protection and time reallocation</strong></td>
+            <td><ul><li>reduced harmful exposure</li><li>sleep or study time</li><li>offline activity</li><li>measured versus predicted benefit</li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new3">Ref3 · Main</a><a class="source-role sub jump-link" href="#source-new1">Ref1 · Sub</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle map-toggle">
+    <summary>
+      <span class="toggle-title">Oppose or limit implementation</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="map-table combined-map">
+        <colgroup><col class="col-topic"><col class="col-reading"><col class="col-sources"></colgroup>
+        <thead><tr><th>Topic-domain subtheme</th><th>Sub-subthemes for detailed reading</th><th>Sources</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Social connection and support</strong></td>
+            <td><ul><li>peer connection</li><li>reduced isolation</li><li>self-expression</li><li><a class="jump-link" href="#kw-new3-social-support">social support</a></li><li><a class="jump-link" href="#kw-new3-help-seeking">help-seeking</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new5">Ref5 · Main</a><a class="source-role main jump-link" href="#source-new2">Ref2 · Main</a><a class="source-role sub jump-link" href="#source-new3">Ref3 · Sub</a></div></td>
+          </tr>
+          <tr>
+            <td><strong>Fairness and subgroup effects</strong></td>
+            <td><ul><li>who loses access</li><li>who faces greater harm</li><li>family and socioeconomic context</li><li><a class="jump-link" href="#kw-new5-moderators">moderators</a></li><li>one-size-fits-all risk</li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new2">Ref2 · Main</a><a class="source-role sub jump-link" href="#source-new5">Ref5 · Sub</a><a class="source-role sub jump-link" href="#source-new4">Ref4 · Sub</a></div></td>
+          </tr>
+          <tr>
+            <td><strong>Skills, disclosure, and hidden use</strong></td>
+            <td><ul><li><a class="jump-link" href="#kw-new3-digital-literacy">digital literacy</a></li><li>resilience</li><li>fear of disclosure</li><li>future online participation</li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new3">Ref3 · Main</a><a class="source-role sub jump-link" href="#source-new2">Ref2 · Sub</a><a class="source-role sub jump-link" href="#source-new5">Ref5 · Sub</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle map-toggle" id="table3-effectiveness" open>
+    <summary id="demo-table3-function" class="demo-target">
+      <span class="toggle-title">Evaluate policy effectiveness</span>
+      <span class="toggle-meta">3 topic domains · demo route</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="map-table combined-map">
+        <colgroup><col class="col-topic"><col class="col-reading"><col class="col-sources"></colgroup>
+        <thead><tr><th>Topic-domain subtheme</th><th>Sub-subthemes for detailed reading</th><th>Sources</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Causal rationale</strong></td>
+            <td><ul><li>association versus causation</li><li>reverse causation</li><li>confounding</li><li><a class="jump-link" href="#kw-new2-causality">causality</a></li><li><a class="jump-link" href="#kw-new2-measurement">measurement</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new2">Ref2 · Main</a><a class="source-role sub jump-link" href="#source-new5">Ref5 · Sub</a><a class="source-role sub jump-link" href="#source-new3">Ref3 · Sub</a></div></td>
+          </tr>
+          <tr class="demo-route-row">
+            <td><strong id="demo-table3-topic" class="demo-target">Compliance and circumvention</strong></td>
+            <td>
+              <ul>
+                <li>age-check exposure</li>
+                <li>own, borrowed, or fake accounts</li>
+                <li>private browsers or VPNs</li>
+                <li id="demo-table3-subtheme" class="demo-target"><a class="jump-link" href="#kw-new1-circumvention">circumvention</a></li>
+                <li><a class="jump-link" href="#kw-new1-displacement">displacement</a></li>
+                <li id="demo-table3-judgment" class="demo-target">restriction alone may have limited effect</li>
+              </ul>
+            </td>
+            <td>
+              <div class="source-role-list"><a id="demo-table3-source" class="source-role main jump-link demo-target" href="#source-new1">Ref1 · Main</a><a class="source-role sub jump-link" href="#source-new3">Ref3 · Sub</a><a class="source-role sub jump-link" href="#source-new2">Ref2 · Sub</a></div>
+              <span id="demo-table3-caution" class="source-caution demo-target">Reading caution: early implementation; self-reported access; long-term effect uncertain</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Privacy, feasibility, and proportionality</strong></td>
+            <td><ul><li>verification, estimation, inference</li><li><a class="jump-link" href="#kw-new6-age-assurance">age assurance</a></li><li><a class="jump-link" href="#kw-new6-accuracy">accuracy</a></li><li>data collection and retention</li><li><a class="jump-link" href="#kw-new6-proportionality">proportionality</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new6">Ref6 · Main</a><a class="source-role sub jump-link" href="#source-new1">Ref1 · Sub</a><a class="source-role sub jump-link" href="#source-new2">Ref2 · Sub</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="knowledge-toggle map-toggle">
+    <summary>
+      <span class="toggle-title">Alternatives and safeguards</span>
+      <span class="toggle-meta">3 topic domains</span>
+    </summary>
+    <div class="toggle-body">
+      <table class="map-table combined-map">
+        <colgroup><col class="col-topic"><col class="col-reading"><col class="col-sources"></colgroup>
+        <thead><tr><th>Topic-domain subtheme</th><th>Sub-subthemes for detailed reading</th><th>Sources</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Education, parents, and schools</strong></td>
+            <td><ul><li><a class="jump-link" href="#kw-new3-digital-literacy">digital literacy</a></li><li>parent guidance</li><li>school programmes</li><li><a class="jump-link" href="#kw-new3-help-seeking">help-seeking</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new3">Ref3 · Main</a><a class="source-role sub jump-link" href="#source-new5">Ref5 · Sub</a><a class="source-role sub jump-link" href="#source-new2">Ref2 · Sub</a><a class="source-role sub jump-link" href="#source-new4">Ref4 · Sub</a></div></td>
+          </tr>
+          <tr>
+            <td><strong>Platform design and accountability</strong></td>
+            <td><ul><li>content moderation</li><li>safer recommendation systems</li><li>reporting tools</li><li><a class="jump-link" href="#kw-new3-platform-accountability">platform accountability</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new3">Ref3 · Main</a><a class="source-role main jump-link" href="#source-new4">Ref4 · Main</a><a class="source-role sub jump-link" href="#source-new6">Ref6 · Sub</a></div></td>
+          </tr>
+          <tr>
+            <td><strong>Targeted and privacy-preserving measures</strong></td>
+            <td><ul><li><a class="jump-link" href="#kw-new5-problematic-passive-use">problematic or passive use</a></li><li>high-risk content or groups</li><li>binary age outcome</li><li>limited retention</li><li><a class="jump-link" href="#kw-new6-data-minimisation">data minimisation</a></li></ul></td>
+            <td><div class="source-role-list"><a class="source-role main jump-link" href="#source-new5">Ref5 · Main</a><a class="source-role main jump-link" href="#source-new6">Ref6 · Main</a><a class="source-role sub jump-link" href="#source-new2">Ref2 · Sub</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+
+<h3 id="paragraph-demo-structure-based-on-table-3-ideas">Paragraph Demo Structure based on Table 3 ideas</h3>
+<div class="paragraph-demo" id="paragraph-demo">
+  <div class="demo-steps" aria-label="Build a paragraph structure from Table 3">
+    <button type="button" class="demo-step" data-demo-step="1" data-demo-targets="demo-table3-function" aria-pressed="false">
+      <span class="step-number">1</span>
+      <span><strong>Essay function</strong><span class="demo-choice" hidden>Evaluate policy effectiveness</span></span>
+    </button>
+    <button type="button" class="demo-step" data-demo-step="2" data-demo-targets="demo-table3-topic" aria-pressed="false">
+      <span class="step-number">2</span>
+      <span><strong>Topic domain</strong><span class="demo-choice" hidden>Compliance and circumvention</span></span>
+    </button>
+    <button type="button" class="demo-step" data-demo-step="3" data-demo-targets="demo-table3-subtheme" aria-pressed="false">
+      <span class="step-number">3</span>
+      <span><strong>Sub-subtheme</strong><span class="demo-choice" hidden>circumvention: own, borrowed, or fake accounts; private browsers or VPNs</span></span>
+    </button>
+    <button type="button" class="demo-step" data-demo-step="4" data-demo-targets="demo-table3-source" aria-pressed="false">
+      <span class="step-number">4</span>
+      <span><strong>Evidence</strong><span class="demo-choice" hidden>age-check exposure · circumvention · displacement (Ref1)</span></span>
+    </button>
+    <button type="button" class="demo-step" data-demo-step="5" data-demo-targets="demo-table3-caution" aria-pressed="false">
+      <span class="step-number">5</span>
+      <span><strong>Limitation</strong><span class="demo-choice" hidden>early implementation · self-report · uncertain long-term effect (Ref1)</span></span>
+    </button>
+    <button type="button" class="demo-step" data-demo-step="6" data-demo-targets="demo-table3-judgment" aria-pressed="false">
+      <span class="step-number">6</span>
+      <span><strong>Paragraph use</strong><span class="demo-choice" hidden>restriction alone may have limited effect</span></span>
+    </button>
+  </div>
+  <div class="demo-outline" id="demo-outline" aria-live="polite">
+    <strong>Paragraph outline</strong>
+    <ul class="demo-outline-root">
+      <li class="demo-outline-group" data-demo-group="claim" hidden>
+        <strong>Claim route</strong>
+        <ul>
+          <li class="demo-outline-item" data-demo-outline-step="1" hidden><strong>Sentence 1 — essay function:</strong> Evaluate policy effectiveness.</li>
+          <li class="demo-outline-item" data-demo-outline-step="2" hidden><strong>Sentence 1 — topic domain:</strong> Compliance and circumvention.</li>
+        </ul>
+      </li>
+      <li class="demo-outline-group" data-demo-group="development" hidden>
+        <strong>Development route</strong>
+        <ul>
+          <li class="demo-outline-item" data-demo-outline-step="3" hidden>
+            <strong>Sentence 2 — explanation:</strong> Circumvention: own, borrowed, or fake accounts; private browsers or VPNs.
+          </li>
+        </ul>
+      </li>
+      <li class="demo-outline-group" data-demo-group="evidence" hidden>
+        <strong>Evidence route</strong>
+        <ul>
+          <li class="demo-outline-item" data-demo-outline-step="4" hidden>
+            <strong>Sentence 3 — evidence:</strong> Ref1 — age-check exposure; circumvention; displacement.
+            <ul><li class="research-gap">[need data support for real-world access after implementation]</li></ul>
+          </li>
+          <li class="demo-outline-item" data-demo-outline-step="5" hidden>
+            <strong>Sentence 4 — limitation:</strong> Early implementation; self-reported access; long-term effect uncertain.
+            <ul><li class="research-gap">[need counter example for successful age-check compliance]</li></ul>
+          </li>
+        </ul>
+      </li>
+      <li class="demo-outline-group" data-demo-group="judgment" hidden>
+        <strong>Judgment route</strong>
+        <ul>
+          <li class="demo-outline-item" data-demo-outline-step="6" hidden>
+            <strong>Sentence 5 — link:</strong> Restriction alone may have limited effect.
+            <ul><li class="research-gap">[need data support for age-assurance and enforcement effectiveness]</li></ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(() => {
+  function revealTarget(hash, shouldScroll = false) {
+    if (!hash || hash === "#") return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    const panel = target.matches("details") ? target : target.closest("details");
+    if (panel) panel.open = true;
+    if (shouldScroll) {
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a.jump-link");
+    if (!link || !link.hash) return;
+    event.preventDefault();
+    history.pushState(null, "", link.hash);
+    revealTarget(link.hash, true);
+  });
+
+  document.querySelectorAll(".demo-step").forEach((button) => {
+    button.addEventListener("click", () => {
+      const step = button.dataset.demoStep;
+      const selected = button.getAttribute("aria-pressed") !== "true";
+      button.setAttribute("aria-pressed", String(selected));
+      const choice = button.querySelector(".demo-choice");
+      if (choice) choice.hidden = !selected;
+      document.getElementById("table3-effectiveness").open = true;
+      button.dataset.demoTargets.split(/\s+/).forEach((targetId) => {
+        const target = document.getElementById(targetId);
+        if (target) target.classList.toggle("demo-selected", selected);
+      });
+      const outlineItem = document.querySelector(`[data-demo-outline-step="${step}"]`);
+      if (outlineItem) outlineItem.hidden = !selected;
+      document.querySelectorAll(".demo-outline-group").forEach((group) => {
+        group.hidden = ![...group.querySelectorAll(".demo-outline-item")]
+          .some((item) => !item.hidden);
+      });
+    });
+  });
+
+  let screenToggleState = [];
+  window.addEventListener("beforeprint", () => {
+    const toggles = [...document.querySelectorAll("details.knowledge-toggle")];
+    screenToggleState = toggles.map((toggle) => toggle.open);
+    toggles.forEach((toggle) => {
+      toggle.open = true;
+    });
+  });
+  window.addEventListener("afterprint", () => {
+    document.querySelectorAll("details.knowledge-toggle").forEach((toggle, index) => {
+      toggle.open = screenToggleState[index] ?? toggle.open;
+    });
+  });
+
+  window.addEventListener("hashchange", () => revealTarget(window.location.hash, true));
+  revealTarget(window.location.hash, Boolean(window.location.hash));
+})();
+</script>
+</body>
+</html>
