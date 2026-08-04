@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jacky Extra Listening Practice</title>
+<style>
+:root{--ink:#20324a;--muted:#607089;--paper:#fffdfa;--navy:#183a63;--blue:#dcecff;--orange:#ffe7c7;--line:#d8e0ea;--bg:#eef3f8;--answer:#1264c0}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.58 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}a{color:#0b5ea8}button,a,summary,input,textarea{font:inherit}.topbar{position:sticky;top:0;z-index:20;background:#153a62;color:white;padding:10px max(16px,calc((100vw - 1180px)/2));display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 2px 12px #0b203944}.topbar a,.topbar button{border:1px solid #ffffff66;border-radius:999px;padding:7px 12px;color:white;background:transparent;text-decoration:none;cursor:pointer}.topbar .note{margin-left:auto;font-size:13px;color:#dce9f7}main{max-width:1180px;margin:24px auto 60px;padding:0 18px}.hero{background:linear-gradient(135deg,#173a63,#2f6f9f);color:white;border-radius:22px;padding:28px;box-shadow:0 16px 40px #243d5b25}.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px)}.hero p{margin:5px 0;max-width:820px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.step{background:#ffffff14;border:1px solid #ffffff38;border-radius:12px;padding:10px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.tab{border:1px solid #9eb2c9;border-radius:999px;background:white;color:var(--navy);padding:9px 16px;cursor:pointer;font-weight:700}.tab[aria-pressed=true]{background:var(--navy);color:white}.topic{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 14px 34px #243d5b17}.topic-header{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}.topic-header h2{margin:5px 0 0;font-size:clamp(24px,3vw,34px)}.topic-header p{margin:3px 0;color:var(--muted)}audio{width:min(390px,100%)}.badge{display:inline-block;background:#d9ebfb;color:#174f7e;padding:4px 9px;border-radius:999px;font-size:13px;font-weight:800}.source-credit{font-size:13px;color:var(--muted);margin:10px 0 18px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,38%);grid-template-areas:"questions script";gap:20px;align-items:start}.questions{grid-area:questions;display:grid;gap:14px}.script-panel{grid-area:script;position:sticky;top:76px}.script-details{border:1px solid #a9bfd4;background:#f4f8fc;border-radius:14px;overflow:hidden}.script-details summary{cursor:pointer;font-weight:800;padding:13px 15px;background:#e3eef8}.script-scroll{max-height:68vh;overflow:auto;padding:15px}pre{white-space:pre-wrap;margin:0;font:14px/1.62 ui-monospace,SFMono-Regular,Menlo,monospace}.qcard{border:1px solid var(--line);border-radius:14px;padding:15px;background:white;break-inside:avoid}.qhead{display:flex;gap:9px;align-items:center;margin-bottom:8px}.qnum{background:var(--navy);color:white;border-radius:8px;padding:3px 8px;font-weight:800}.qtype{color:var(--muted);font-size:13px;font-weight:700}.prompt{font-weight:650;margin-bottom:9px;white-space:pre-wrap}mark.cue{border-radius:4px;padding:0 2px;color:inherit}mark.theme{background:var(--orange)}mark.difference{background:var(--blue)}.options,.option-list{display:grid;gap:7px;margin:8px 0}.option{display:flex;gap:7px;align-items:flex-start;padding:7px;border-radius:9px}.option:hover{background:#f2f6fa}textarea{width:100%;border:0;border-bottom:2px solid #90a8c0;background:#f8fafc;min-height:58px;padding:9px;resize:vertical;margin-top:8px}.notes{min-height:44px}.footer{font-size:13px;color:var(--muted);margin:24px 5px}.footer a{white-space:nowrap}
+@media(max-width:760px){.topbar .note{width:100%;margin-left:0}main{padding:0 10px;margin-top:12px}.hero,.topic{border-radius:15px;padding:16px}.steps{grid-template-columns:1fr 1fr}.topic-header{display:block}audio{margin-top:12px}.workspace{grid-template-columns:1fr;grid-template-areas:"script" "questions"}.script-panel{position:static}.script-scroll{max-height:46vh}}
+@media(max-width:420px){.steps{grid-template-columns:1fr}}
+@media print{body{background:white;font-size:11pt}.topbar,.tabs{display:none!important}main{max-width:none;margin:0;padding:0}.hero{background:white!important;color:var(--ink);box-shadow:none;border:1px solid var(--line);padding:12mm}.hero .steps{display:none}.topic,.topic[hidden]{display:block!important;box-shadow:none;border:0;border-radius:0;padding:8mm 0;page-break-before:always}.topic-header{page-break-after:avoid}.workspace{display:block}.script-panel{position:static;margin-bottom:8mm}.script-details{overflow:visible}.script-details>summary{display:none}.script-scroll{max-height:none;overflow:visible}.questions{display:block}.qcard{margin:0 0 5mm}textarea{min-height:18mm}audio{display:none}}
+</style></head><body>
+<nav class="topbar"><a href="../">← Jacky practice home</a><a href="../listening-practice/">Main listening practice</a><button type="button" id="printBtn">打印 / Save as PDF</button><span class="note">答案仅保存在这台设备；不会自动提交。</span></nav>
+<main><header class="hero"><h1>Extra Listening Practice</h1><p>补充听力练习｜三段由易到难的短报告。先独立完成，再打开 script 核对关键词和信息顺序。</p><div class="steps"><div class="step">1 · 先读题，圈出对象与差异</div><div class="step">2 · 第一遍听结构与主旨</div><div class="step">3 · 第二遍补细节</div><div class="step">4 · 最后用 script 核对</div></div></header><div class="tabs" role="navigation" aria-label="Extra practice topics"><button class="tab" data-open-topic="1" aria-pressed="true">Extra 1</button><button class="tab" data-open-topic="2" aria-pressed="false">Extra 2</button><button class="tab" data-open-topic="3" aria-pressed="false">Extra 3</button></div><section class="topic" id="topic-1" data-topic="1">
+      <header class="topic-header">
+        <div><span class="badge">Extra 1</span><h2>Avoid Ineffective Study Methods</h2><p>低效与高效的学习方法 · 8 个题组 · 约 4 分钟</p></div>
+        <audio controls preload="metadata" src="audio/01-study-methods.mp3"></audio>
+      </header>
+      <div class="source-credit">Audio and transcript: <a href="https://learningenglish.voanews.com/a/education-tips-avoid-ineffective-study-methods/3795956.html" target="_blank" rel="noopener">VOA Learning English</a> · Intermediate / upper-beginner</div>
+      <div class="workspace">
+        <aside class="script-panel">
+          <details class="script-details">
+            <summary>听后打开 Listening script</summary>
+            <div class="script-scroll"><pre>No media source currently available
+
+128 kbps | MP3
+
+64 kbps | MP3
+
+Imagine you have a test in school. It could be for a class in history or mathematics. Even worse, you could have an English test. How should you prepare for this terrible event? What can you do before the big day to help you do better?
+
+Should you reread your history or math books? What about underlining important words or sentences?
+
+If you are like many students, you probably use both rereading and underlining. But are these truly the best methods?
+
+Today, on our Education Report, we will explore effective and ineffective ways to study for tests. You might learn that some study habits you used in the past might not be the best methods.
+
+Are rereading and highlighting effective?
+
+Rereading and highlighting are common strategies that you will see in schools around the world.
+
+Students look at information they have already read in an effort to remember what is important.
+
+Students often combine rereading with highlighting. They underline important information in what they read with a writing instrument such as a marker.
+
+American Mary Pyc is a cognitive scientist. She studies the human mind and its processes.
+
+Pyc says that both rereading and highlighting are ineffective study tools. While better than not studying at all, she believes they are not as useful as other habits.
+
+&quot;For example, with rereading, it&#x27;s maybe not as effective because you are not trying to actively retrieve the information. You are not seeing &quot;what do I actually know about what I read?&quot; With rereading what is going to happen is that it is going to feel like you already know the information because you&#x27;ve already read it. So, you have this sense of fluency that is leading you to think &quot;Ok, yes, I know the information.&quot;
+
+The problem with highlighting, Pyc says, is that students have a false sense of understanding - similar to when they reread information. Also, there is a second problem that comes with highlighting.
+
+&quot;Students aren&#x27;t always aware of what the most important information is. So it&#x27;s possible that they are maybe highlighting details that aren&#x27;t as important as the higher level concepts.&quot;
+
+What can you do?
+
+So what should you do if rereading and highlighting are not the best ways to study for a test?
+
+One idea is to test yourself. We have discussed self-testing strategies in other education stories. Simple flashcards and practice exams can help when you want to make sure that you have learned something.
+
+Another strategy is what education experts have called “spaced practice.” This means to practice remembering the new information over time, instead of doing everything all at once. We will discuss spaced practice in a future Education Tips story.
+
+Regardless of which strategy you chose, you should know that effective learning takes time and it takes effort.
+
+The next time you have a test coming, try to plan for the big day so that you can give yourself time to engage in different study habits. And remember, rereading and highlighting are better than not studying at all, but there are better methods out there!
+
+I&#x27;m John Russell.</pre></div>
+          </details>
+        </aside>
+        <section class="questions"><article class="qcard" data-question="Q1">
+          <div class="qhead"><span class="qnum">Q1</span><span class="qtype">Sequencing</span></div>
+          <div class="prompt">Put the three parts of the report in the correct order. Write 1–3.</div>
+          <div class="option-list"><div>a) <mark class="cue theme">Suggestions</mark> for better study methods</div><div>b) Two <mark class="cue theme">common study strategies</mark></div><div>c) <mark class="cue theme">Why</mark> the common strategies can be <mark class="cue theme">ineffective</mark></div></div><textarea class="answer-space" data-save="study-methods-Q1" aria-label="Q1 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q2">
+          <div class="qhead"><span class="qnum">Q2</span><span class="qtype">Multiple choice</span></div>
+          <div class="prompt">What is the main purpose of the report?</div>
+          <div class="options"><label class="option"><input type="radio" name="study-methods-Q2" value="A"> <span>A. To <mark class="cue difference">compare school subjects</mark></span></label><label class="option"><input type="radio" name="study-methods-Q2" value="B"> <span>B. To explain why <mark class="cue difference">tests should be removed</mark></span></label><label class="option"><input type="radio" name="study-methods-Q2" value="C"> <span>C. To <mark class="cue difference">evaluate common study habits</mark> and suggest better ones</span></label><label class="option"><input type="radio" name="study-methods-Q2" value="D"> <span>D. To show how to <mark class="cue difference">use a marker</mark></span></label></div><textarea class="notes" data-save="study-methods-Q2-notes" aria-label="作答依据" placeholder="作答依据 / notes"></textarea>
+        </article><article class="qcard" data-question="Q3">
+          <div class="qhead"><span class="qnum">Q3</span><span class="qtype">Note completion</span></div>
+          <div class="prompt">Complete the notes. <mark class="cue theme">Rereading</mark> can create a <mark class="cue theme">sense of</mark> ________. <mark class="cue theme">Highlighting</mark> may make students choose ________ instead of <mark class="cue theme">higher-level concepts</mark>.</div>
+          <textarea class="answer-space" data-save="study-methods-Q3" aria-label="Q3 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q4">
+          <div class="qhead"><span class="qnum">Q4</span><span class="qtype">Multiple choice</span></div>
+          <div class="prompt">What does Mary Pyc study?</div>
+          <div class="options"><label class="option"><input type="radio" name="study-methods-Q4" value="A"> <span>A. <mark class="cue difference">School examinations</mark></span></label><label class="option"><input type="radio" name="study-methods-Q4" value="B"> <span>B. The <mark class="cue difference">human mind</mark> and its processes</span></label><label class="option"><input type="radio" name="study-methods-Q4" value="C"> <span>C. <mark class="cue difference">Writing instruments</mark></span></label><label class="option"><input type="radio" name="study-methods-Q4" value="D"> <span>D. <mark class="cue difference">Mathematics teaching</mark></span></label></div><textarea class="notes" data-save="study-methods-Q4-notes" aria-label="作答依据" placeholder="作答依据 / notes"></textarea>
+        </article><article class="qcard" data-question="Q5">
+          <div class="qhead"><span class="qnum">Q5</span><span class="qtype">Short answer</span></div>
+          <div class="prompt">Name the <mark class="cue theme">TWO</mark> <mark class="cue theme">better study strategies</mark> suggested in the report.</div>
+          <textarea class="answer-space" data-save="study-methods-Q5" aria-label="Q5 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q6">
+          <div class="qhead"><span class="qnum">Q6</span><span class="qtype">Multiple matching</span></div>
+          <div class="prompt">Match each method to its description: 1 rereading; 2 highlighting; 3 self-testing; 4 spaced practice.</div>
+          <div class="option-list"><div>a) remembering information <mark class="cue difference">over time</mark></div><div>b) using <mark class="cue difference">flashcards</mark> or practice exams</div><div>c) <mark class="cue difference">looking again</mark> at information already read</div><div>d) <mark class="cue difference">marking information</mark> with colour</div></div><textarea class="answer-space" data-save="study-methods-Q6" aria-label="Q6 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q7">
+          <div class="qhead"><span class="qnum">Q7</span><span class="qtype">Short answer</span></div>
+          <div class="prompt">According to the speaker, what <mark class="cue theme">TWO things</mark> does <mark class="cue theme">effective learning</mark> <mark class="cue theme">require</mark>?</div>
+          <textarea class="answer-space" data-save="study-methods-Q7" aria-label="Q7 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q8">
+          <div class="qhead"><span class="qnum">Q8</span><span class="qtype">Summary / Evaluation</span></div>
+          <div class="prompt">Choose <mark class="cue theme">one study habit</mark> you will change. Explain the <mark class="cue theme">replacement</mark> in 2–3 sentences.</div>
+          <textarea class="answer-space" data-save="study-methods-Q8" aria-label="Q8 answer" placeholder="在这里作答"></textarea>
+        </article></section>
+      </div>
+    </section><section class="topic" id="topic-2" data-topic="2" hidden>
+      <header class="topic-header">
+        <div><span class="badge">Extra 2</span><h2>Improve Your Learning by Teaching</h2><p>通过“教别人”来学习 · 8 个题组 · 约 5 分钟</p></div>
+        <audio controls preload="metadata" src="audio/02-learning-by-teaching.mp3"></audio>
+      </header>
+      <div class="source-credit">Audio and transcript: <a href="https://learningenglish.voanews.com/a/improve-your-learning-by-teaching-/5728658.html" target="_blank" rel="noopener">VOA Learning English</a> · Intermediate / upper-beginner</div>
+      <div class="workspace">
+        <aside class="script-panel">
+          <details class="script-details">
+            <summary>听后打开 Listening script</summary>
+            <div class="script-scroll"><pre>No media source currently available
+
+128 kbps | MP3
+
+64 kbps | MP3
+
+You might be looking for new ways to improve your understanding of something you are studying. Perhaps you are seeking better methods to remember important information.
+
+One way to help you reach these goals is to try teaching – not as a job, but as a way to improve your own learning.
+
+In today’s Education Tips, we will explore how teaching could help your studies.
+
+Background
+
+Researchers and educators have been interested in the link between teaching and learning for quite some time.
+
+A 1982 study found that tutoring helped both the tutors and the people who studied with them.
+
+Tutoring means teaching one person or a very small group of students.
+
+“Like the children they helped, the tutors gained a better understanding of and developed more positive attitudes toward the subject matter covered in the tutorial program,” the researchers wrote.
+
+Attitude is a term that means the way you think or feel about something.
+
+Also in the 1980s, Jean-Pol Martin, a French teacher in Germany, developed a way of teaching that asked students to teach each other. Martin taught language classes, but he expanded his “Learning by Teaching” method, also called LdL, to include other subjects as well.
+
+More recent studies
+
+More recent studies have looked at the link between teaching and memory. A 2013 study, which we briefly described in a previous Education Tips, found that teaching had a strong effect on understanding and learning.
+
+An important part of the study compared the learning results of people who actually taught a lesson to those who simply prepared but did not teach.
+
+“Overall, these findings suggest that when students actually teach the content of a lesson, they develop a deeper and more persistent understanding of the material than from solely preparing to teach,” the researchers wrote.
+
+Persistent is a term that means continuing beyond the usual or expected amount of time.
+
+Why Does Teaching Improve Learning?
+
+Scientists have also explored the question of why teaching improves learning.
+
+A 2018 study suggests that teaching may help your learning because you have to remember the information you have learned as you continue to teach. Experts call this “retrieval.”
+
+The researchers wrote that “retrieval practice possibly causes the learning benefits of teaching.”
+
+Practice is a term that means to do something over and over again to become better at it.
+
+The basic idea is that if you want to improve your memory of what you have learned, you have to practice remembering that information.
+
+While retrieval may be one reason that teaching helps learning, there could be other reasons. The issue remains an open question.
+
+Ideas for how to start teaching
+
+The good news is that there are many ways that you can improve your learning by teaching.
+
+One way might be to teach your family or friends about something that you are learning. For example, you could teach your parents about English grammar or vocabulary.
+
+You could also try teaching a younger person – perhaps a cousin, brother or sister. Try to make your lessons simple and clear, and ask them what they do not understand.
+
+The process of teaching and asking for feedback will help you realize that you may not understand some things as well as you thought you did. That is an important, necessary step in the learning process.
+
+Another idea is to imagine yourself describing a lesson to someone, or to write the lesson down. In the Guardian newspaper, David Robson suggests that you could write an email describing what you have learned in great detail.
+
+A final idea for those who like technology: You could record video of yourself teaching information. You could then send the lesson to friends or put it on YouTube or some other social media service.
+
+Give teaching a try and let us know if it improves your learning!
+
+I’m John Russell.</pre></div>
+          </details>
+        </aside>
+        <section class="questions"><article class="qcard" data-question="Q1">
+          <div class="qhead"><span class="qnum">Q1</span><span class="qtype">Sequencing</span></div>
+          <div class="prompt">Put the research developments in chronological order. Write 1–4.</div>
+          <div class="option-list"><div>a) A study <mark class="cue difference">compared teaching</mark> with only preparing to teach</div><div>b) <mark class="cue difference">Tutoring</mark> helped tutors and learners</div><div>c) Researchers connected teaching with <mark class="cue difference">retrieval practice</mark></div><div>d) Jean-Pol Martin developed <mark class="cue difference">Learning by Teaching</mark></div></div><textarea class="answer-space" data-save="learning-by-teaching-Q1" aria-label="Q1 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q2">
+          <div class="qhead"><span class="qnum">Q2</span><span class="qtype">Multiple choice</span></div>
+          <div class="prompt">Who benefited from tutoring in the 1982 study?</div>
+          <div class="options"><label class="option"><input type="radio" name="learning-by-teaching-Q2" value="A"> <span>A. <mark class="cue difference">Only the tutors</mark></span></label><label class="option"><input type="radio" name="learning-by-teaching-Q2" value="B"> <span>B. <mark class="cue difference">Only the learners</mark></span></label><label class="option"><input type="radio" name="learning-by-teaching-Q2" value="C"> <span>C. <mark class="cue difference">Both</mark> tutors and learners</span></label><label class="option"><input type="radio" name="learning-by-teaching-Q2" value="D"> <span>D. <mark class="cue difference">Only language teachers</mark></span></label></div><textarea class="notes" data-save="learning-by-teaching-Q2-notes" aria-label="作答依据" placeholder="作答依据 / notes"></textarea>
+        </article><article class="qcard" data-question="Q3">
+          <div class="qhead"><span class="qnum">Q3</span><span class="qtype">Note completion</span></div>
+          <div class="prompt">The <mark class="cue theme">2013 study</mark> found that students who <mark class="cue theme">actually taught</mark> developed a ________ and more ________ understanding than students who <mark class="cue theme">only prepared</mark>.</div>
+          <textarea class="answer-space" data-save="learning-by-teaching-Q3" aria-label="Q3 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q4">
+          <div class="qhead"><span class="qnum">Q4</span><span class="qtype">Short answer</span></div>
+          <div class="prompt">What <mark class="cue theme">term</mark> means <mark class="cue theme">practising remembering</mark> information?</div>
+          <textarea class="answer-space" data-save="learning-by-teaching-Q4" aria-label="Q4 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q5">
+          <div class="qhead"><span class="qnum">Q5</span><span class="qtype">Multiple choice</span></div>
+          <div class="prompt">What is the speaker’s view of retrieval as an explanation?</div>
+          <div class="options"><label class="option"><input type="radio" name="learning-by-teaching-Q5" value="A"> <span>A. It is <mark class="cue difference">certainly the only reason</mark></span></label><label class="option"><input type="radio" name="learning-by-teaching-Q5" value="B"> <span>B. It <mark class="cue difference">may be one reason</mark>, but the question is still open</span></label><label class="option"><input type="radio" name="learning-by-teaching-Q5" value="C"> <span>C. It has been <mark class="cue difference">disproved</mark></span></label><label class="option"><input type="radio" name="learning-by-teaching-Q5" value="D"> <span>D. It applies <mark class="cue difference">only to language learning</mark></span></label></div><textarea class="notes" data-save="learning-by-teaching-Q5-notes" aria-label="作答依据" placeholder="作答依据 / notes"></textarea>
+        </article><article class="qcard" data-question="Q6">
+          <div class="qhead"><span class="qnum">Q6</span><span class="qtype">Multiple matching</span></div>
+          <div class="prompt">Match each teaching method to the suggested action: 1 family/friends; 2 younger person; 3 imagined learner; 4 video.</div>
+          <div class="option-list"><div>a) explain a lesson in an <mark class="cue difference">email</mark></div><div>b) teach <mark class="cue difference">grammar or vocabulary</mark></div><div>c) <mark class="cue difference">record and share</mark> the lesson</div><div>d) keep it simple and <mark class="cue difference">ask what is unclear</mark></div></div><textarea class="answer-space" data-save="learning-by-teaching-Q6" aria-label="Q6 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q7">
+          <div class="qhead"><span class="qnum">Q7</span><span class="qtype">Short answer</span></div>
+          <div class="prompt">How can <mark class="cue theme">feedback</mark> <mark class="cue theme">help</mark> the <mark class="cue theme">learner who is teaching</mark>?</div>
+          <textarea class="answer-space" data-save="learning-by-teaching-Q7" aria-label="Q7 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q8">
+          <div class="qhead"><span class="qnum">Q8</span><span class="qtype">Summary</span></div>
+          <div class="prompt">Summarise <mark class="cue theme">why teaching</mark> may <mark class="cue theme">improve learning</mark>. Write <mark class="cue theme">NO MORE THAN 30 WORDS</mark>.</div>
+          <textarea class="answer-space" data-save="learning-by-teaching-Q8" aria-label="Q8 answer" placeholder="在这里作答"></textarea>
+        </article></section>
+      </div>
+    </section><section class="topic" id="topic-3" data-topic="3" hidden>
+      <header class="topic-header">
+        <div><span class="badge">Extra 3</span><h2>Are You Getting Enough Sleep?</h2><p>你的睡眠够吗？ · 9 个题组 · 约 6 分钟</p></div>
+        <audio controls preload="metadata" src="audio/03-enough-sleep.mp3"></audio>
+      </header>
+      <div class="source-credit">Audio and transcript: <a href="https://learningenglish.voanews.com/a/health-lifestyle-are-you-getting-enough-sleep/3848126.html" target="_blank" rel="noopener">VOA Learning English</a> · Intermediate / upper-beginner</div>
+      <div class="workspace">
+        <aside class="script-panel">
+          <details class="script-details">
+            <summary>听后打开 Listening script</summary>
+            <div class="script-scroll"><pre>No media source currently available
+
+128 kbps | MP3
+
+64 kbps | MP3
+
+From VOA Learning English, this is the Health &amp; Lifestyle report.
+
+We spend about one-third of our lives asleep. This may sound like a lot of time, but it is not wasted.
+
+Our bodies need sleep to stay healthy. Not getting enough sleep, or as we sometimes say shut-eye, can make us sick.
+
+Sleep and our immune system
+
+The immune system protects the body from diseases and infections. Not getting enough sleep hurts this protective system.
+
+The Mayo Clinic is a nonprofit research hospital in the United States. Its website explains that when we sleep our bodies release proteins that support sleep and help us fight infections. They add that infection-fighting antibodies and cells are reduced during periods when you don&#x27;t get enough sleep.
+
+A new study from the University of Washington in the U.S. seems to confirm this. Dr. Nathaniel Watson was the lead writer of the study. He is also co-director of the university’s Medicine Sleep Center at Harborview Medical Center.
+
+Watson says his study shows that the immune system works best when the body gets enough sleep.
+
+For the study, Watson and his team studied 11 pairs of identical twins. This is an important difference from other sleep studies. Other research did not study identical twins.
+
+The identical twins, however, had different sleep patterns. Researchers found that the twin who slept less had a weaker immune system.
+
+Watson says his study showed for the first time that a long-term lack of sleep shuts down parts of the immune system. He says parts that move white blood cells around the body are affected. White blood cells fight infection in the body.
+
+Watson adds that the results confirm a finding of other sleep studies. They found that when sleep-deprived people are given a vaccine, fewer antibodies are produced. If sleep-deprived people are then exposed to a virus, he says, “they are more likely to get the virus.”
+
+Watson’s study provides more evidence that sleep is important to “overall health and well-being.” And sleep is especially important to immune health.
+
+The researchers published their findings in the journal Sleep.
+
+How much sleep is enough?
+
+To stay in good health, experts at the Mayo Clinic say that adults should get seven to eight hours of sleep. Teenagers need nine to 10 hours. And school-aged children may need more than 10 hours of sleep a night.
+
+Experts say the quality and quantity of our sleep becomes poor as we age. This happens because brain circuits that control sleep slowly begin to weaken.
+
+Experts say the process begins in our 30s. By the time we reach our 50s, the average person has lost 50 percent of their ability to have a restful sleep.
+
+These people also have trouble falling asleep and staying asleep through the night. From middle age on, they say these problems only get worse, and they can affect our health.
+
+Signs you may not be getting enough sleep
+
+The website Health.com lists several signs that may mean you are not getting enough sleep.
+
+You’re always hungry or you’ve gained weight. A lack of sleep can affect the hormones that tell your brain you have eaten enough.
+
+You have trouble making decisions. A lack of sleep may affect your higher level brain functions, such as problem solving.
+
+You have trouble remembering things. Sleep helps prepare the brain for new memories.
+
+You feel very emotional. People who are sleep deprived may feel unable to control their emotions, whether they be angry, sad or happy.
+
+Your skin doesn’t look good. When we sleep, the body repairs damaged cells, like skin cells. (We don’t call it beauty sleep for nothing!)
+
+You are having trouble seeing. When you’re tired you may not be able to control your eye muscles.
+
+How to improve your sleep
+
+There are things people can do get better sleep.
+
+Health experts recommend exercise and avoiding work on computers and electronic devices before bed. A cool room is also a better environment for sleeping.
+
+And that’s the Health &amp; Lifestyle report.
+
+I’m Anna Matteo.</pre></div>
+          </details>
+        </aside>
+        <section class="questions"><article class="qcard" data-question="Q1">
+          <div class="qhead"><span class="qnum">Q1</span><span class="qtype">Sequencing</span></div>
+          <div class="prompt">Put the report sections in the correct order. Write 1–4.</div>
+          <div class="option-list"><div>a) Ways to <mark class="cue theme">improve sleep</mark></div><div>b) Sleep and the <mark class="cue theme">immune system</mark></div><div>c) <mark class="cue theme">Signs</mark> of insufficient sleep</div><div>d) Recommended <mark class="cue theme">sleep amounts</mark></div></div><textarea class="answer-space" data-save="enough-sleep-Q1" aria-label="Q1 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q2">
+          <div class="qhead"><span class="qnum">Q2</span><span class="qtype">Note completion</span></div>
+          <div class="prompt">Complete the notes. <mark class="cue theme">During sleep</mark>, the body releases ________ that help <mark class="cue theme">fight infection</mark>. <mark class="cue theme">Without enough sleep</mark>, infection-fighting ________ and cells are <mark class="cue theme">reduced</mark>.</div>
+          <textarea class="answer-space" data-save="enough-sleep-Q2" aria-label="Q2 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q3">
+          <div class="qhead"><span class="qnum">Q3</span><span class="qtype">Short answer</span></div>
+          <div class="prompt"><mark class="cue theme">How many pairs</mark> of <mark class="cue theme">identical twins</mark> were studied?</div>
+          <textarea class="answer-space" data-save="enough-sleep-Q3" aria-label="Q3 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q4">
+          <div class="qhead"><span class="qnum">Q4</span><span class="qtype">Multiple choice</span></div>
+          <div class="prompt">What did researchers find about the twins?</div>
+          <div class="options"><label class="option"><input type="radio" name="enough-sleep-Q4" value="A"> <span>A. The twin who <mark class="cue difference">slept less</mark> had a weaker immune system</span></label><label class="option"><input type="radio" name="enough-sleep-Q4" value="B"> <span>B. Both twins had <mark class="cue difference">identical sleep patterns</mark></span></label><label class="option"><input type="radio" name="enough-sleep-Q4" value="C"> <span>C. The twin who <mark class="cue difference">slept more</mark> became ill</span></label><label class="option"><input type="radio" name="enough-sleep-Q4" value="D"> <span>D. <mark class="cue difference">Neither twin</mark> produced antibodies</span></label></div><textarea class="notes" data-save="enough-sleep-Q4-notes" aria-label="作答依据" placeholder="作答依据 / notes"></textarea>
+        </article><article class="qcard" data-question="Q5">
+          <div class="qhead"><span class="qnum">Q5</span><span class="qtype">Note completion</span></div>
+          <div class="prompt">Complete the table: <mark class="cue theme">Adults</mark>: ________ hours; <mark class="cue theme">Teenagers</mark>: ________ hours; <mark class="cue theme">School-aged children</mark>: ________ hours.</div>
+          <textarea class="answer-space" data-save="enough-sleep-Q5" aria-label="Q5 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q6">
+          <div class="qhead"><span class="qnum">Q6</span><span class="qtype">Multiple choice</span></div>
+          <div class="prompt">Why does sleep quality generally become poorer with age?</div>
+          <div class="options"><label class="option"><input type="radio" name="enough-sleep-Q6" value="A"> <span>A. People <mark class="cue difference">exercise more</mark></span></label><label class="option"><input type="radio" name="enough-sleep-Q6" value="B"> <span>B. <mark class="cue difference">Brain circuits</mark> controlling sleep weaken</span></label><label class="option"><input type="radio" name="enough-sleep-Q6" value="C"> <span>C. The <mark class="cue difference">immune system becomes stronger</mark></span></label><label class="option"><input type="radio" name="enough-sleep-Q6" value="D"> <span>D. Older people <mark class="cue difference">need no deep sleep</mark></span></label></div><textarea class="notes" data-save="enough-sleep-Q6-notes" aria-label="作答依据" placeholder="作答依据 / notes"></textarea>
+        </article><article class="qcard" data-question="Q7">
+          <div class="qhead"><span class="qnum">Q7</span><span class="qtype">Multiple choice — choose THREE</span></div>
+          <div class="prompt">Which THREE signs of insufficient sleep are mentioned? Write three letters.</div>
+          <div class="option-list"><div>A. Increased <mark class="cue difference">hunger or weight gain</mark></div><div>B. <mark class="cue difference">Better memory</mark></div><div>C. Trouble <mark class="cue difference">making decisions</mark></div><div>D. More <mark class="cue difference">stable emotions</mark></div><div>E. Trouble <mark class="cue difference">seeing</mark></div><div>F. Needing <mark class="cue difference">less food</mark></div></div><textarea class="answer-space" data-save="enough-sleep-Q7" aria-label="Q7 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q8">
+          <div class="qhead"><span class="qnum">Q8</span><span class="qtype">Note completion</span></div>
+          <div class="prompt">Complete the <mark class="cue theme">recommendations</mark>: get ________; avoid computers and electronic devices <mark class="cue theme">before bed</mark>; <mark class="cue theme">keep the room</mark> ________.</div>
+          <textarea class="answer-space" data-save="enough-sleep-Q8" aria-label="Q8 answer" placeholder="在这里作答"></textarea>
+        </article><article class="qcard" data-question="Q9">
+          <div class="qhead"><span class="qnum">Q9</span><span class="qtype">Summary / Evaluation</span></div>
+          <div class="prompt">Choose <mark class="cue theme">ONE recommendation</mark> from the report. Explain how you could <mark class="cue theme">apply it this week</mark> in 2–3 sentences.</div>
+          <textarea class="answer-space" data-save="enough-sleep-Q9" aria-label="Q9 answer" placeholder="在这里作答"></textarea>
+        </article></section>
+      </div>
+    </section>
+<footer class="footer">Audio and transcripts are credited to <a href="https://learningenglish.voanews.com/" target="_blank" rel="noopener">VOA Learning English</a> and reused under its <a href="https://learningenglish.voanews.com/p/6861.html" target="_blank" rel="noopener">public-domain content policy</a>. Practice questions were created for this course.</footer></main>
+<script>
+const STORE='jacky-extra-listening-v1:';
+document.querySelectorAll('[data-open-topic]').forEach(btn=>btn.addEventListener('click',()=>{const n=btn.dataset.openTopic;document.querySelectorAll('.topic').forEach(t=>t.hidden=t.dataset.topic!==n);document.querySelectorAll('[data-open-topic]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));window.scrollTo({top:document.querySelector('.tabs').offsetTop-60,behavior:'smooth'})}));
+document.querySelectorAll('textarea[data-save]').forEach(el=>{el.value=localStorage.getItem(STORE+el.dataset.save)||'';el.addEventListener('input',()=>localStorage.setItem(STORE+el.dataset.save,el.value))});
+document.querySelectorAll('input[type=radio]').forEach(el=>{if(localStorage.getItem(STORE+el.name)===el.value)el.checked=true;el.addEventListener('change',()=>localStorage.setItem(STORE+el.name,el.value))});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+let detailStates=[];addEventListener('beforeprint',()=>{detailStates=[...document.querySelectorAll('.script-details')].map(d=>d.open);document.querySelectorAll('.script-details').forEach(d=>d.open=true)});addEventListener('afterprint',()=>document.querySelectorAll('.script-details').forEach((d,i)=>d.open=detailStates[i]));
+</script></body></html>
