@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Jacky · Predicted Topic Listening Library</title>
+<style>
+:root{--ink:#1d2b36;--muted:#62707a;--paper:#f4f1ea;--card:#fff;--line:#d8dcdd;--navy:#173a59;--blue:#1769aa;--orange:#a74818;--green:#17603d;--shadow:0 18px 50px rgba(22,36,45,.11)}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}body{margin:0;color:var(--ink);font:16px/1.58 Arial,"PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--blue)}button,a,summary{font:inherit}.topbar{position:sticky;top:0;z-index:30;display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:10px max(16px,calc((100vw - 1120px)/2));background:var(--navy);box-shadow:0 2px 14px #0a1d2c44}.topbar a,.topbar button{border:1px solid #ffffff55;border-radius:999px;padding:7px 12px;color:#fff;background:transparent;text-decoration:none;cursor:pointer}.topbar .print{margin-left:auto}main{width:min(1120px,calc(100% - 32px));margin:34px auto 70px}.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:24px;padding:34px;border-radius:24px;background:linear-gradient(135deg,#173a59,#245f82);color:#fff;box-shadow:var(--shadow)}.kicker,.topic-no{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.kicker{color:#ffd7ba}.hero h1{margin:7px 0 12px;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:-.045em}.hero p{margin:7px 0;color:#e1edf3}.notice{align-self:end;border-left:3px solid #f1a36e;padding:12px 15px;background:#ffffff11;border-radius:0 12px 12px 0}.notice strong{display:block;color:#fff}.notice span{font-size:13px;color:#dce8ee}.topic-nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 28px}.topic-nav a{padding:7px 11px;border:1px solid #cbd1d2;border-radius:999px;background:#fff;color:var(--navy);text-decoration:none;font-size:13px;font-weight:800}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:24px 0}.controls strong{margin-right:4px;color:var(--navy)}.filter{border:1px solid #9baeb9;border-radius:999px;padding:8px 15px;background:#fff;color:var(--navy);font-weight:850;cursor:pointer}.filter[aria-pressed=true]{background:var(--navy);color:#fff}.topic{scroll-margin-top:76px;margin:22px 0;padding:25px;border:1px solid var(--line);border-radius:21px;background:#fffdfa;box-shadow:0 12px 34px rgba(22,36,45,.07)}.topic-head{display:flex;justify-content:space-between;gap:18px;align-items:start}.topic-no{color:var(--orange)}.topic h2{margin:4px 0 0;color:var(--navy);font-size:clamp(27px,4vw,40px);line-height:1.08;letter-spacing:-.035em}.topic-cn{margin:4px 0;color:var(--muted)}.confidence{flex:none;padding:5px 9px;border-radius:999px;background:#eaf2ed;color:var(--green);font-size:11px;font-weight:900}.rationale{max-width:880px;margin:13px 0 20px;padding-left:12px;border-left:3px solid #d98a57;color:#52616a}.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.listen-card{min-width:0;padding:19px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.listen-card[hidden]{display:none}.card-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.level{padding:4px 9px;border-radius:999px;font-size:12px;font-weight:950}.level.b1{background:#e6f3eb;color:#12603a}.level.b2{background:#fff0e4;color:#914117}.duration{color:var(--muted);font-size:12px;font-weight:750}.listen-card h3{margin:15px 0 3px;color:var(--navy);font-size:23px;line-height:1.14;letter-spacing:-.02em}.title-cn{margin:0;color:var(--muted)}.level-reason{min-height:50px;margin:12px 0;color:#465761;font-size:13px}audio{display:block;width:100%;margin:13px 0}.transcript{margin-top:12px;border:1px solid #b9c8d2;border-radius:12px;overflow:hidden;background:#f5f8fa}.transcript summary{cursor:pointer;padding:11px 13px;background:#e9f0f4;color:var(--navy);font-weight:900}.transcript pre{max-height:380px;overflow:auto;white-space:pre-wrap;margin:0;padding:14px;font:14px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;color:#24333d}.credit{margin:10px 2px 0;color:var(--muted);font-size:11px}footer{margin:28px 4px;color:var(--muted);font-size:12px}
+@media(max-width:760px){.topbar .print{margin-left:0}main{width:min(100% - 20px,1120px);margin-top:12px}.hero{grid-template-columns:1fr;padding:22px;border-radius:17px}.topic{padding:17px;border-radius:15px}.topic-head{display:block}.confidence{display:inline-block;margin-top:10px}.card-grid{grid-template-columns:1fr}.level-reason{min-height:0}.transcript pre{max-height:48vh}}
+@media print{body{background:#fff;font-size:10.5pt}.topbar,.controls,.topic-nav{display:none!important}main{width:auto;margin:0}.hero{display:block;background:#fff!important;color:var(--ink);box-shadow:none;border:1px solid var(--line);padding:12mm}.hero p,.notice span{color:var(--ink)}.notice strong{color:var(--navy)}.topic{box-shadow:none;break-before:page;border:0;padding:0}.card-grid{display:block}.listen-card{break-inside:avoid;margin:0 0 8mm}audio{display:none}.transcript{overflow:visible}.transcript summary{display:none}.transcript pre{max-height:none;overflow:visible;font-size:9pt}}
+</style></head><body>
+<nav class="topbar"><a href="../../">← Jacky Learning Home</a><a href="../">Extra 1–3 Practice</a><a href="../../listening-practice/">Listening 1</a><a href="../../listening-round-2/">Listening 2</a><button class="print" id="printBtn" type="button">打印 / Save as PDF</button></nav>
+<main><header class="hero"><div><div class="kicker">B1 → B2 Academic Listening</div><h1>Predicted Topic Listening Library</h1><p>预测主题听力库｜5 个高价值主题，每个主题含一段 B1 衔接材料和一段 B2 挑战材料。</p><p>先听结构，再听细节；最后在本页直接打开完整逐字稿核对。不设练习题。</p></div><div class="notice"><strong>Prediction, not an exam notice</strong><span>这些主题根据现有练习范围扩展，不代表学校已公布或确认考试题目。B1/B2 为课程难度预估，不代表 Jacky 已独立达到该等级。</span></div></header>
+<nav class="topic-nav" aria-label="Predicted topics"><a href="#topic-1">1. 城市系统、交通与宜居性</a><a href="#topic-2">2. 食物系统、浪费与可持续发展</a><a href="#topic-3">3. 公共健康与生活方式科学</a><a href="#topic-4">4. 人工智能、数据与数字系统</a><a href="#topic-5">5. 教育、学习与批判性思维</a></nav><div class="controls" aria-label="Level filter"><strong>Show:</strong><button class="filter" data-filter="all" aria-pressed="true">All 10</button><button class="filter" data-filter="b1" aria-pressed="false">B1 bridge</button><button class="filter" data-filter="b2" aria-pressed="false">B2 challenge</button></div><section class="topic" id="topic-1">
+          <div class="topic-head"><div><span class="topic-no">Predicted topic 1</span><h2>Urban Systems &amp; Liveability</h2><p class="topic-cn">城市系统、交通与宜居性</p></div><span class="confidence">High-value prediction</span></div>
+          <p class="rationale">Extends the existing Urban Populations and Transport lecture and the later Noise and Health material through urban ecology, transport policy, pollution and access.</p>
+          <div class="card-grid"><article class="listen-card" data-level="b1">
+      <div class="card-top"><span class="level b1">B1</span><span class="duration">04:46 · 552 words</span></div>
+      <h3>Can City Life Help Some Endangered Animals?</h3>
+      <p class="title-cn">城市会成为濒危动物的新栖息地吗？</p>
+      <p class="level-reason">One clear case study, two animal examples and repeated cause-and-effect language.</p>
+      <audio controls preload="metadata" src="audio/01-b1-city-animals.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>At sunset every day, loud sounds can be heard coming from the sky in a community just east of Los Angeles.
+
+The noises are from parrots. The colorful birds have become part of everyday life there.
+
+The parrots leave their waste everywhere, said Havolynn Rose Owaleon. But she and many other community members have gotten used to the birds.
+
+Owaleon said, &quot;They are not quiet at all, but you know, it’s something that you listen for. Because if I didn’t hear them on a daily basis, then I know something is really wrong.”
+
+Flying immigrants
+
+Red-crowned parrots are now part of the ecosystem in Southern California. Their ancestors came from Tamaulipas, Mexico, where the parrots are now endangered.
+
+The birds were often killed in their native land. But in the United States, they were sold to people as pets. Some of the parrots escaped or were released by their owners.
+
+They have since reproduced and grown in number in an area with large numbers of people.
+
+&quot;They are good at making a habitat for themselves in major cities, and this is what happened in Pasadena and East L.A. So, these are birds that live pretty much exclusively off of trees that are also not native to our area,&quot; said Ursula Heise. She teaches at the University of California Los Angeles (UCLA) Department of English and at the Institute of the Environment and Sustainability.
+
+Since arriving in Southern California, the red-crowned parrots have become such permanent fixtures that they are on the California Bird Records Committee&#x27;s list of birds in the state.
+
+“They’ve been naturalized as California citizens,” said Heise.
+
+Cold-blooded immigrants
+
+Often seen sunning themselves near a body of water, red-eared slider turtles are also not native to the U.S. West Coast. They also immigrated to the area as household pets. Later, some were released or escaped into the wild.
+
+The turtles are native to the central United States. But they have survived in many parts of the country and around the world.
+
+&quot;Because this species is so commonly exploited for food and the pet industry, it’s the one that gets released the most often,&quot; said UCLA’s Brad Shaffer. He heads the La Kretz Center for California Conservation Science.
+
+Urban haven
+
+The success of the red-eared slider turtles and red-crowned parrots in the Los Angeles area has scientists wondering whether a city can be a place to help endangered non-native animals.
+
+Shaffer said, “At least it’s living in the wild. It’s making its own living. It’s having the lifestyle that turtles or that parrots should have, it’s just doing it in a different place.&quot;
+
+Heise noted that work crews have put up major buildings and added different kinds of plants in neighborhoods across Southern California.
+
+In many cases, this has led to a reduction of biodiversity; the native species had trouble living in the newly created habitat.
+
+But the other side of that, Shaffer said, is that new kinds of habitats have been created, in which some creatures could thrive. These artificial habitats could become new homes for birds, insects or other creatures whose native homes are threatened.
+
+Shaffer said any non-native species that is added would have to be carefully chosen to limit the risk of harm to the existing wildlife population in the city and other areas.
+
+I’m Jonathan Evans</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/can-city-life-help-some-endangered-animals-/4783054.html" target="_blank" rel="noopener">VOA Learning English</a> · 2019-02-13 · public domain</p>
+    </article><article class="listen-card" data-level="b2">
+      <div class="card-top"><span class="level b2">B2</span><span class="duration">06:56 · 727 words</span></div>
+      <h3>Is a Motorbike Ban in Vietnam&#x27;s Future?</h3>
+      <p class="title-cn">越南城市是否应该禁摩？</p>
+      <p class="level-reason">A sustained policy debate with competing claims, stakeholder views, numerical evidence and an equity conclusion.</p>
+      <audio controls preload="metadata" src="audio/02-b2-vietnam-motorbikes.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>Any traveler to Vietnam knows a trip to the country is not complete until the traveler tries to cross a road.
+
+The streets are crowded with motorbikes moving at all different speeds, in both directions. It seems a major challenge for a walker. But one quickly learns that motorbike drivers will weave expertly around walkers. There is, in fact, some order to the seeming chaos of the streets.
+
+Vietnam is the land of the motorbike. Last year, Google Maps even created a feature for two-wheel commuters in the country. It provides trip times and road costs just for motorbikes.
+
+So can Vietnam&#x27;s two biggest cities really ban the transport that its 100 million people depend on every day?
+
+City officials have proposed a motorbike ban in parts of Hanoi and Ho Chi Minh City. It is not the first time such an idea has been suggested. Similar proposals have come up over the years. The idea has led to a debate about pollution, traffic problems, city planning, and the fairest way to get people where they need to go.
+
+Supporters of motorbike restrictions argue that they are needed to cut pollution and traffic. But opponents say the public has no alternative. Cars, they say, are too costly and public transportation is limited.
+
+Nguyen Ngoc Dong leads the country’s Ministry of Transport. Vietnam’s official newspaper reports he said, &quot;Hanoi is just now in the process of developing the idea. There are still a lot of issues that need to be researched, assessed, and analyzed before making a final plan.&quot;
+
+Traffic and pollution
+
+The idea is to ban motorbikes during the busiest parts of the day, or in the busiest parts of the city. Ho Chi Minh City’s population has now grown to 13 million. Its air quality is worsening. Pollution levels sometimes go beyond those in China and India.
+
+Supporters of a ban say if other countries can do it, so can Vietnam. Crowded cities from Beijing to Mexico City have in place restrictions on car use. Some cities, like Stockholm, have barred vehicles from pedestrian zones.
+
+Unlike those places, however, Vietnamese cities do not have enough public transportation to replace motorbikes. Projects to build subway systems have been delayed repeatedly. Commuters do not want to take buses when motorbikes are faster and more convenient, and still low cost. Vespa maker Piaggio Vietnam said a motorbike ban could push people to use cars, which would not help solve the pollution and traffic problems.
+
+&quot;We believe that to meet those objectives, simply banning motorbikes is a radical and not effective solution,&quot; Enrico Bruni, the company&#x27;s head of finance for Asia, said at a business conference last month.
+
+He suggested it would be better to try to educate the public about traffic problems. He said the government should also place controls on vehicle pollution.
+
+Others suggest that Vietnamese officials should try to experiment with ways to redirect traffic, including the use of sensors to measure traffic to permit the rerouting of drivers.
+
+Restrictions would affect some more than others
+
+Some Vietnamese are old enough to remember a time when they would have been lucky to own a bicycle. But today almost everyone has enough money for a motorbike, which costs as little as a few hundred dollars.
+
+Vietnam is the fourth biggest market for motorbikes in the world. The top three, China, India, and Indonesia, each have populations at least double that of Vietnam.
+
+An outright ban of motorbikes seems unlikely if not impossible. The vehicle is deeply embedded in Vietnamese urban life. It is hard to find a picture of a Vietnamese city that does not include a motorbike or two.
+
+It is common to see a family of five riding together on the two-wheeled vehicles. People transport everything from giant pigs to dining tables on their motorbikes. War veterans turn their motorbikes into taxis. And visitors jump on the back of motorbikes for guided food tours of the cities.
+
+Critics say a motorbike ban would hurt the poor, who depend on motorbikes, more than the wealthy, who favor cars.
+
+That is not to say some restrictions do not work. Ho Chi Minh City started limiting motorbikes on the downtown street of Nguyen Hue several years ago. Its residents have since enjoyed walking the street, turning it into a popular public space.
+
+I’m Caty Weaver.
+
+And I&#x27;m Bryan Lynn.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/is-a-motorbike-ban-in-vietnam-s-future-/4878628.html" target="_blank" rel="noopener">VOA Learning English</a> · 2019-04-16 · public domain</p>
+    </article></div>
+        </section><section class="topic" id="topic-2">
+          <div class="topic-head"><div><span class="topic-no">Predicted topic 2</span><h2>Food Systems &amp; Sustainability</h2><p class="topic-cn">食物系统、浪费与可持续发展</p></div><span class="confidence">High-value prediction</span></div>
+          <p class="rationale">Extends the existing Food Miles lecture from transport impact to production, consumption, food security and waste reduction.</p>
+          <div class="card-grid"><article class="listen-card" data-level="b1">
+      <div class="card-top"><span class="level b1">B1</span><span class="duration">02:47 · 364 words</span></div>
+      <h3>Why Do People Waste So Much Food?</h3>
+      <p class="title-cn">为什么人们浪费这么多食物？</p>
+      <p class="level-reason">A short comparison of developing and developed countries followed by one proposed technology solution.</p>
+      <audio controls preload="metadata" src="audio/03-b1-food-waste.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>Up to half of the food the world produces is never eaten. It is instead thrown away. Experts say food is wasted in both rich and poor countries, but for different reasons.
+
+Elliot Woolley teaches about sustainable manufacturing at Loughborough University in Britain. He spoke at the Global Conference on Sustainable Manufacturing, held earlier this month in Vietnam.
+
+Mr. Woolley says in poor countries, food is usually lost while it is still in the field or during storage and transportation. He says that is because food producers there are inefficient. These businesses are unable to operate effectively without wasting materials, time or energy. But he adds that once food is sold in developing countries, people usually eat everything they buy.
+
+However, people in the United States and other developed countries throw away as much as half of the food they purchase. The British researcher called this custom “a disgrace.”
+
+Elliot Woolley has created a smartphone app that he says shows users what food they have bought and when the food is about to become unsafe to eat. It also gives information on how people can combine the foods they have to make a meal. The software program is called the “Pantry App.”
+
+Mr. Woolley said that people who used the app reduced the amount of food they wasted by a third. But this result came from a limited experiment -- users only followed their food use for a week.
+
+Jeremy Bonvoisin is a student at the Technical University of Berlin. He attended the recent conference in Vietnam. He said one way to solve the problem of wasted food is to take steps to persuade people to stop buying so much food in the first place. He said people buy more food than they need because it is becoming less costly. They waste so much food because they bought more than they needed.
+
+He says the new app could help those who already want to change the way they use the food they buy. But he is also worried that it could get people to waste more food because they no longer have to pay attention to how much they have bought.
+
+I’m Bob Doughty.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/food-waste-up-to-half-of-worlds-food-thrown-away-voa/2975776.html" target="_blank" rel="noopener">VOA Learning English</a> · 2015-09-26 · public domain</p>
+    </article><article class="listen-card" data-level="b2">
+      <div class="card-top"><span class="level b2">B2</span><span class="duration">09:00 · 1022 words</span></div>
+      <h3>One Billion Tons of Food Wasted Each Year</h3>
+      <p class="title-cn">全球食物浪费：原因、影响与解决方案</p>
+      <p class="level-reason">A two-part, multi-speaker report linking global statistics, infrastructure, consumer behaviour, farming and social-media solutions.</p>
+      <audio controls preload="metadata" src="audio/04-b2-global-food-waste.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>Hello, and welcome to As It Is from VOA Learning English! I’m Katherine Cole in Washington.
+
+Food waste is a problem around the world, especially in wealthy nations. Studies estimate that between 30 and 40 percent of the food in wealthy countries is thrown away every year.
+
+At the same time, millions of people in the world do not have enough to eat. Christopher Cruise will join us today to investigate some of these issues.
+
+Later in the show, Karen Leggett will report on what farmers in the United States are doing to reduce food waste.
+
+But first, here is Christopher Cruise.
+
+More Than One Billion Tons of Food Wasted Each Year
+
+The United Nations Food and Agriculture Organization says more than a billion tons of food is wasted each year. Much of that waste happens in wealthy nations, but it happens in developing countries as well.
+
+Even as all this food is being wasted, it is estimated that one billion people are undernourished, and hundreds of millions of people go to sleep hungry each day.
+
+Danielle Nierenberg is the co-founder and president of Food Tank, an organization that studies food issues.
+
+“A lot of people in the world -- one out of eight people -- are hungry. And at the same time we have around 1.5 billion people who are obese. So, that excess has consequences not just on our waistlines, but on the environment, on our food security and a whole range of other factors.”
+
+Ms. Nierenberg says much of the food waste in the developing world is caused by poor infrastructure, like bad roads and storage areas that are too small.
+
+In wealthy nations, people are to blame because they buy more than they can eat. Ms. Nierenberg also blames dates that are printed on food containers. These dates tell buyers and sellers what date the food should be sold or eaten by. She says these dates cause people to throw away food too soon.
+
+VOA spoke with Ms. Nierenberg when she was in Milan, Italy. She was attending the Barilla Center for Food and Nutrition yearly meeting. Officials at the meeting released what they call the Milan Protocol. The document calls on international leaders and policymakers to improve food security.
+
+“It not only focuses on food waste, but creating better and more-sustainable agriculture systems, as well as focusing on unhealthy lifestyles and really helping reduce the epidemic of obesity and overweight that is plaguing not just rich countries, but poor countries as well.”
+
+Ms. Nierenberg says the amount of food wasted each year shows there is already enough food to feed the planet.
+
+“The problem of hunger in the world is not one of not having enough food. We produce more than enough food for every man, woman and child to eat every day. Yet, it’s political reasons. It’s poverty, certainly, that prevents food from getting to people who need it the most.”
+
+I’m Christopher Cruise.
+
+You are listening to As It Is from VOA Learning English. I’m Katherine Cole.
+
+A lot of people look at the United States as a rich country. Yet many American farmers are struggling financially. How do they deal with wasted food and unused crops? As Karen Leggett reports, some are using social media to help solve the problem.
+
+Social Media Helps Farmers
+
+A CropMobster gleaning, collecting leftover crops from farmers&#x27; fields to avoid food waste. (Photo by Gary Cedar)
+
+The United States Department of Agriculture found that more than half of the small farms in California do not make a profit.
+
+One California farm family is using social media in an effort to change the situation and reduce wasted food. Nick Papadopoulos is general manager of Bloomfield Farms in Sonoma County. It was difficult for him to watch his employees returning from several weekend farmers’ markets with top quality, unsold produce. Mr. Papadopoulos said he would find boxes of leafy greens, herbs and carrots left in a storage area. The vegetables would go bad before the next market day.
+
+As a result, Mr. Papadopoulos came up with a plan to offer the food at a low price by advertising it on the farm’s Facebook status page on Sunday nights.
+
+“We’re going to put ‘Breaking news! Crop mob. Two pallets of Bloomfield Farms’ organic veggies, $150 dollars per pallet.’”
+
+The deals were open to anyone using the social media website. One week, several homeowners in a neighboring community bought the vegetables. Another week, the buyers were a group of friends.
+
+Nick Papadopoulos began using social media after he went to work on a farm belonging to his wife’s father. One night he began thinking about the issue of wasted food when he could not find a place to donate 32 cases of organic broccoli. He ended up giving some of the food to chickens and using the rest to make fertilizer.
+
+“I don’t believe we should let it go to waste. I believe we should share it, donate it, whatever it takes to get it out there, and if possible - as farmers - we would like to recover a small portion of our cost.”
+
+After his success of using Facebook, Mr. Papadopoulos helped to set up a website called cropmobster.com. It is a place where people involved with food production, feeding the hungry and those who want to buy locally-grown food can find surplus produce.
+
+Have you ever used the Internet to buy or sell crops? If so, tell us about your experience. You can leave a message on our Facebook page or visit our website, learningenglish.voanews.com.
+
+I’m Karen Leggett.
+
+When you visit our website, click on “Contact Us” to tell us what you want to hear about on a future show. You can also read, listen to and download our programs. You will also find podcasts, captioned videos and lessons to test your English skills.
+
+That’s our program for today. I&#x27;m Katherine Cole. Thanks so much for listening! Join us again tomorrow for another As It Is from VOA Learning English.
+
+And, for the latest world news, be sure to listen to VOA at the top of the hour, Universal Time.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/one-billion-tons-food-wasted-/1848583.html" target="_blank" rel="noopener">VOA Learning English</a> · 2014-02-15 · public domain</p>
+    </article></div>
+        </section><section class="topic" id="topic-3">
+          <div class="topic-head"><div><span class="topic-no">Predicted topic 3</span><h2>Public Health &amp; Lifestyle Science</h2><p class="topic-cn">公共健康与生活方式科学</p></div><span class="confidence">High-value prediction</span></div>
+          <p class="rationale">The current corpus repeatedly uses health lectures: sleep deprivation, antibiotic resistance and the health effects of noise.</p>
+          <div class="card-grid"><article class="listen-card" data-level="b1">
+      <div class="card-top"><span class="level b1">B1</span><span class="duration">04:04 · 468 words</span></div>
+      <h3>WHO: 80% of Urban Residents Breathe Unsafe Air</h3>
+      <p class="title-cn">世界卫生组织：城市空气与健康风险</p>
+      <p class="level-reason">One WHO study with clear statistics, health effects, a technical definition and practical policy responses.</p>
+      <audio controls preload="metadata" src="audio/05-b1-urban-air-health.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>From VOA Learning English, this is the Health &amp; Lifestyle report.
+
+A new study finds that more than 80 percent of people living in cities are breathing unsafe air.
+
+The World Health Organization study on urban air quality says those most affected live in the world&#x27;s poorest cities. The study finds urban air pollution has nearly doubled in 3,000 cities over the past two years. The cities are in 103 countries.
+
+The study also shows that almost all cities with populations over 100,000, and in developing countries, have air pollution levels that do not meet WHO guidelines.
+
+The WHO warns that as air quality worsens the risk increases for many diseases. These include stroke, heart disease, lung cancer, and breathing diseases such as asthma. Poor air quality is also responsible for an estimated seven million premature deaths every year.
+
+Flavia Bustreo is WHO Assistant-Director General of Family, Women and Children&#x27;s Health. In the report, she says that dirty air in cities most affects the youngest, oldest, and poorest people.
+
+However, her colleague, Maria Neira, says there are effective measures to deal with the problem. Neira leads the WHO’s Public Health and Environmental Policy.
+
+&quot;You will see that in those cities where measures have been put in place, you can see a decrease on the levels of air pollution and, therefore, on the health risks caused by air pollution.&quot;
+
+Neira agrees in the report that &quot;urban air pollution continues to rise at an alarming rate” and severely affects human health. But she says the study shows improvements too. In her words, &quot;awareness is rising and more cities are monitoring their air quality.&quot;
+
+This includes increased monitoring of particulate matter in the air.
+
+&quot;Particulate matter,&quot; also known as particle pollution, is a complex mixture of extremely small particles and liquid droplets. Particulate matter is made up of a number of parts, including acids, organic chemicals, metals, and soil or dust. The WHO study finds a reduction in air pollutants could lessen deaths from particulate matter by 15 percent.
+
+Carlos Dora is Coordinator of WHO&#x27;s Department of Public Health and Environmental Policy. He says there are low-cost ways to improve air quality for even the poorest cities. These methods include using renewable power sources, such as solar and wind, and sustainable public transportation.
+
+&quot;If you have clean transportation means, like cycling, walking or rapid transit systems -- where you have a lot of people being carried with a few vehicles -- then you have less air pollution. Or, if you have cities like New York, which have cleaned the fuel to heat and cool the buildings in a major way … then you have important improvements in air pollution.&quot;
+
+The report says the areas with the poorest air quality are in the Eastern Mediterranean and South East Asia.
+
+I’m Anna Matteo.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/urban-residents-breathe-unsafe-air/3347253.html" target="_blank" rel="noopener">VOA Learning English</a> · 2016-05-30 · public domain</p>
+    </article><article class="listen-card" data-level="b2">
+      <div class="card-top"><span class="level b2">B2</span><span class="duration">15:30 · 1352 words</span></div>
+      <h3>Daily Exercise Leads to Better Health</h3>
+      <p class="title-cn">运动如何影响身体与心理健康</p>
+      <p class="level-reason">A long academic-style report covering biological mechanisms, disease risk, activity types, guidelines, examples and qualifications.</p>
+      <audio controls preload="metadata" src="audio/06-b2-exercise-health.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>From VOA Learning English, this is Science in the News. I&#x27;m Bob Doughty. And I&#x27;m June Simms. Today, we will tell why exercise is so important. And we will tell about some popular ways to get in good shape.
+
+Health experts have long noted the importance of physical activity. Exercise not only improves your appearance. It can also improve your health. Exercise helps to reduce the risk of some diseases. They include heart disease, stroke, type-two diabetes, osteoporosis and even some kinds of cancer.
+
+America’s Centers for Disease Control and Prevention says heart disease is the leading cause of death in the United States. About 600,000 Americans die of heart disease every year. High blood pressure and high cholesterol levels in blood can increase your risk of heart disease. Medical experts say both can be reduced through normal exercise.
+
+Physical activity is also known to increase the release of endorphins. These chemicals reduce feelings of pain. They also help people feel more happy and peaceful. There is some debate about exactly what causes the brain to release endorphins. Some experts believe it is the act of exercising itself. Others say it is the feeling one gets from having met an exercise goal. Either way, the two things work together when it comes to improving one’s emotional health.
+
+Exercise improves your energy levels by increasing the flow of blood to the heart and blood vessels. One of the main reasons people exercise is to control or reduce their weight. Physical activity burns calories – the energy stored in food. The more calories you burn, the easier it is to control or reduce your weight.
+
+So exactly how much exercise do you need to do to gain all of these great health effects? Experts say it is easier than you think. In 2008, the Centers for Disease Control released its first ever Physical Activity Guidelines for Americans. The report included suggestions for young people, adults, disabled persons and those with long-term health problems.
+
+One of the major ideas noted in the report was that some activity is better than none. So if you are not doing anything, now is the time to get started. CDC officials define physical activity as anything that gets your body moving. And, it says there are two separate, but equally important kinds of physical activity.
+
+Aerobic or cardio exercise gets your heart rate going faster and increases your breathing. Some examples are activities like walking at an increased speed, dancing, swimming or riding a bicycle. Muscle-strengthening activities help build and strengthen muscle groups in the body. This kind of exercise includes lifting weights, or doing sit-ups and push-ups.
+
+To get the most from your exercise plan, experts say adults should get at least two and a half hours of aerobic exercise each week. More intense activities reduce the suggested amount of time to one hour and 15 minutes. Some examples are playing basketball, swimming and distance running.
+
+Earlier advice from the CDC said that people need to exercise at least 30 minutes each day for at least five days to get the health benefits of exercise. More recent research has suggested that those gains are the same whether you exercise for short periods over five days or longer sessions over two or three days.
+
+In addition, the newer suggestions say any exercise plan should include at least two days of muscle training. Each exercise period should be at least 10 minutes long. The total amount of activity should be spread over at least two days throughout the week. Most importantly, experts say people should choose physical activities that they find fun. This helps to guarantee that they stay with the program.
+
+So, what are some of the most popular forms of exercise in the United States? Walking tops the list. A 2012 report from the CDC found that more than 145 million Americans now include walking to stay physically fit. For many people, it is considered the easiest way to get exercise. It does not require a health club membership.
+
+Walking is safe. And, it is said to be as valuable for one’s health as more intense forms of exercise like jogging. Walking is also said to be less damaging to the knees and feet. This makes it a better choice of exercise for older adults. Another popular form of exercise is jogging, or running at a slow to medium speed.
+
+USA Track and Field Hall of Famer Bill Bowerman was credited with bringing jogging to the United States in the 1970s. He did so after witnessing the popularity of the activity himself during a trip to New Zealand in the 1960s. He started the first running club in America and wrote a book about jogging for fitness. Bill Bowerman also helped establish Nike, the tennis shoe company.
+
+Jogging provides great physical conditioning for the heart and lungs. And, it increases the flow of blood and oxygen in the body. All of these things combined help to improve heart activity, lower blood pressure and cholesterol levels, and reduce bone and muscle loss. Running is also a good way to lose weight. People burn an average of 160 calories a kilometer while running.
+
+The Census Bureau says swimming was the fourth most popular sports activity in the United States in 2009. The top activity was exercise walking, followed by exercising with equipment and camping. Swimming is said to be one of the best ways to exercise. Nearly all of the major muscle groups are put to work.
+
+Swimming also presents less risk of muscle and joint injury because of the body’s weightlessness in water. This makes it a great choice of exercise for people with special needs, like pregnant women, older adults, and persons who are overweight. Some people have questioned whether swimming burns as many calories as other forms of exercise. But one thing is sure: the effects on your health are just as great. Water aerobics is another popular form of exercise. This can be anything from walking or running against the resistance of water, to doing jumping jacks in the water.
+
+Dancing can also be a fun way to exercise. This is especially true for those who see exercise as a necessary evil: something they should do, not something they want to do. A dance-fitness program called Zumba has grown in popularity in recent years. Zumba is said to be one of the fastest-growing group programs in the physical fitness industry today. Alberto Beto Perez created Zumba in his native Colombia in the 1990s. His dance-fitness program is based on salsa, meringue, and other forms of Latin American music.
+
+Mister Perez brought the program to the United States in 2001. Since then it has spread around the world. The Zumba website says its classes are now offered in 140,000 gyms, fitness studios and dance clubs around the world. That is up from about 2,000 locations in 2006. The website also says that 14 million people now attend Zumba classes in 151 countries.
+
+Whatever kind of exercise you choose, experts agree that you should start small and work your way up. Start by exercising 10 minutes a day two times a week. After a few weeks, increase your time to 15 or 20 minutes, and increase the number of days. Next, aim to increase the intensity of your workout. If you have been walking, trying walking faster, or take turns between walking and jogging. And try not to forget those muscle strengthening exercises.
+
+The more time you spend exercising, the more health benefits you get. Health experts advise people who have been physically inactive to have a complete physical exam before beginning a new exercise program. If one of the goals of your exercise program is to lose weight, you will also need to change how and what you eat. Next week we will look at the influence of diet on your weight loss efforts.
+
+This Science in the News was written and produced by June Simms. I&#x27;m Bob Doughty. And I&#x27;m June Simms. Join us next week for more news about science on the Voice of America.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/fitness-exercise-health/1686004.html" target="_blank" rel="noopener">VOA Learning English</a> · 2013-06-25 · public domain</p>
+    </article></div>
+        </section><section class="topic" id="topic-4">
+          <div class="topic-head"><div><span class="topic-no">Predicted topic 4</span><h2>AI &amp; Digital Systems</h2><p class="topic-cn">人工智能、数据与数字系统</p></div><span class="confidence">High-value prediction</span></div>
+          <p class="rationale">Extends the existing Technology and Law and Cloud Computing lectures into AI capability, evaluation and real-world applications.</p>
+          <div class="card-grid"><article class="listen-card" data-level="b1">
+      <div class="card-top"><span class="level b1">B1</span><span class="duration">06:18 · 560 words</span></div>
+      <h3>Artificial Intelligence Beats Humans in Major Reading Test</h3>
+      <p class="title-cn">人工智能阅读理解测试</p>
+      <p class="level-reason">One benchmark, two systems and a clear human-versus-machine comparison with repeated explanation of technical terms.</p>
+      <audio controls preload="metadata" src="audio/07-b1-ai-reading-test.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>Machines equipped with artificial intelligence (AI) have performed better than human beings in a high-level test of reading comprehension.
+
+Two natural language processing tools received higher test scores than humans in recent exams.
+
+One of the tools is a product of the American software maker Microsoft. The other was created by the Chinese online seller Alibaba Group.
+
+Alibaba reported its success earlier this month. The company said that a deep-learning model developed by its Institute of Data Science of Technologies was the first to beat a human score in the reading comprehension test.
+
+The test is called the Stanford Question Answering Dataset. It was developed by researchers at Stanford University in California.
+
+The test has over 100,000 questions and answers. They are based on information found in over 500 stories from the Wikipedia website. The answers to all the questions come from the reading material.
+
+The AI-powered machines were tested on whether they could provide exact answers to the questions after processing large amounts of information.
+
+Alibaba said its deep neural network model received an “Exact Match” score of 82.44 on the Stanford test. Microsoft reported that a team at Microsoft Research Asia had a score of 82.65. It said the human score on the same questions and answers was 82.304.
+
+Microsoft and Alibaba were tied for first place on a list of the top performers on the Stanford test. Many research organizations also appeared on the list – all with scores below 82.
+
+Luo Si is the chief scientist for Alibaba’s Institute of Data Science of Technologies. Luo said it was a “great honor” for his group to be part of such a technological milestone. He noted that researchers have made great progress in the area of machine reading and comprehension over the past year.
+
+“We look forward to sharing our model-building methodology with the wider community and exporting the technology to our clients in the near future,” he added.
+
+Alibaba said it has already used its reading comprehension model in different parts of its business. For example, the company is using machines to answer many incoming telephone calls from customers.
+
+The company says in the future, the technology could enable machines to guide visitors through museums or provide advice to medical patients.
+
+Microsoft said its success in the reading test marks an important development for artificial intelligence and its reading capabilities. Microsoft said it has already used its AI methods in its Bing search engine and the Cortana digital assistant.
+
+The company said in a blog post that it believes the technology will lead to easier, more natural communication between people and machines in the future.
+
+As machine reading and comprehension technology continue to develop, computers will be able to study and process large amounts of text quickly, Microsoft said. The machines could then provide people with very specific details from the information in an easy, understandable way.
+
+Ming Zhou serves as assistant managing director at Microsoft Research Asia. He said the reading test results were truly an important milestone in the development of AI. But he noted that, overall, people are still much better than machines at understanding the complexity and nuances of language.
+
+“Natural language processing is still an area with lots of challenges that we all need to keep investing in and pushing forward,” Zhou said. “This milestone is just a start.”
+
+I’m Bryan Lynn.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/artificial-intelligence-beats-humans-in-major-reading-test/4215369.html" target="_blank" rel="noopener">VOA Learning English</a> · 2018-01-23 · public domain</p>
+    </article><article class="listen-card" data-level="b2">
+      <div class="card-top"><span class="level b2">B2</span><span class="duration">06:25 · 632 words</span></div>
+      <h3>5 Interesting AI Tools Announced in 2022</h3>
+      <p class="title-cn">五种人工智能工具及其用途</p>
+      <p class="level-reason">Five technical subtopics require section tracking, comparison of purposes and retention of specialised vocabulary.</p>
+      <audio controls preload="metadata" src="audio/08-b2-ai-tools.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>Throughout the past year, we followed some interesting new inventions in the field of artificial intelligence (AI). Here is a look back at five notable AI developments in 2022.
+
+Meta’s speech-to-speech translation
+
+Facebook’s parent Meta said it had built a technology tool designed to directly translate spoken speech from one language to another.
+
+The AI-powered tool was built to translate between English and the Hokkien language. The company said the project required unusual development methods. This is because Hokkien is mainly a spoken language and does not have a widely used written form.
+
+Meta said it trained its AI models on written text examples from Mandarin Chinese, which is similar to Hokkien. In addition, developers used an encoding tool designed to compare spoken Hokkien to similar English text. The team also worked closely with Hokkien speakers to ensure correct results.
+
+Meta said it aims to use the same methods used for Hokkien to create speech-to-speech translation systems for many more languages in the future.
+
+Method to identify Parkinson’s Disease
+
+Researchers announced a new AI method to identify Parkinson’s disease – a neurological disease that harms the brain.
+
+The system works by measuring a person’s breathing patterns during sleep. A study describing the method said it can also measure the severity of disease and record its progression.
+
+The researchers noted that early signs of Parkinson’s disease are not easy to discover. Many signs, or symptoms, only appear years after the disease sets in.
+
+But the team said its experiments showed that with just one night of sleep, the AI system was able to correctly identify Parkinson’s up to 86 percent of the time. With 12 nights of data, the rate went up to 95 percent.
+
+Tool to interpret pig emotions
+
+Researchers announced they had created a technology tool that uses pig sounds to interpret different emotions.
+
+The tool is based on thousands of recordings collected from more than 400 pigs throughout their lives. The scientists developed an AI-driven algorithm to identify a series of emotions the animals could be experiencing.
+
+The study centered on more than 7,000 audio recordings of pigs in different situations. By training the algorithm to recognize the sounds in both good and bad situations, the team said the tool was able to identify the correct emotion 92 percent of the time.
+
+Researchers said the tool is expected to lead to further systems farmers can use to improve the productivity and well-being of their animals.
+
+System to identify and predict smells
+
+Developers said they had created a technology tool that can identify and re-create different smells.
+
+The scientists built on past research to produce a brain-like technology model to create a “principal odor map” to identify molecules related to smells. The team said such a system can be used across many different fields, including the healthcare, food and fragrance industries.
+
+The researchers reported that the tool can be used to help fight one of the world’s biggest health problems – diseases spread through insects. They said the system can measure how effective a molecule is at keeping mosquitos away from humans.
+
+Tool to fill in missing words in ancient writings
+
+Researchers said they developed an AI system to help fill in missing words in ancient writings. The tool, called Ithaca, is designed to help historians repair the writings and identify when and where they were written.
+
+Researchers – led by Alphabet’s AI company DeepMind – created the tool. They said the system is “the first deep neural network” to identify missing text in damaged writings, or inscriptions.
+
+The team said that when historians work on their own, the success rate for repairing damaged inscriptions is about 25 percent. But when humans teamed up with Ithaca to assist in their work, the success rate jumped to 72 percent.
+
+I’m Bryan Lynn.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/interesting-ai-tools-announced-in-2022/6893653.html" target="_blank" rel="noopener">VOA Learning English</a> · 2022-12-28 · public domain</p>
+    </article></div>
+        </section><section class="topic" id="topic-5">
+          <div class="topic-head"><div><span class="topic-no">Predicted topic 5</span><h2>Education, Learning &amp; Critical Thinking</h2><p class="topic-cn">教育、学习与批判性思维</p></div><span class="confidence">Useful adjacent prediction</span></div>
+          <p class="rationale">Extends the existing extra listening reports on study methods and learning by teaching into educational research and university-style critical thinking.</p>
+          <div class="card-grid"><article class="listen-card" data-level="b1">
+      <div class="card-top"><span class="level b1">B1</span><span class="duration">03:57 · 385 words</span></div>
+      <h3>Testing New Ways to Recognize What Makes a Good Teacher</h3>
+      <p class="title-cn">如何判断一位教师是否有效？</p>
+      <p class="level-reason">One research project with a straightforward method-results-conclusion sequence and repeated school vocabulary.</p>
+      <audio controls preload="metadata" src="audio/09-b1-effective-teachers.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>This is the VOA Special English Education Report.
+
+In recent years, Bill Gates has given financial support to improve American education.
+
+Late last year, the Bill and Melinda Gates Foundation launched the Measures of Effective Teaching project. The project tests new ways to recognize what makes a good teacher.
+
+Its goal is to help educators and policymakers identify and support good teaching.
+
+The study is being carried out in public school systems in seven American cities. Thousands of teachers volunteered to take part. They agreed to have their classes recorded on video, but only for observation by expert researchers.
+
+Last spring, the project collected digital videos of thirteen thousand lessons in the classrooms taught by the teachers. They were in grades four through nine.
+
+Researchers also collected information from students. They asked students to report their opinions of each teacher’s classroom. Students were also tested in mathematics, English and biology.
+
+Officials recently released early results of the project study. The report says teachers’ past success in raising student scores on state tests is one of the strongest signs of their ability to do so again. This is known as a teacher’s “value-added.”
+
+The teachers with the highest value-added scores on state tests also help students understand math or show reading ability.
+
+The results also say students know effective teaching when they experience it. The students gave comments on whether or not their teachers cared about them. They also gave opinions on how much teachers controlled or managed student behavior in the classroom.
+
+The report found that classrooms where students reported positive experiences were more likely to show greater learning gains.
+
+Another finding shows that combining different sources of information helps administrators provide better comments and suggestions to teachers. In many cases, administrators had been basing their comments on student test scores only.
+
+The Measures of Effective Teaching project continues through twenty twelve when final results will be released. Researchers plan to test a new measure that examines what a teacher knows about how to teach a subject. Experts say these findings could also help create better training and development for teachers.
+
+And that&#x27;s the VOA Special English Education Report, written by Lawan Davis. Join us online at voaspecialenglish.com. You can also join us on Facebook, Twitter and YouTube at VOA Learning English. I&#x27;m Steve Ember.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/good-teacher-met-project-112341399/113706.html" target="_blank" rel="noopener">VOA Learning English</a> · 2010-12-22 · public domain</p>
+    </article><article class="listen-card" data-level="b2">
+      <div class="card-top"><span class="level b2">B2</span><span class="duration">05:38 · 589 words</span></div>
+      <h3>Learning How to Ask Questions</h3>
+      <p class="title-cn">通过提问发展批判性思维</p>
+      <p class="level-reason">Abstract academic concepts, extended expert quotations and a three-stage concrete-to-abstract model.</p>
+      <audio controls preload="metadata" src="audio/10-b2-critical-thinking.mp3"></audio>
+      <details class="transcript"><summary>听完后打开逐字稿 · Word-for-word script</summary><pre>In the Education Tips series, education experts in the United States give you tips about how to improve your English skills. This week, Suzanne Meyer, the assistant director at the English Language Institute at the University of Tennessee, Knoxville, discusses question-asking and the development of critical thinking skills.
+
+For VOA Learning English, this is the Education Report.
+
+Suzanne Meyer, the assistant director of the English Language Institute at the University of Tennessee, Knoxville, says that many students need to develop critical thinking skills.
+
+In other words, students need to learn how to collect information, and then evaluate the information and apply it to a new context.
+
+She says:
+
+&quot;We need to get students actively engaged in inquiry, from the beginning levels on, into those levels where they really are close to professional and university contexts.&quot;
+
+One way to develop critical thinking skills, Meyer says, is to teach students to be creative about the types of questions that they ask.
+
+Benefits of question-asking for English learners
+
+Meyer says that there are many benefits to using question-asking activities with English learners. Question-asking activities help students to become better language learners.
+
+She says:
+
+&quot;Question-asking overall helps students be better language learners. Not for the obvious, because you ask a question you get an answer. Often, questions are the first point of contact. And so if my question is not good, then that&#x27;s going to direct the level of our conversation.&quot;
+
+Meyer also says that question-asking may help develop critical thinking skills by allowing for more interactions:
+
+&quot;People who can ask questions are very confident. And when you are confident, you can have more interaction. That extra interaction might lead to critical thinking. Because you are more likely to actually integrate in some fashion into a new setting if you are in an ESL scenario. So, I think overall, just the whole question-asking idea has so many benefits.&quot;
+
+How can you practice asking questions?
+
+There are many strategies to improve question-asking and develop critical thinking skills. One possible strategy, says Meyer, is to use question-asking patterns that start with concrete questions and move to abstract questions.
+
+SOURCE: SUZANNE MEYER
+
+So, for example, if students were reading a new text, they would design a series of questions using three different steps.
+
+If students follow these three steps, they have not only practiced creative ways to ask questions, they have also started practicing critical thinking.
+
+Example of a question-asking activity
+
+Meyer gave an example of what this activity could look like:
+
+SOURCE: SUZANNE MEYER/Text is from Zwier, Lawrence J. “Fat for Brains.” Inside Reading 2. 2nd ed. Ed. Cheryl Boyd Zimmerman. Oxford: OUP, 2012.
+
+In the activity, students read part of a story. In this case, the story is about how different foods affect a person.
+
+These questions, and other questions listed in the table, are examples of how to develop questions. You should, of course, create your own questions!
+
+Practical tips:
+
+Meyer says that when teachers tell students which questions to answer, students are less likely to be creative about the types of questions that they ask.
+
+So, practice developing your own questions! Try making a list of questions that go from concrete to abstract, like the steps outlined above. Check with your teacher to make sure that your grammar is correct, and try to practice in the classroom.
+
+You can also write us your questions about this story in the comments section, or on our Facebook page. Give question-asking a try, and let us know how it works for you!
+
+I&#x27;m John Russell.</pre></details>
+      <p class="credit">Audio and script: <a href="https://learningenglish.voanews.com/a/education-tips-improve-critical-thinking-ask-questions/3303557.html" target="_blank" rel="noopener">VOA Learning English</a> · 2016; page updated 2024 · public domain</p>
+    </article></div>
+        </section>
+<footer>All audio and scripts are credited to <a href="https://learningenglish.voanews.com/" target="_blank" rel="noopener">VOA Learning English</a> and reused under its <a href="https://learningenglish.voanews.com/p/6861.html" target="_blank" rel="noopener">public-domain content policy</a>. Full recordings and scripts are hosted here; the source links are retained only for attribution and verification.</footer></main>
+<script>
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{const level=button.dataset.filter;document.querySelectorAll('.filter').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.querySelectorAll('.listen-card').forEach(card=>card.hidden=level!=='all'&&card.dataset.level!==level)}));
+document.querySelectorAll('audio').forEach(player=>player.addEventListener('play',()=>document.querySelectorAll('audio').forEach(other=>{if(other!==player)other.pause()})));
+document.getElementById('printBtn').addEventListener('click',()=>window.print());let detailStates=[];addEventListener('beforeprint',()=>{detailStates=[...document.querySelectorAll('.transcript')].map(item=>item.open);document.querySelectorAll('.transcript').forEach(item=>item.open=true)});addEventListener('afterprint',()=>document.querySelectorAll('.transcript').forEach((item,index)=>item.open=detailStates[index]));
+</script></body></html>
