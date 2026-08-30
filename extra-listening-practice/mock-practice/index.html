@@ -1,25 +1,26 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>"><title>Jacky AES Listening Mock Practice</title>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>"><title>Jacky AES Listening Practice</title>
 <style>
 :root{--ink:#1d2d3c;--muted:#607080;--navy:#143b5d;--navy2:#245f7f;--paper:#fffdf8;--bg:#edf2f5;--line:#d7e0e4;--blue:#1567a7;--orange:#bd5a1a;--green:#1b704c;--shadow:0 16px 42px rgba(25,46,60,.12)}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;color:var(--ink);font:16px/1.58 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",Arial,sans-serif}button,input,textarea,summary{font:inherit}a{color:var(--blue)}.topbar{position:sticky;top:0;z-index:30;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px max(14px,calc((100vw - 1160px)/2));background:var(--navy);box-shadow:0 2px 14px #0b253b55}.topbar a,.topbar button{border:1px solid #ffffff5e;border-radius:999px;padding:7px 11px;color:#fff;background:transparent;text-decoration:none;cursor:pointer}.topbar .print{margin-left:auto}main{width:min(1160px,calc(100% - 28px));margin:28px auto 70px}.hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.55fr);gap:24px;padding:32px;border-radius:24px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;box-shadow:var(--shadow)}.hero h1{margin:5px 0 11px;font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.04em}.hero p{margin:6px 0;color:#e2eef4}.hero .kicker{font-size:12px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:#ffcfad}.method{align-self:end;border-left:3px solid #f2a36d;padding:10px 14px;background:#ffffff12;border-radius:0 12px 12px 0}.method strong{display:block}.method span{display:block;margin-top:5px;font-size:13px;color:#e2eef4}.tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:20px 0}.tab{border:1px solid #aabcc6;border-radius:13px;padding:9px 7px;background:#fff;color:var(--navy);cursor:pointer;font-weight:850}.tab small{display:block;margin-top:2px;color:var(--muted);font-size:10px}.tab[aria-pressed=true]{background:var(--navy);color:#fff}.tab[aria-pressed=true] small{color:#d8e6ee}.practice-set{padding:24px;border:1px solid var(--line);border-radius:22px;background:var(--paper);box-shadow:var(--shadow)}.practice-set[hidden]{display:none}.set-header{display:flex;justify-content:space-between;gap:24px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:17px}.eyebrow{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.set-header h2{margin:5px 0 2px;color:var(--navy);font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.035em}.set-header p{margin:0;color:var(--muted)}audio{width:min(410px,100%)}.source-credit{margin:10px 0 18px;color:var(--muted);font-size:12px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,38%);grid-template-areas:"questions script";gap:20px;align-items:start}.questions{grid-area:questions;display:grid;gap:13px}.script-panel{grid-area:script;position:sticky;top:72px}.script-details{overflow:hidden;border:1px solid #adc2ce;border-radius:14px;background:#f2f7f9}.script-details summary{cursor:pointer;padding:12px 14px;background:#e3eef3;color:var(--navy);font-weight:900}.script-scroll{max-height:69vh;overflow:auto;padding:15px}pre{margin:0;white-space:pre-wrap;font:13.5px/1.64 ui-monospace,SFMono-Regular,Menlo,monospace;color:#243744}.qcard{break-inside:avoid;padding:15px;border:1px solid var(--line);border-radius:14px;background:#fff}.qhead{display:flex;gap:9px;align-items:center;margin-bottom:8px}.qnum{min-width:31px;padding:3px 8px;border-radius:8px;background:var(--navy);color:#fff;text-align:center;font-weight:900}.qtype{color:var(--muted);font-size:12px;font-weight:800}.prompt{font-weight:700;white-space:pre-wrap}.item-list{display:grid;gap:4px;margin:9px 0;padding:10px 12px;border-left:3px solid #c6a276;background:#fff9f1}.match-options{display:grid;gap:5px;margin:9px 0;padding:10px 12px;border-left:3px solid #93b0c0;background:#f5f8fa}.options{display:grid;gap:7px;margin-top:10px}.option{display:flex;gap:8px;align-items:flex-start;padding:8px;border-radius:9px;cursor:pointer}.option:hover{background:#f0f5f7}.option input{margin-top:5px}textarea{width:100%;min-height:68px;margin-top:10px;padding:9px;border:1px solid #9cb2bf;border-radius:9px;background:#fbfdfe;resize:vertical}textarea[rows="7"]{min-height:165px}.submit-panel{margin-top:22px;padding:19px;border:2px solid #8eb0c4;border-radius:17px;background:#fff}.submit-panel h3{margin:0;color:var(--navy);font-size:22px}.submit-panel p{margin:4px 0;color:var(--muted)}.submit-grid{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:12px;align-items:end;margin-top:13px}.submit-panel label{font-weight:750}.submit-panel input[type=text]{display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #9cb2bf;border-radius:9px}.submit-confirm{display:flex;gap:8px;align-items:flex-start;margin-top:12px}.submit-confirm input{margin-top:5px}.submit-btn{min-width:145px;border:0;border-radius:999px;padding:11px 19px;background:var(--blue);color:#fff;font-weight:900;cursor:pointer}.submit-btn:disabled{background:#7c909e;cursor:not-allowed}.submit-status{min-height:25px!important;margin-top:8px!important;font-weight:800}.submit-status.error{color:#a43838}.submit-status.success{color:var(--green)}.answer-key{margin-top:14px;overflow:hidden;border:1px solid #d6b58d;border-radius:14px;background:#fff9f1}.answer-key summary{cursor:pointer;padding:12px 14px;background:#ffedd8;color:#7d3e13;font-weight:900}.answer-key ol{display:grid;gap:7px;margin:0;padding:14px 20px 8px 45px}.answer-key p{margin:0;padding:0 14px 14px;color:var(--muted);font-size:13px}footer{margin:25px 3px;color:var(--muted);font-size:12px}
-@media(max-width:900px){.tabs{grid-template-columns:repeat(3,1fr)}.workspace{grid-template-columns:1fr;grid-template-areas:"script" "questions"}.script-panel{position:static}.script-scroll{max-height:48vh}}
+@media(max-width:900px){.tabs{grid-template-columns:repeat(3,1fr)}.workspace{grid-template-columns:1fr;grid-template-areas:"questions" "script"}.script-panel{position:static}.script-scroll{max-height:48vh}}
 @media(max-width:640px){.topbar .print{margin-left:0}main{width:min(100% - 18px,1160px);margin-top:10px}.hero{grid-template-columns:1fr;padding:21px;border-radius:17px}.tabs{grid-template-columns:repeat(2,1fr)}.practice-set{padding:15px;border-radius:16px}.set-header{display:block}.set-header audio{margin-top:13px}.submit-grid{grid-template-columns:1fr}.qcard{padding:13px}}
 @media(max-width:390px){.topbar{padding:8px}.topbar a,.topbar button{padding:6px 8px;font-size:12px}.hero h1{font-size:33px}.tabs{gap:6px}.tab{padding:8px 5px}.practice-set{padding:12px}.prompt{font-size:15px}}
-@media print{body{background:#fff;font-size:10.5pt}.topbar,.tabs,.submit-panel,.answer-key{display:none!important}main{width:auto;margin:0}.hero{display:block;padding:10mm;border:1px solid var(--line);background:#fff!important;color:var(--ink);box-shadow:none}.hero p,.method span{color:var(--ink)}.practice-set,.practice-set[hidden]{display:block!important;padding:0;border:0;box-shadow:none;break-before:page}.set-header{padding-top:8mm}.workspace{display:block}.script-panel{position:static;margin:5mm 0}.script-details{overflow:visible}.script-details>summary{display:none}.script-scroll{max-height:none;overflow:visible}.qcard{margin-bottom:4mm}audio{display:none}textarea{min-height:16mm}.source-credit{font-size:9pt}}
+.hero{display:block}.submit-panel{display:flex;align-items:center;gap:12px}.submit-status{flex:1}
+@media print{body{background:#fff;font-size:10.5pt}.topbar,.tabs,.submit-panel,.answer-key{display:none!important}main{width:auto;margin:0}.hero{display:block;padding:10mm;border:1px solid var(--line);background:#fff!important;color:var(--ink);box-shadow:none}.practice-set,.practice-set[hidden]{display:block!important;padding:0;border:0;box-shadow:none;break-before:page}.set-header{padding-top:8mm}.workspace{display:block}.script-panel{position:static;margin:5mm 0}.script-details{overflow:visible}.script-details>summary{display:none}.script-scroll{max-height:none;overflow:visible}.qcard{margin-bottom:4mm}audio{display:none}textarea{min-height:16mm}.source-credit{font-size:9pt}}
 </style></head><body>
-<nav class="topbar"><a href="../../">← Jacky practice home</a><a href="../">Extra 1–3</a><a href="../topic-library/">10-audio library</a><button class="print" id="printBtn" type="button">打印 / Save as PDF</button></nav>
-<main><header class="hero"><div><div class="kicker">AES listening · mock-style practice</div><h1>6 complete listening sets</h1><p>3 套 conversation + 3 套 academic report。每套都有真实音频、完整 script、答案 toggle 和独立提交。</p><p>题目用英文；中文只帮助你进入方法，不替代独立听辨。</p></div><div class="method"><strong>建议做法</strong><span>先读题 → 第一遍抓结构与观点 → 第二遍补细节 → 提交本套 → 最后打开答案和 script 核对。</span></div></header>
-<nav class="tabs" aria-label="Listening practice sets"><button class="tab" data-open-set="S01" aria-pressed="true"><span>Set 1</span><small>Conversation</small></button><button class="tab" data-open-set="S02" aria-pressed="false"><span>Set 2</span><small>Conversation</small></button><button class="tab" data-open-set="S03" aria-pressed="false"><span>Set 3</span><small>Conversation</small></button><button class="tab" data-open-set="S04" aria-pressed="false"><span>Set 4</span><small>Academic</small></button><button class="tab" data-open-set="S05" aria-pressed="false"><span>Set 5</span><small>Academic</small></button><button class="tab" data-open-set="S06" aria-pressed="false"><span>Set 6</span><small>Academic</small></button></nav>
+<nav class="topbar"><a href="../../">← Jacky practice home</a><a href="../">Extra 1–3</a><a href="../topic-library/">Listening Library</a><button class="print" id="printBtn" type="button">打印 / Save as PDF</button></nav>
+<main><header class="hero"><h1>AES Listening Practice</h1></header>
+<nav class="tabs" aria-label="Listening practice sets"><button class="tab" data-open-set="S01" aria-pressed="true">Set 1</button><button class="tab" data-open-set="S02" aria-pressed="false">Set 2</button><button class="tab" data-open-set="S03" aria-pressed="false">Set 3</button><button class="tab" data-open-set="S04" aria-pressed="false">Set 4</button><button class="tab" data-open-set="S05" aria-pressed="false">Set 5</button><button class="tab" data-open-set="S06" aria-pressed="false">Set 6</button></nav>
 <section class="practice-set" id="set-S01" data-set="S01" data-assignment="JKY-AES-LISTEN-MOCK-2026-08-S01">
     <header class="set-header">
-      <div><div class="eyebrow">Set 1 · Part 1 style · Conversation</div><h2>Budget Cuts</h2><p>办公室传闻与最终澄清 · B1 bridge · 04:08</p></div>
+      <div><div class="eyebrow">Set 1</div><h2>Budget Cuts</h2></div>
       <audio controls preload="metadata" src="audio/01-budget-cuts.mp3"></audio>
     </header>
-    <p class="source-credit">Audio and full script: <a href="https://learningenglish.voanews.com/a/lets-learn-english-level-2-lesson1/3960391.html" target="_blank" rel="noopener">VOA Learning English</a></p>
+    <p class="source-credit"><a href="https://learningenglish.voanews.com/a/lets-learn-english-level-2-lesson1/3960391.html" target="_blank" rel="noopener">VOA Learning English</a></p>
     <div class="workspace">
       <aside class="script-panel">
         <details class="script-details">
-          <summary>完成本套后打开完整 script</summary>
+          <summary>Transcript</summary>
           <div class="script-scroll"><pre>Anna: Hum. Oh! “Important meeting. Everyone must come.” Well, back to work! And my boss has called a meeting. I wonder what it&#39;s about. Maybe we&#39;re all getting raises! Ooo, there&#39;s Jonathan! Maybe he knows.
 
 Professor Bot: Hi! I&#39;m Professor Bot! This video is all about work. People talk about jobs and things that happen at work. Your assignment is to find as many work words as you can. Don&#39;t worry, I&#39;ll help.
@@ -80,7 +81,7 @@ Professor Bot: Ms. Weaver&#39;s team is doing a good job! How did you do? Did yo
         </details>
       </aside>
       <div class="questions"><article class="qcard" data-question="Q01" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">1</span><span class="qtype">Multiple choice · 选择题</span></div>
+    <div class="qhead"><span class="qnum">1</span></div>
     <div class="prompt">Why does Anna approach Jonathan at the beginning?</div>
     
     <div class="options">
@@ -88,7 +89,7 @@ Professor Bot: Ms. Weaver&#39;s team is doing a good job! How did you do? Did yo
       <label class="option"><input type="radio" name="S01-Q01" value="B"><span><strong>B.</strong> She thinks he may know why the meeting was called.</span></label>
       <label class="option"><input type="radio" name="S01-Q01" value="C"><span><strong>C.</strong> She has already heard Mark&#39;s budget-cut claim.</span></label></div>
   </article><article class="qcard" data-question="Q02" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">2</span><span class="qtype">Speaker reasoning · 说话人理由</span></div>
+    <div class="qhead"><span class="qnum">2</span></div>
     <div class="prompt">Why does Anna object when Jonathan says that “people” have discussed budget cuts?</div>
     
     <div class="options">
@@ -96,7 +97,7 @@ Professor Bot: Ms. Weaver&#39;s team is doing a good job! How did you do? Did yo
       <label class="option"><input type="radio" name="S01-Q02" value="B"><span><strong>B.</strong> Mark works in Accounting rather than reporting.</span></label>
       <label class="option"><input type="radio" name="S01-Q02" value="C"><span><strong>C.</strong> The manager has already denied the budget cuts.</span></label></div>
   </article><article class="qcard" data-question="Q03" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">3</span><span class="qtype">Purpose / inference · 目的推断</span></div>
+    <div class="qhead"><span class="qnum">3</span></div>
     <div class="prompt">Why do Amelia and Kaveh mention their former jobs?</div>
     
     <div class="options">
@@ -104,7 +105,7 @@ Professor Bot: Ms. Weaver&#39;s team is doing a good job! How did you do? Did yo
       <label class="option"><input type="radio" name="S01-Q03" value="B"><span><strong>B.</strong> To prove that they could easily accept different work</span></label>
       <label class="option"><input type="radio" name="S01-Q03" value="C"><span><strong>C.</strong> To explain why losing their present jobs would frighten them</span></label></div>
   </article><article class="qcard" data-question="Q04" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">4</span><span class="qtype">Final conclusion · 最终结论</span></div>
+    <div class="qhead"><span class="qnum">4</span></div>
     <div class="prompt">What is the real purpose of the meeting?</div>
     
     <div class="options">
@@ -113,24 +114,21 @@ Professor Bot: Ms. Weaver&#39;s team is doing a good job! How did you do? Did yo
       <label class="option"><input type="radio" name="S01-Q04" value="C"><span><strong>C.</strong> To identify the person who began the office rumour</span></label></div>
   </article></div>
     </div>
-    <section class="submit-panel" aria-labelledby="submit-title-S01">
-      <h3 id="submit-title-S01">提交本套答案</h3>
-      <p>完成本套全部题目后，再填写姓名并提交。</p>
-      <div class="submit-grid"><label>Student name<input type="text" data-student-name autocomplete="name" placeholder="请输入姓名"></label><button class="submit-btn" type="button">提交本套</button></div>
-      <label class="submit-confirm"><input type="checkbox" data-submit-confirm>我确认已完成本套，并准备提交本次作答。</label>
+    <section class="submit-panel" aria-label="Submit Set 1">
+      <button class="submit-btn" type="button">Submit</button>
       <p class="submit-status" role="status" aria-live="polite"></p>
     </section>
-    <details class="answer-key"><summary>提交后核对答案 · Answer key</summary><ol><li><strong>1.</strong> B. She thinks he may know why the meeting was called.</li><li><strong>2.</strong> A. Only one person is actually named as the source.</li><li><strong>3.</strong> C. To explain why losing their present jobs would frighten them</li><li><strong>4.</strong> A. To praise the team and give them new assignments</li></ol></details>
+    <details class="answer-key"><summary>Answers</summary><ol><li>B. She thinks he may know why the meeting was called.</li><li>A. Only one person is actually named as the source.</li><li>C. To explain why losing their present jobs would frighten them</li><li>A. To praise the team and give them new assignments</li></ol></details>
   </section><section class="practice-set" id="set-S02" data-set="S02" data-assignment="JKY-AES-LISTEN-MOCK-2026-08-S02" hidden>
     <header class="set-header">
-      <div><div class="eyebrow">Set 2 · Part 1 style · Conversation</div><h2>Run Away with the Circus</h2><p>观点分歧、让步与最终转变 · B1 bridge · 05:01</p></div>
+      <div><div class="eyebrow">Set 2</div><h2>Run Away with the Circus</h2></div>
       <audio controls preload="metadata" src="audio/02-circus-arts.mp3"></audio>
     </header>
-    <p class="source-credit">Audio and full script: <a href="https://learningenglish.voanews.com/a/lets-learn-english-level-2-lesson-4-run-away-with-the-circus/4034187.html" target="_blank" rel="noopener">VOA Learning English</a></p>
+    <p class="source-credit"><a href="https://learningenglish.voanews.com/a/lets-learn-english-level-2-lesson-4-run-away-with-the-circus/4034187.html" target="_blank" rel="noopener">VOA Learning English</a></p>
     <div class="workspace">
       <aside class="script-panel">
         <details class="script-details">
-          <summary>完成本套后打开完整 script</summary>
+          <summary>Transcript</summary>
           <div class="script-scroll"><pre>Anna: Hello, I’m Anna …
 
 Pete: … and I’m Pete. Welcome to “He Said,
@@ -239,7 +237,7 @@ Professor Bot: Good job you two! I&#39;m so glad that Anna and Pete finally agre
         </details>
       </aside>
       <div class="questions"><article class="qcard" data-question="Q01" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">1</span><span class="qtype">Speaker view · 说话人观点</span></div>
+    <div class="qhead"><span class="qnum">1</span></div>
     <div class="prompt">What is Pete&#39;s initial view of circus performers?</div>
     
     <div class="options">
@@ -247,7 +245,7 @@ Professor Bot: Good job you two! I&#39;m so glad that Anna and Pete finally agre
       <label class="option"><input type="radio" name="S02-Q01" value="B"><span><strong>B.</strong> They are athletic and skilled, but they are not artists.</span></label>
       <label class="option"><input type="radio" name="S02-Q01" value="C"><span><strong>C.</strong> They are neither skilled nor physically strong.</span></label></div>
   </article><article class="qcard" data-question="Q02" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">2</span><span class="qtype">Purpose of example · 举例目的</span></div>
+    <div class="qhead"><span class="qnum">2</span></div>
     <div class="prompt">Why does Pete mention Michelangelo and Rembrandt?</div>
     
     <div class="options">
@@ -255,7 +253,7 @@ Professor Bot: Good job you two! I&#39;m so glad that Anna and Pete finally agre
       <label class="option"><input type="radio" name="S02-Q02" value="B"><span><strong>B.</strong> To explain where circus costumes came from</span></label>
       <label class="option"><input type="radio" name="S02-Q02" value="C"><span><strong>C.</strong> To contrast accepted artists with people who perform physical tricks</span></label></div>
   </article><article class="qcard" data-question="Q03" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">3</span><span class="qtype">Agreement · 共同观点</span></div>
+    <div class="qhead"><span class="qnum">3</span></div>
     <div class="prompt">Before Kate and Piper speak, which point do Anna and Pete both explicitly accept?</div>
     
     <div class="options">
@@ -263,7 +261,7 @@ Professor Bot: Good job you two! I&#39;m so glad that Anna and Pete finally agre
       <label class="option"><input type="radio" name="S02-Q03" value="B"><span><strong>B.</strong> All sports are non-competitive.</span></label>
       <label class="option"><input type="radio" name="S02-Q03" value="C"><span><strong>C.</strong> Costumes alone prove that circus is art.</span></label></div>
   </article><article class="qcard" data-question="Q04" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">4</span><span class="qtype">Change of view · 观点转变</span></div>
+    <div class="qhead"><span class="qnum">4</span></div>
     <div class="prompt">What finally leads Pete to accept Anna&#39;s position?</div>
     
     <div class="options">
@@ -272,24 +270,21 @@ Professor Bot: Good job you two! I&#39;m so glad that Anna and Pete finally agre
       <label class="option"><input type="radio" name="S02-Q04" value="C"><span><strong>C.</strong> Professor Bot explains the word “trapeze.”</span></label></div>
   </article></div>
     </div>
-    <section class="submit-panel" aria-labelledby="submit-title-S02">
-      <h3 id="submit-title-S02">提交本套答案</h3>
-      <p>完成本套全部题目后，再填写姓名并提交。</p>
-      <div class="submit-grid"><label>Student name<input type="text" data-student-name autocomplete="name" placeholder="请输入姓名"></label><button class="submit-btn" type="button">提交本套</button></div>
-      <label class="submit-confirm"><input type="checkbox" data-submit-confirm>我确认已完成本套，并准备提交本次作答。</label>
+    <section class="submit-panel" aria-label="Submit Set 2">
+      <button class="submit-btn" type="button">Submit</button>
       <p class="submit-status" role="status" aria-live="polite"></p>
     </section>
-    <details class="answer-key"><summary>提交后核对答案 · Answer key</summary><ol><li><strong>1.</strong> B. They are athletic and skilled, but they are not artists.</li><li><strong>2.</strong> C. To contrast accepted artists with people who perform physical tricks</li><li><strong>3.</strong> A. The performers are athletic and amazing.</li><li><strong>4.</strong> B. Piper explains the artistic performance, and Pete responds to its beauty.</li></ol></details>
+    <details class="answer-key"><summary>Answers</summary><ol><li>B. They are athletic and skilled, but they are not artists.</li><li>C. To contrast accepted artists with people who perform physical tricks</li><li>A. The performers are athletic and amazing.</li><li>B. Piper explains the artistic performance, and Pete responds to its beauty.</li></ol></details>
   </section><section class="practice-set" id="set-S03" data-set="S03" data-assignment="JKY-AES-LISTEN-MOCK-2026-08-S03" hidden>
     <header class="set-header">
-      <div><div class="eyebrow">Set 3 · Part 1 style · Conversation</div><h2>Run! Bees!</h2><p>否认、行为证据与专家建议 · B1 bridge · 04:18</p></div>
+      <div><div class="eyebrow">Set 3</div><h2>Run! Bees!</h2></div>
       <audio controls preload="metadata" src="audio/03-run-bees.mp3"></audio>
     </header>
-    <p class="source-credit">Audio and full script: <a href="https://learningenglish.voanews.com/a/lets-learn-english-level-2-lesson-12-run-bees/4139015.html" target="_blank" rel="noopener">VOA Learning English</a></p>
+    <p class="source-credit"><a href="https://learningenglish.voanews.com/a/lets-learn-english-level-2-lesson-12-run-bees/4139015.html" target="_blank" rel="noopener">VOA Learning English</a></p>
     <div class="workspace">
       <aside class="script-panel">
         <details class="script-details">
-          <summary>完成本套后打开完整 script</summary>
+          <summary>Transcript</summary>
           <div class="script-scroll"><pre>Anna: Wow. Did you know that bees are dying?
 
 Kaveh: That is bad news. If all the bees died, there would be no food. Bees are very important.
@@ -372,7 +367,7 @@ Professor Bot: Are you ready for one more conditional sentence? If you are not a
         </details>
       </aside>
       <div class="questions"><article class="qcard" data-question="Q01" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">1</span><span class="qtype">Inference · 推断</span></div>
+    <div class="qhead"><span class="qnum">1</span></div>
     <div class="prompt">What does Kaveh infer from Anna&#39;s behaviour around the first bee?</div>
     
     <div class="options">
@@ -380,7 +375,7 @@ Professor Bot: Are you ready for one more conditional sentence? If you are not a
       <label class="option"><input type="radio" name="S03-Q01" value="B"><span><strong>B.</strong> She has a serious allergy to bees.</span></label>
       <label class="option"><input type="radio" name="S03-Q01" value="C"><span><strong>C.</strong> She is afraid of bees despite what she says.</span></label></div>
   </article><article class="qcard" data-question="Q02" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">2</span><span class="qtype">Speaker purpose · 说话人目的</span></div>
+    <div class="qhead"><span class="qnum">2</span></div>
     <div class="prompt">Why does Kaveh recommend that Anna contact Caroline?</div>
     
     <div class="options">
@@ -388,7 +383,7 @@ Professor Bot: Are you ready for one more conditional sentence? If you are not a
       <label class="option"><input type="radio" name="S03-Q02" value="B"><span><strong>B.</strong> Caroline may help Anna overcome her fear.</span></label>
       <label class="option"><input type="radio" name="S03-Q02" value="C"><span><strong>C.</strong> Caroline can identify the kind of bee in the office.</span></label></div>
   </article><article class="qcard" data-question="Q03" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">3</span><span class="qtype">Cause and effect · 因果</span></div>
+    <div class="qhead"><span class="qnum">3</span></div>
     <div class="prompt">Why was Anna stung when she was a child?</div>
     
     <div class="options">
@@ -396,7 +391,7 @@ Professor Bot: Are you ready for one more conditional sentence? If you are not a
       <label class="option"><input type="radio" name="S03-Q03" value="B"><span><strong>B.</strong> She hit a hive and reached inside with bare hands.</span></label>
       <label class="option"><input type="radio" name="S03-Q03" value="C"><span><strong>C.</strong> She helped a beekeeper without special equipment.</span></label></div>
   </article><article class="qcard" data-question="Q04" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">4</span><span class="qtype">Final state · 最后状态</span></div>
+    <div class="qhead"><span class="qnum">4</span></div>
     <div class="prompt">What is true of Anna at the end of the conversation?</div>
     
     <div class="options">
@@ -405,24 +400,21 @@ Professor Bot: Are you ready for one more conditional sentence? If you are not a
       <label class="option"><input type="radio" name="S03-Q04" value="C"><span><strong>C.</strong> She is willing to continue, but she needs time to calm down.</span></label></div>
   </article></div>
     </div>
-    <section class="submit-panel" aria-labelledby="submit-title-S03">
-      <h3 id="submit-title-S03">提交本套答案</h3>
-      <p>完成本套全部题目后，再填写姓名并提交。</p>
-      <div class="submit-grid"><label>Student name<input type="text" data-student-name autocomplete="name" placeholder="请输入姓名"></label><button class="submit-btn" type="button">提交本套</button></div>
-      <label class="submit-confirm"><input type="checkbox" data-submit-confirm>我确认已完成本套，并准备提交本次作答。</label>
+    <section class="submit-panel" aria-label="Submit Set 3">
+      <button class="submit-btn" type="button">Submit</button>
       <p class="submit-status" role="status" aria-live="polite"></p>
     </section>
-    <details class="answer-key"><summary>提交后核对答案 · Answer key</summary><ol><li><strong>1.</strong> C. She is afraid of bees despite what she says.</li><li><strong>2.</strong> B. Caroline may help Anna overcome her fear.</li><li><strong>3.</strong> B. She hit a hive and reached inside with bare hands.</li><li><strong>4.</strong> C. She is willing to continue, but she needs time to calm down.</li></ol></details>
+    <details class="answer-key"><summary>Answers</summary><ol><li>C. She is afraid of bees despite what she says.</li><li>B. Caroline may help Anna overcome her fear.</li><li>B. She hit a hive and reached inside with bare hands.</li><li>C. She is willing to continue, but she needs time to calm down.</li></ol></details>
   </section><section class="practice-set" id="set-S04" data-set="S04" data-assignment="JKY-AES-LISTEN-MOCK-2026-08-S04" hidden>
     <header class="set-header">
-      <div><div class="eyebrow">Set 4 · Part 2 style · Academic report</div><h2>5 Interesting AI Tools Announced in 2022</h2><p>五项人工智能应用 · B2 · 06:25</p></div>
+      <div><div class="eyebrow">Set 4</div><h2>5 Interesting AI Tools Announced in 2022</h2></div>
       <audio controls preload="metadata" src="../topic-library/audio/08-b2-ai-tools.mp3"></audio>
     </header>
-    <p class="source-credit">Audio and full script: <a href="https://learningenglish.voanews.com/a/interesting-ai-tools-announced-in-2022/6893653.html" target="_blank" rel="noopener">VOA Learning English</a></p>
+    <p class="source-credit"><a href="https://learningenglish.voanews.com/a/interesting-ai-tools-announced-in-2022/6893653.html" target="_blank" rel="noopener">VOA Learning English</a></p>
     <div class="workspace">
       <aside class="script-panel">
         <details class="script-details">
-          <summary>完成本套后打开完整 script</summary>
+          <summary>Transcript</summary>
           <div class="script-scroll"><pre>Throughout the past year, we followed some interesting new inventions in the field of artificial intelligence (AI). Here is a look back at five notable AI developments in 2022.
 
 Facebook’s parent Meta said it had built a technology tool designed to directly translate spoken speech from one language to another.
@@ -465,22 +457,22 @@ I’m Bryan Lynn.</pre></div>
         </details>
       </aside>
       <div class="questions"><article class="qcard" data-question="Q01" data-response-kind="text">
-    <div class="qhead"><span class="qnum">1</span><span class="qtype">Lecture structure · 讲座结构</span></div>
+    <div class="qhead"><span class="qnum">1</span></div>
     <div class="prompt">Put the five developments in the order in which the speaker presents them. Write the five letters.</div>
     <div class="item-list"><div>A. Tool to interpret pig emotions</div><div>B. Speech-to-speech translation</div><div>C. Tool to repair ancient writings</div><div>D. Method to identify Parkinson&#39;s disease</div><div>E. System to identify and predict smells</div></div>
     <textarea data-answer rows="3" aria-label="S04 Q01 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q02" data-response-kind="text">
-    <div class="qhead"><span class="qnum">2</span><span class="qtype">Note completion · 笔记填空</span></div>
+    <div class="qhead"><span class="qnum">2</span></div>
     <div class="prompt">Complete the notes. Write NO MORE THAN TWO WORDS in each gap. Hokkien is mainly a ________ and does not have a widely used ________.</div>
     
     <textarea data-answer rows="3" aria-label="S04 Q02 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q03" data-response-kind="text">
-    <div class="qhead"><span class="qnum">3</span><span class="qtype">Method detail · 方法细节</span></div>
+    <div class="qhead"><span class="qnum">3</span></div>
     <div class="prompt">Complete the method. Meta trained its models on written text from ________, then used an encoding tool to compare spoken Hokkien with similar ________.</div>
     
     <textarea data-answer rows="3" aria-label="S04 Q03 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q04" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">4</span><span class="qtype">Research rationale · 研究理由</span></div>
+    <div class="qhead"><span class="qnum">4</span></div>
     <div class="prompt">Why is early identification of Parkinson&#39;s disease difficult?</div>
     
     <div class="options">
@@ -488,27 +480,27 @@ I’m Bryan Lynn.</pre></div>
       <label class="option"><input type="radio" name="S04-Q04" value="B"><span><strong>B.</strong> Many symptoms appear years after the disease begins.</span></label>
       <label class="option"><input type="radio" name="S04-Q04" value="C"><span><strong>C.</strong> The disease always changes from night to night.</span></label></div>
   </article><article class="qcard" data-question="Q05" data-response-kind="text">
-    <div class="qhead"><span class="qnum">5</span><span class="qtype">Figures · 数字信息</span></div>
+    <div class="qhead"><span class="qnum">5</span></div>
     <div class="prompt">Complete the results. One night of data: ________% accuracy. Twelve nights of data: ________% accuracy.</div>
     
     <textarea data-answer rows="3" aria-label="S04 Q05 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q06" data-response-kind="text">
-    <div class="qhead"><span class="qnum">6</span><span class="qtype">Dataset detail · 数据细节</span></div>
+    <div class="qhead"><span class="qnum">6</span></div>
     <div class="prompt">Complete the pig-emotion study notes: more than ________ recordings; more than ________ pigs; ________% correct emotion identification.</div>
     
     <textarea data-answer rows="3" aria-label="S04 Q06 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q07" data-response-kind="text">
-    <div class="qhead"><span class="qnum">7</span><span class="qtype">Two benefits · 两项益处</span></div>
+    <div class="qhead"><span class="qnum">7</span></div>
     <div class="prompt">Note TWO expected benefits of the pig-emotion tool for farmers.</div>
     
     <textarea data-answer rows="3" aria-label="S04 Q07 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q08" data-response-kind="text">
-    <div class="qhead"><span class="qnum">8</span><span class="qtype">Matching · 配对</span></div>
+    <div class="qhead"><span class="qnum">8</span></div>
     <div class="prompt">Match each tool (1–5) to its function (A–E).</div>
     <div class="item-list"><div>1. Hokkien translation</div><div>2. Parkinson&#39;s system</div><div>3. Pig-emotion tool</div><div>4. Smell model</div><div>5. Ithaca</div></div><div class="match-options"><div>A. Monitor disease severity and progression</div><div>B. Bridge spoken languages without a common written form</div><div>C. Recognise an animal&#39;s emotional state</div><div>D. Identify molecules that may repel mosquitos</div><div>E. Restore, date and locate damaged inscriptions</div></div>
     <textarea data-answer rows="3" aria-label="S04 Q08 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q09" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">9</span><span class="qtype">Purpose of example · 举例目的</span></div>
+    <div class="qhead"><span class="qnum">9</span></div>
     <div class="prompt">Why does the speaker mention mosquitos?</div>
     
     <div class="options">
@@ -516,12 +508,12 @@ I’m Bryan Lynn.</pre></div>
       <label class="option"><input type="radio" name="S04-Q09" value="B"><span><strong>B.</strong> To explain why insects can recognise Hokkien speech</span></label>
       <label class="option"><input type="radio" name="S04-Q09" value="C"><span><strong>C.</strong> To compare animal emotions with human disease</span></label></div>
   </article><article class="qcard" data-question="Q10" data-response-kind="text">
-    <div class="qhead"><span class="qnum">10</span><span class="qtype">Comparison · 对比</span></div>
+    <div class="qhead"><span class="qnum">10</span></div>
     <div class="prompt">Complete the comparison. Historians working alone repaired inscriptions with about ________% success; humans working with Ithaca reached ________%.</div>
     
     <textarea data-answer rows="3" aria-label="S04 Q10 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q11" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">11</span><span class="qtype">Speaker attitude · 说话人态度</span></div>
+    <div class="qhead"><span class="qnum">11</span></div>
     <div class="prompt">Which description best fits the speaker&#39;s attitude toward the five developments?</div>
     
     <div class="options">
@@ -529,30 +521,27 @@ I’m Bryan Lynn.</pre></div>
       <label class="option"><input type="radio" name="S04-Q11" value="B"><span><strong>B.</strong> Concerned that all five tools will replace humans</span></label>
       <label class="option"><input type="radio" name="S04-Q11" value="C"><span><strong>C.</strong> Interested and generally positive about their possible uses</span></label></div>
   </article><article class="qcard" data-question="Q12" data-response-kind="text">
-    <div class="qhead"><span class="qnum">12</span><span class="qtype">Evidence-supported response · 证据作答</span></div>
+    <div class="qhead"><span class="qnum">12</span></div>
     <div class="prompt">Which AI development seems most useful? State your position and support it with THREE accurate details or examples from the report.</div>
     
     <textarea data-answer rows="7" aria-label="S04 Q12 answer" placeholder="Write your position and three pieces of evidence."></textarea>
   </article></div>
     </div>
-    <section class="submit-panel" aria-labelledby="submit-title-S04">
-      <h3 id="submit-title-S04">提交本套答案</h3>
-      <p>完成本套全部题目后，再填写姓名并提交。</p>
-      <div class="submit-grid"><label>Student name<input type="text" data-student-name autocomplete="name" placeholder="请输入姓名"></label><button class="submit-btn" type="button">提交本套</button></div>
-      <label class="submit-confirm"><input type="checkbox" data-submit-confirm>我确认已完成本套，并准备提交本次作答。</label>
+    <section class="submit-panel" aria-label="Submit Set 4">
+      <button class="submit-btn" type="button">Submit</button>
       <p class="submit-status" role="status" aria-live="polite"></p>
     </section>
-    <details class="answer-key"><summary>提交后核对答案 · Answer key</summary><ol><li><strong>1.</strong> B – D – A – E – C</li><li><strong>2.</strong> spoken language; written form</li><li><strong>3.</strong> Mandarin Chinese; English text</li><li><strong>4.</strong> B. Many symptoms appear years after the disease begins.</li><li><strong>5.</strong> 86; 95</li><li><strong>6.</strong> 7,000; 400; 92</li><li><strong>7.</strong> improved productivity; improved animal well-being</li><li><strong>8.</strong> 1–B; 2–A; 3–C; 4–D; 5–E</li><li><strong>9.</strong> A. To show a possible public-health use of the smell model</li><li><strong>10.</strong> 25; 72</li><li><strong>11.</strong> C. Interested and generally positive about their possible uses</li><li><strong>12.</strong> Any clear position supported by three accurate, relevant report details.</li></ol><p>开放题没有唯一答案：检查是否有清楚立场，并准确使用三条录音信息。</p></details>
+    <details class="answer-key"><summary>Answers</summary><ol><li>B – D – A – E – C</li><li>spoken language; written form</li><li>Mandarin Chinese; English text</li><li>B. Many symptoms appear years after the disease begins.</li><li>86; 95</li><li>7,000; 400; 92</li><li>improved productivity; improved animal well-being</li><li>1–B; 2–A; 3–C; 4–D; 5–E</li><li>A. To show a possible public-health use of the smell model</li><li>25; 72</li><li>C. Interested and generally positive about their possible uses</li><li>Any clear position supported by three accurate, relevant report details.</li></ol></details>
   </section><section class="practice-set" id="set-S05" data-set="S05" data-assignment="JKY-AES-LISTEN-MOCK-2026-08-S05" hidden>
     <header class="set-header">
-      <div><div class="eyebrow">Set 5 · Part 2 style · Academic report</div><h2>Is a Motorbike Ban in Vietnam&#39;s Future?</h2><p>禁摩政策：支持、反对与限制条件 · B2 · 06:56</p></div>
+      <div><div class="eyebrow">Set 5</div><h2>Is a Motorbike Ban in Vietnam&#39;s Future?</h2></div>
       <audio controls preload="metadata" src="../topic-library/audio/02-b2-vietnam-motorbikes.mp3"></audio>
     </header>
-    <p class="source-credit">Audio and full script: <a href="https://learningenglish.voanews.com/a/is-a-motorbike-ban-in-vietnam-s-future-/4878628.html" target="_blank" rel="noopener">VOA Learning English</a></p>
+    <p class="source-credit"><a href="https://learningenglish.voanews.com/a/is-a-motorbike-ban-in-vietnam-s-future-/4878628.html" target="_blank" rel="noopener">VOA Learning English</a></p>
     <div class="workspace">
       <aside class="script-panel">
         <details class="script-details">
-          <summary>完成本套后打开完整 script</summary>
+          <summary>Transcript</summary>
           <div class="script-scroll"><pre>Any traveler to Vietnam knows a trip to the country is not complete until the traveler tries to cross a road.
 
 The streets are crowded with motorbikes moving at all different speeds, in both directions. It seems a major challenge for a walker. But one quickly learns that motorbike drivers will weave expertly around walkers. There is, in fact, some order to the seeming chaos of the streets.
@@ -597,27 +586,27 @@ And I&#39;m Bryan Lynn.</pre></div>
         </details>
       </aside>
       <div class="questions"><article class="qcard" data-question="Q01" data-response-kind="text">
-    <div class="qhead"><span class="qnum">1</span><span class="qtype">Lecture structure · 讲座结构</span></div>
+    <div class="qhead"><span class="qnum">1</span></div>
     <div class="prompt">Put the four parts of the report in order. Write the four letters.</div>
     <div class="item-list"><div>A. Possible alternatives to a full ban</div><div>B. The everyday role of motorbikes</div><div>C. The proposed restrictions and central debate</div><div>D. Equity concerns and one limited restriction that worked</div></div>
     <textarea data-answer rows="3" aria-label="S05 Q01 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q02" data-response-kind="text">
-    <div class="qhead"><span class="qnum">2</span><span class="qtype">Note completion · 笔记填空</span></div>
+    <div class="qhead"><span class="qnum">2</span></div>
     <div class="prompt">Complete the note. Google Maps created a motorbike feature that gives ________ and ________ specifically for two-wheel commuters.</div>
     
     <textarea data-answer rows="3" aria-label="S05 Q02 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q03" data-response-kind="text">
-    <div class="qhead"><span class="qnum">3</span><span class="qtype">Two aims · 两项目标</span></div>
+    <div class="qhead"><span class="qnum">3</span></div>
     <div class="prompt">According to supporters, what TWO problems would motorbike restrictions reduce?</div>
     
     <textarea data-answer rows="3" aria-label="S05 Q03 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q04" data-response-kind="text">
-    <div class="qhead"><span class="qnum">4</span><span class="qtype">Counter-argument · 反方论点</span></div>
+    <div class="qhead"><span class="qnum">4</span></div>
     <div class="prompt">Complete the opponents&#39; argument: cars are too ________, while public transportation is ________.</div>
     
     <textarea data-answer rows="3" aria-label="S05 Q04 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q05" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">5</span><span class="qtype">Viewpoint · 观点</span></div>
+    <div class="qhead"><span class="qnum">5</span></div>
     <div class="prompt">What is Nguyen Ngoc Dong&#39;s position on the proposal?</div>
     
     <div class="options">
@@ -625,12 +614,12 @@ And I&#39;m Bryan Lynn.</pre></div>
       <label class="option"><input type="radio" name="S05-Q05" value="B"><span><strong>B.</strong> More research and assessment are needed before a final plan.</span></label>
       <label class="option"><input type="radio" name="S05-Q05" value="C"><span><strong>C.</strong> Only foreign cities should limit vehicles.</span></label></div>
   </article><article class="qcard" data-question="Q06" data-response-kind="text">
-    <div class="qhead"><span class="qnum">6</span><span class="qtype">Figures and comparison · 数字与比较</span></div>
+    <div class="qhead"><span class="qnum">6</span></div>
     <div class="prompt">Complete the city note. Ho Chi Minh City has about ________ people, and its pollution sometimes exceeds levels in ________ and ________.</div>
     
     <textarea data-answer rows="3" aria-label="S05 Q06 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q07" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">7</span><span class="qtype">Reasoning · 推理</span></div>
+    <div class="qhead"><span class="qnum">7</span></div>
     <div class="prompt">Why does Piaggio argue that a motorbike ban might fail?</div>
     
     <div class="options">
@@ -638,12 +627,12 @@ And I&#39;m Bryan Lynn.</pre></div>
       <label class="option"><input type="radio" name="S05-Q07" value="B"><span><strong>B.</strong> It would make motorbikes cheaper and more convenient.</span></label>
       <label class="option"><input type="radio" name="S05-Q07" value="C"><span><strong>C.</strong> It would cause Google Maps to remove road costs.</span></label></div>
   </article><article class="qcard" data-question="Q08" data-response-kind="text">
-    <div class="qhead"><span class="qnum">8</span><span class="qtype">Viewpoint matching · 观点配对</span></div>
+    <div class="qhead"><span class="qnum">8</span></div>
     <div class="prompt">Match each source (1–3) to its proposal (A–C).</div>
     <div class="item-list"><div>1. Enrico Bruni</div><div>2. Other proposed experiments</div><div>3. The city restriction plan</div></div><div class="match-options"><div>A. Use sensors and reroute drivers</div><div>B. Restrict motorbikes at the busiest times or places</div><div>C. Educate the public and control vehicle pollution</div></div>
     <textarea data-answer rows="3" aria-label="S05 Q08 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q09" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">9</span><span class="qtype">Main obstacle · 主要障碍</span></div>
+    <div class="qhead"><span class="qnum">9</span></div>
     <div class="prompt">Why does the report consider a complete motorbike ban unlikely?</div>
     
     <div class="options">
@@ -651,40 +640,37 @@ And I&#39;m Bryan Lynn.</pre></div>
       <label class="option"><input type="radio" name="S05-Q09" value="B"><span><strong>B.</strong> Motorbikes are used only by tourists and food guides.</span></label>
       <label class="option"><input type="radio" name="S05-Q09" value="C"><span><strong>C.</strong> Vietnam has already banned all cars in city centres.</span></label></div>
   </article><article class="qcard" data-question="Q10" data-response-kind="text">
-    <div class="qhead"><span class="qnum">10</span><span class="qtype">Equity · 公平性</span></div>
+    <div class="qhead"><span class="qnum">10</span></div>
     <div class="prompt">Which group would be hurt most by a full ban, and why?</div>
     
     <textarea data-answer rows="3" aria-label="S05 Q10 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q11" data-response-kind="text">
-    <div class="qhead"><span class="qnum">11</span><span class="qtype">Select and complete · 选词并补全</span></div>
+    <div class="qhead"><span class="qnum">11</span></div>
     <div class="prompt">Select the correct word and complete the reason: The limited restriction on Nguyen Hue has failed / worked because ________.</div>
     
     <textarea data-answer rows="3" aria-label="S05 Q11 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q12" data-response-kind="text">
-    <div class="qhead"><span class="qnum">12</span><span class="qtype">Evidence-supported response · 证据作答</span></div>
+    <div class="qhead"><span class="qnum">12</span></div>
     <div class="prompt">Should the cities adopt a full ban or targeted restrictions? State your position and support it with THREE accurate details or examples from the report.</div>
     
     <textarea data-answer rows="7" aria-label="S05 Q12 answer" placeholder="Write your position and three pieces of evidence."></textarea>
   </article></div>
     </div>
-    <section class="submit-panel" aria-labelledby="submit-title-S05">
-      <h3 id="submit-title-S05">提交本套答案</h3>
-      <p>完成本套全部题目后，再填写姓名并提交。</p>
-      <div class="submit-grid"><label>Student name<input type="text" data-student-name autocomplete="name" placeholder="请输入姓名"></label><button class="submit-btn" type="button">提交本套</button></div>
-      <label class="submit-confirm"><input type="checkbox" data-submit-confirm>我确认已完成本套，并准备提交本次作答。</label>
+    <section class="submit-panel" aria-label="Submit Set 5">
+      <button class="submit-btn" type="button">Submit</button>
       <p class="submit-status" role="status" aria-live="polite"></p>
     </section>
-    <details class="answer-key"><summary>提交后核对答案 · Answer key</summary><ol><li><strong>1.</strong> B – C – A – D</li><li><strong>2.</strong> trip times; road costs</li><li><strong>3.</strong> pollution; traffic</li><li><strong>4.</strong> costly; limited</li><li><strong>5.</strong> B. More research and assessment are needed before a final plan.</li><li><strong>6.</strong> 13 million; China; India</li><li><strong>7.</strong> A. It could push people into cars without solving traffic or pollution.</li><li><strong>8.</strong> 1–C; 2–A; 3–B</li><li><strong>9.</strong> A. Motorbikes are central to daily life and alternatives remain limited.</li><li><strong>10.</strong> Poorer people, because they depend on motorbikes while wealthier people can favour cars.</li><li><strong>11.</strong> worked; residents enjoy walking there and it became a popular public space</li><li><strong>12.</strong> Any clear position supported by three accurate, relevant report details.</li></ol><p>开放题没有唯一答案：检查是否有清楚立场，并准确使用三条录音信息。</p></details>
+    <details class="answer-key"><summary>Answers</summary><ol><li>B – C – A – D</li><li>trip times; road costs</li><li>pollution; traffic</li><li>costly; limited</li><li>B. More research and assessment are needed before a final plan.</li><li>13 million; China; India</li><li>A. It could push people into cars without solving traffic or pollution.</li><li>1–C; 2–A; 3–B</li><li>A. Motorbikes are central to daily life and alternatives remain limited.</li><li>Poorer people, because they depend on motorbikes while wealthier people can favour cars.</li><li>worked; residents enjoy walking there and it became a popular public space</li><li>Any clear position supported by three accurate, relevant report details.</li></ol></details>
   </section><section class="practice-set" id="set-S06" data-set="S06" data-assignment="JKY-AES-LISTEN-MOCK-2026-08-S06" hidden>
     <header class="set-header">
-      <div><div class="eyebrow">Set 6 · Part 2 style · Academic report</div><h2>One Billion Tons of Food Wasted Each Year</h2><p>全球原因、政策与农场案例 · B2 · 09:00</p></div>
+      <div><div class="eyebrow">Set 6</div><h2>One Billion Tons of Food Wasted Each Year</h2></div>
       <audio controls preload="metadata" src="../topic-library/audio/04-b2-global-food-waste.mp3"></audio>
     </header>
-    <p class="source-credit">Audio and full script: <a href="https://learningenglish.voanews.com/a/one-billion-tons-food-wasted-/1848583.html" target="_blank" rel="noopener">VOA Learning English</a></p>
+    <p class="source-credit"><a href="https://learningenglish.voanews.com/a/one-billion-tons-food-wasted-/1848583.html" target="_blank" rel="noopener">VOA Learning English</a></p>
     <div class="workspace">
       <aside class="script-panel">
         <details class="script-details">
-          <summary>完成本套后打开完整 script</summary>
+          <summary>Transcript</summary>
           <div class="script-scroll"><pre>Hello, and welcome to As It Is from VOA Learning English! I’m Katherine Cole in Washington.
 
 Food waste is a problem around the world, especially in wealthy nations. Studies estimate that between 30 and 40 percent of the food in wealthy countries is thrown away every year.
@@ -749,32 +735,32 @@ And, for the latest world news, be sure to listen to VOA at the top of the hour,
         </details>
       </aside>
       <div class="questions"><article class="qcard" data-question="Q01" data-response-kind="text">
-    <div class="qhead"><span class="qnum">1</span><span class="qtype">Lecture structure · 讲座结构</span></div>
+    <div class="qhead"><span class="qnum">1</span></div>
     <div class="prompt">Put the three main parts of the programme in order. Write the three letters.</div>
     <div class="item-list"><div>A. A California farm and social-media solution</div><div>B. Global scale, causes and policy responses</div><div>C. Introduction previewing the two reports</div></div>
     <textarea data-answer rows="3" aria-label="S06 Q01 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q02" data-response-kind="text">
-    <div class="qhead"><span class="qnum">2</span><span class="qtype">Figures · 数字信息</span></div>
+    <div class="qhead"><span class="qnum">2</span></div>
     <div class="prompt">Complete the global picture: wealthy countries throw away about ________% of food; ________ people are hungry; about ________ people are obese.</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q02 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q03" data-response-kind="text">
-    <div class="qhead"><span class="qnum">3</span><span class="qtype">Comparison · 原因对比</span></div>
+    <div class="qhead"><span class="qnum">3</span></div>
     <div class="prompt">Complete the comparison. In developing countries, waste is linked to poor ________. In wealthy countries, people buy too much and may follow ________ on food containers too strictly.</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q03 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q04" data-response-kind="text">
-    <div class="qhead"><span class="qnum">4</span><span class="qtype">Organisation detail · 机构信息</span></div>
+    <div class="qhead"><span class="qnum">4</span></div>
     <div class="prompt">Complete the organisation note. FAO = United Nations ________ and ________ Organization. It estimates that more than ________ tons of food are wasted each year.</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q04 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q05" data-response-kind="text">
-    <div class="qhead"><span class="qnum">5</span><span class="qtype">Policy detail · 政策细节</span></div>
+    <div class="qhead"><span class="qnum">5</span></div>
     <div class="prompt">According to the quoted description, note THREE areas addressed by the Milan Protocol.</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q05 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q06" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">6</span><span class="qtype">Main argument · 主要观点</span></div>
+    <div class="qhead"><span class="qnum">6</span></div>
     <div class="prompt">What does Danielle Nierenberg identify as the main reason people still go hungry?</div>
     
     <div class="options">
@@ -782,7 +768,7 @@ And, for the latest world news, be sure to listen to VOA at the top of the hour,
       <label class="option"><input type="radio" name="S06-Q06" value="B"><span><strong>B.</strong> Political conditions and poverty prevent access.</span></label>
       <label class="option"><input type="radio" name="S06-Q06" value="C"><span><strong>C.</strong> All available food is used to feed farm animals.</span></label></div>
   </article><article class="qcard" data-question="Q07" data-response-kind="choice">
-    <div class="qhead"><span class="qnum">7</span><span class="qtype">Transition purpose · 转折目的</span></div>
+    <div class="qhead"><span class="qnum">7</span></div>
     <div class="prompt">Why does the programme move to the California farm report?</div>
     
     <div class="options">
@@ -790,53 +776,49 @@ And, for the latest world news, be sure to listen to VOA at the top of the hour,
       <label class="option"><input type="radio" name="S06-Q07" value="B"><span><strong>B.</strong> To prove that every small farm already makes a profit</span></label>
       <label class="option"><input type="radio" name="S06-Q07" value="C"><span><strong>C.</strong> To compare Italian and Californian food labels</span></label></div>
   </article><article class="qcard" data-question="Q08" data-response-kind="text">
-    <div class="qhead"><span class="qnum">8</span><span class="qtype">Research finding · 研究结果</span></div>
+    <div class="qhead"><span class="qnum">8</span></div>
     <div class="prompt">Complete the USDA finding: more than ________ of small farms in California do not make ________.</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q08 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q09" data-response-kind="text">
-    <div class="qhead"><span class="qnum">9</span><span class="qtype">Cause / problem · 起因</span></div>
+    <div class="qhead"><span class="qnum">9</span></div>
     <div class="prompt">What problem led Nick Papadopoulos to create his first social-media sale?</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q09 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q10" data-response-kind="text">
-    <div class="qhead"><span class="qnum">10</span><span class="qtype">Specific detail · 具体信息</span></div>
+    <div class="qhead"><span class="qnum">10</span></div>
     <div class="prompt">Complete the first advertised deal: ________ pallets of organic vegetables at $________ per pallet.</div>
     
     <textarea data-answer rows="3" aria-label="S06 Q10 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q11" data-response-kind="text">
-    <div class="qhead"><span class="qnum">11</span><span class="qtype">Solution matching · 方案配对</span></div>
+    <div class="qhead"><span class="qnum">11</span></div>
     <div class="prompt">Match each response (1–3) to its function (A–C).</div>
     <div class="item-list"><div>1. Milan Protocol</div><div>2. Bloomfield Farms&#39; Facebook status</div><div>3. CropMobster</div></div><div class="match-options"><div>A. Connect surplus producers, local buyers and people addressing hunger</div><div>B. Call on leaders and policymakers to improve food systems</div><div>C. Offer a specific batch of unsold food quickly at a low price</div></div>
     <textarea data-answer rows="3" aria-label="S06 Q11 answer" placeholder="Type your answer here."></textarea>
   </article><article class="qcard" data-question="Q12" data-response-kind="text">
-    <div class="qhead"><span class="qnum">12</span><span class="qtype">Evidence-supported response · 证据作答</span></div>
+    <div class="qhead"><span class="qnum">12</span></div>
     <div class="prompt">Which response to food waste should receive priority? State your position and support it with THREE accurate details or examples from the programme.</div>
     
     <textarea data-answer rows="7" aria-label="S06 Q12 answer" placeholder="Write your position and three pieces of evidence."></textarea>
   </article></div>
     </div>
-    <section class="submit-panel" aria-labelledby="submit-title-S06">
-      <h3 id="submit-title-S06">提交本套答案</h3>
-      <p>完成本套全部题目后，再填写姓名并提交。</p>
-      <div class="submit-grid"><label>Student name<input type="text" data-student-name autocomplete="name" placeholder="请输入姓名"></label><button class="submit-btn" type="button">提交本套</button></div>
-      <label class="submit-confirm"><input type="checkbox" data-submit-confirm>我确认已完成本套，并准备提交本次作答。</label>
+    <section class="submit-panel" aria-label="Submit Set 6">
+      <button class="submit-btn" type="button">Submit</button>
       <p class="submit-status" role="status" aria-live="polite"></p>
     </section>
-    <details class="answer-key"><summary>提交后核对答案 · Answer key</summary><ol><li><strong>1.</strong> C – B – A</li><li><strong>2.</strong> 30–40; one out of eight; 1.5 billion</li><li><strong>3.</strong> infrastructure; dates</li><li><strong>4.</strong> Food; Agriculture; one billion</li><li><strong>5.</strong> food waste; sustainable agriculture; unhealthy lifestyles/obesity</li><li><strong>6.</strong> B. Political conditions and poverty prevent access.</li><li><strong>7.</strong> A. To show how farmers are using social media to reduce waste</li><li><strong>8.</strong> half; a profit</li><li><strong>9.</strong> Top-quality unsold produce returned from markets and spoiled before the next market day.</li><li><strong>10.</strong> two; 150</li><li><strong>11.</strong> 1–B; 2–C; 3–A</li><li><strong>12.</strong> Any clear position supported by three accurate, relevant programme details.</li></ol><p>开放题没有唯一答案：检查是否有清楚立场，并准确使用三条录音信息。</p></details>
+    <details class="answer-key"><summary>Answers</summary><ol><li>C – B – A</li><li>30–40; one out of eight; 1.5 billion</li><li>infrastructure; dates</li><li>Food; Agriculture; one billion</li><li>food waste; sustainable agriculture; unhealthy lifestyles/obesity</li><li>B. Political conditions and poverty prevent access.</li><li>A. To show how farmers are using social media to reduce waste</li><li>half; a profit</li><li>Top-quality unsold produce returned from markets and spoiled before the next market day.</li><li>two; 150</li><li>1–B; 2–C; 3–A</li><li>Any clear position supported by three accurate, relevant programme details.</li></ol></details>
   </section>
-<footer>Audio and full scripts: VOA Learning English. Questions prepared for Jacky's AES listening practice.</footer></main>
+</main>
 <form id="googleSubmitForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe3phGfIhB3CK52Yd1RRqKfRawq7nTJ4d8tc6bbUnZhoAoHpw/formResponse" method="post" target="submitReceipt" hidden><input type="hidden" name="entry.2123413413" id="formStudentName"><input type="hidden" name="entry.1235633044" id="formAssignmentId"><textarea name="entry.667517454" id="formAnswers"></textarea><input type="hidden" name="entry.186773631" id="formClientTime"></form><iframe name="submitReceipt" id="submitReceipt" title="Submission receipt" hidden></iframe>
 <script>
-const STORE='jacky-aes-listen-mock-v1:';const tabs=[...document.querySelectorAll('[data-open-set]')];const sets=[...document.querySelectorAll('.practice-set')];
+const STORE='jacky-aes-listen-mock-v1:';const LEARNER_NAME='Jacky';const tabs=[...document.querySelectorAll('[data-open-set]')];const sets=[...document.querySelectorAll('.practice-set')];
 function openSet(id){tabs.forEach(tab=>tab.setAttribute('aria-pressed',String(tab.dataset.openSet===id)));sets.forEach(set=>set.hidden=set.dataset.set!==id);history.replaceState(null,'','#set-'+id)}
 tabs.forEach(tab=>tab.addEventListener('click',()=>openSet(tab.dataset.openSet)));
 const hashSet=location.hash.match(/^#set-(S\d{2})$/)?.[1];if(hashSet&&sets.some(set=>set.dataset.set===hashSet))openSet(hashSet);
-const nameInputs=[...document.querySelectorAll('[data-student-name]')];const storedName=localStorage.getItem(STORE+'student-name')||'';nameInputs.forEach(input=>{input.value=storedName;input.addEventListener('input',()=>{nameInputs.forEach(other=>{if(other!==input)other.value=input.value});localStorage.setItem(STORE+'student-name',input.value)})});
 sets.forEach(set=>{set.querySelectorAll('.qcard').forEach(card=>{const key=STORE+set.dataset.set+'-'+card.dataset.question;if(card.dataset.responseKind==='choice'){const saved=localStorage.getItem(key);if(saved){const target=card.querySelector('input[value="'+CSS.escape(saved)+'"]');if(target)target.checked=true}card.querySelectorAll('input[type=radio]').forEach(input=>input.addEventListener('change',()=>localStorage.setItem(key,input.value)))}else{const field=card.querySelector('[data-answer]');field.value=localStorage.getItem(key)||'';field.addEventListener('input',()=>localStorage.setItem(key,field.value))}})});
 function collect(set){const missing=[];const lines=[];set.querySelectorAll('.qcard').forEach(card=>{let value='';if(card.dataset.responseKind==='choice')value=card.querySelector('input[type=radio]:checked')?.value||'';else value=card.querySelector('[data-answer]').value.trim();if(!value)missing.push(card.dataset.question);lines.push(set.dataset.set+'-'+card.dataset.question+': '+value)});return{missing,payload:lines.join('\n')}}
 function status(set,message,state=''){const target=set.querySelector('.submit-status');target.textContent=message;target.className='submit-status'+(state?' '+state:'')}
-let pendingSet=null;sets.forEach(set=>{const button=set.querySelector('.submit-btn');const previous=localStorage.getItem(STORE+set.dataset.set+'-submitted-at');if(previous){button.textContent='已提交';button.disabled=true;status(set,'本设备已提交本套。','success')}button.addEventListener('click',()=>{const name=set.querySelector('[data-student-name]').value.trim();const confirm=set.querySelector('[data-submit-confirm]');if(!name){status(set,'请先填写 Student name。','error');set.querySelector('[data-student-name]').focus();return}if(!confirm.checked){status(set,'请勾选确认框后再提交。','error');confirm.focus();return}const submission=collect(set);if(submission.missing.length){status(set,'还有 '+submission.missing.length+' 题未完成：'+submission.missing.slice(0,5).join('、')+(submission.missing.length>5?'…':''),'error');return}document.getElementById('formStudentName').value=name;document.getElementById('formAssignmentId').value=set.dataset.assignment;document.getElementById('formAnswers').value=submission.payload;document.getElementById('formClientTime').value=new Date().toISOString();pendingSet=set;button.disabled=true;status(set,'正在提交…');document.getElementById('googleSubmitForm').submit()})});
-document.getElementById('submitReceipt').addEventListener('load',()=>{if(!pendingSet)return;const set=pendingSet;pendingSet=null;localStorage.setItem(STORE+set.dataset.set+'-submitted-at',new Date().toISOString());const button=set.querySelector('.submit-btn');button.textContent='已提交';button.disabled=true;status(set,'提交成功。','success')});
+let pendingSet=null;sets.forEach(set=>{const button=set.querySelector('.submit-btn');const previous=localStorage.getItem(STORE+set.dataset.set+'-submitted-at');if(previous){button.textContent='Submitted';button.disabled=true;status(set,'Submitted.','success')}button.addEventListener('click',()=>{const submission=collect(set);if(submission.missing.length){status(set,'还有 '+submission.missing.length+' 题未完成：'+submission.missing.slice(0,5).join('、')+(submission.missing.length>5?'…':''),'error');return}document.getElementById('formStudentName').value=LEARNER_NAME;document.getElementById('formAssignmentId').value=set.dataset.assignment;document.getElementById('formAnswers').value=submission.payload;document.getElementById('formClientTime').value=new Date().toISOString();pendingSet=set;button.disabled=true;status(set,'Submitting…');document.getElementById('googleSubmitForm').submit()})});
+document.getElementById('submitReceipt').addEventListener('load',()=>{if(!pendingSet)return;const set=pendingSet;pendingSet=null;localStorage.setItem(STORE+set.dataset.set+'-submitted-at',new Date().toISOString());const button=set.querySelector('.submit-btn');button.textContent='Submitted';button.disabled=true;status(set,'Submitted.','success')});
 document.getElementById('printBtn').addEventListener('click',()=>window.print());let printState=[];addEventListener('beforeprint',()=>{printState=[...document.querySelectorAll('.script-details')].map(item=>item.open);document.querySelectorAll('.script-details').forEach(item=>item.open=true)});addEventListener('afterprint',()=>document.querySelectorAll('.script-details').forEach((item,index)=>item.open=printState[index]));
 </script></body></html>
