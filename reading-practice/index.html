@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Jacky Reading Practice</title>
+<link rel="stylesheet" href="../assets/jacky-reading.css?v=20261013">
+</head>
+<body>
+<!-- STAGED public shell. It contains no passage, no prompt, no option and no key: the reading practice
+     is delivered only to a signed-in browser by the private course service. -->
+<nav class="topbar">
+  <a href="../">← Jacky practice home</a>
+  <button type="button" id="printBtn" hidden>打印 / Save as PDF</button>
+  <button type="button" id="forgetBtn" hidden>Forget this device</button>
+</nav>
+
+<main>
+  <header class="hero">
+    <h1>Reading Practice</h1>
+    <p>阅读练习</p>
+  </header>
+
+  <!-- Shown only once the course service has verified a teacher preview link and derived a test
+       session itself. It is never shown to a reader who signs in normally. -->
+  <p class="preview-note" id="previewNote" hidden>老师预览 · Teacher preview — test only, not Jacky’s record.</p>
+
+  <section class="gate" id="gate">
+    <h2>Sign in to open the reading practice</h2>
+    <form id="signInForm" autocomplete="off">
+      <label for="passphrase">Passphrase</label>
+      <input type="password" id="passphrase" name="passphrase" autocomplete="current-password" required>
+      <button type="submit" class="primary" id="signInBtn">Open reading practice</button>
+      <p class="status" id="gateStatus" role="status"></p>
+    </form>
+  </section>
+
+  <div id="workspace" hidden>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Reading texts"></div>
+    <div id="panels"></div>
+  </div>
+</main>
+
+<script src="../assets/jacky-reading-config.js?v=20261013"></script>
+<script src="../assets/submission-origin.js?v=20261013"></script>
+<script src="../assets/jacky-reading.js?v=20261013"></script>
+</body>
+</html>
