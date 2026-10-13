@@ -85,6 +85,17 @@ button.primary:disabled { background: #7890a8; cursor: not-allowed; }
 .qnum { padding: 3px 9px; border-radius: 8px; background: var(--navy); color: #fff; font-weight: 800; font-size: 14px; }
 .qmarks { color: var(--muted); font-size: 13px; font-weight: 700; }
 .qcard.optional .qnum { background: #5d7089; }
+/* A printed question whose one prompt covers several gaps: the shared context sits once at the top of
+   the group, then each gap is its own bounded field. Nested padding stays small so a 375px screen
+   never scrolls sideways, and a word bank keeps its own scrolling wrapper. */
+.qgroup { padding: 14px 12px 4px; border: 1px solid var(--line); border-radius: 14px; background: #f7f9fb; break-inside: avoid; }
+.qgroup-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 8px; }
+.qgroup > .prompt.shared { margin: 0 0 12px; }
+.qgroup > .prompt.shared .table-scroll { margin: 10px 0; }
+.qgroup .qcard { margin: 0 0 10px; padding: 11px 12px; border-radius: 11px; }
+.qgroup .qcard .qhead { margin-bottom: 6px; }
+.qgroup .qcard .qnum { font-size: 13px; }
+.qgroup .qcard .prompt { color: var(--muted); font-size: 14px; }
 .prompt p { margin: 8px 0 0; }
 .prompt > *:first-child { margin-top: 0; }
 .opts { display: grid; gap: 6px; margin: 10px 0 0; }
@@ -129,6 +140,12 @@ textarea.answer { min-height: 92px; }
 
 @media (max-width: 430px) {
   main { margin-top: 12px; padding: 0 10px; }
+  /* 375px: the group's own frame gives up its side padding before any field does, so a bank table and
+     a long gapped sentence both stay inside the screen. */
+  .qgroup { padding: 12px 9px 3px; border-radius: 12px; }
+  .qgroup .qcard { padding: 10px; }
+  .qgroup > .prompt.shared .table-scroll table { font-size: 14px; }
+  .qgroup > .prompt.shared .table-scroll th, .qgroup > .prompt.shared .table-scroll td { padding: 6px 7px; }
   .hero, .set, .gate { padding: 14px; border-radius: 14px; }
   .passage { padding: 12px; }
   .topbar { padding: 10px 12px; }
@@ -145,7 +162,8 @@ textarea.answer { min-height: 92px; }
   .hero { padding: 0 0 6mm; border-radius: 0; color: var(--ink); background: #fff !important; box-shadow: none; }
   .set { padding: 0; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
   .set[hidden] { display: none !important; }
-  .passage, .qcard, .optional-block { border: 0; border-radius: 0; background: #fff; padding: 0; }
+  .passage, .qcard, .optional-block, .qgroup { border: 0; border-radius: 0; background: #fff; padding: 0; }
+  .qgroup { margin: 0 0 5mm; }
   .passage { max-height: none !important; overflow: visible !important; }
   .qcard { margin: 0 0 5mm; }
   .answer { min-height: 16mm; border: 0; border-bottom: 1px solid #99a; background: #fff; }
