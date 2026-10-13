@@ -410,9 +410,14 @@
       .replace(/<table/g, '<div class="table-scroll"><table').replace(/<\/table>/g, '</table></div>');
   }
 
-  function fieldHtml(item) {
+  // One answer field. Inside a group it prints only its own unique suffix and points at the shared
+  // context with aria-describedby, so a screen reader announces the context with every gap. Its
+  // wrapper, its data-field, its input ids, names and values are exactly what they were before
+  // grouping: readValues, writeValues and setReadOnly address those and are untouched.
+  function fieldHtml(item, group) {
     var marks = Number(item.marks) || 0;
     var label = item.required ? marks + (marks === 1 ? ' mark' : ' marks') : '选做';
+    var promptHtml = group ? String(group.subPrompts[item.id] || '') : item.promptHtml;
     var input;
     if (item.type === 'choice' || item.type === 'multi') {
       var kind = item.type === 'multi' ? 'checkbox' : 'radio';
@@ -427,23 +432,62 @@
     } else {
       input = '<input type="text" class="answer" aria-label="Answer for question ' + esc(item.number) + '">';
     }
-    return '<article class="qcard' + (item.required ? '' : ' optional') + '" data-field="' + esc(item.id) + '">'
+    return '<article class="qcard' + (item.required ? '' : ' optional') + (group ? ' grouped' : '')
+      + '" data-field="' + esc(item.id) + '"'
+      + (group ? ' aria-describedby="' + esc(groupDomId(group)) + '"' : '') + '>'
       + '<div class="qhead"><span class="qnum">Q' + esc(item.number) + '</span>'
       + '<span class="qmarks">' + esc(label) + '</span></div>'
-      + '<div class="prompt">' + wrapTables(item.promptHtml) + '</div>'
+      + (promptHtml ? '<div class="prompt">' + wrapTables(promptHtml) + '</div>' : '')
       + input + '</article>';
+  }
+
+  function groupDomId(group) {
+    return 'gp-' + String(group.id);
+  }
+
+  // The printed questions of one list. A question whose single printed prompt covers several answer
+  // fields prints that shared context ONCE, then each field follows as its own labelled control.
+  // A field in no group is rendered exactly as before, with its complete prompt. A payload with no
+  // promptGroups — an older service — renders exactly as before as well.
+  function fieldListHtml(set, items) {
+    var groups = set.promptGroups || [];
+    var groupOf = {};
+    groups.forEach(function (group) {
+      (group.itemIds || []).forEach(function (itemId) { groupOf[itemId] = group; });
+    });
+    var done = {};
+    var out = [];
+    items.forEach(function (item) {
+      var group = groupOf[item.id];
+      if (!group) { out.push(fieldHtml(item, null)); return; }
+      if (done[group.id]) return;
+      done[group.id] = true;
+      var members = group.itemIds.map(function (itemId) {
+        return items.filter(function (candidate) { return candidate.id === itemId; })[0];
+      }).filter(function (candidate) { return candidate; });
+      out.push('<section class="qgroup" data-group="' + esc(group.id) + '">'
+        + '<div class="qgroup-head"><span class="qnum">Q' + esc(group.questionNumber) + '</span>'
+        // Neutral: a group is not always a set of gaps — some group a paraphrase classification or a
+        // shared referent — so the header counts parts and never names the answer shape.
+        + '<span class="qmarks">' + members.length + ' 小题 / parts</span></div>'
+        + '<div class="prompt shared" id="' + esc(groupDomId(group)) + '">'
+        + wrapTables(group.sharedPromptHtml) + '</div>'
+        + members.map(function (member) { return fieldHtml(member, group); }).join('')
+        + '</section>');
+    });
+    return out.join('');
   }
 
   function setHtml(set) {
     var extras = (set.extras || []).length
       ? '<section class="optional-block"><h3>讨论 / 写作（选做）</h3>'
-        + set.extras.map(fieldHtml).join('') + '</section>'
+        + fieldListHtml(set, set.extras) + '</section>'
       : '';
     return '<section class="set" data-set="' + esc(set.id) + '">'
       + '<header class="set-head"><span class="badge">' + esc(set.sourceLabel) + '</span>'
       + '<h2>' + esc(set.title) + '</h2></header>'
       + '<div class="passage">' + wrapTables(set.readingHtml) + '</div>'
-      + '<div class="questions">' + set.items.map(fieldHtml).join('') + '</div>'
+      + '<div class="questions">' + fieldListHtml(set, set.items) + '</div>'
       + extras
       + '<section class="handin">'
       + '<div class="conflict-box" data-conflict="' + esc(set.id) + '" hidden></div>'
