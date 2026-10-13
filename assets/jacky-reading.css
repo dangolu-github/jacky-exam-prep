@@ -1,0 +1,153 @@
+/* Jacky reading practice (STAGED public styles). Same navy/blue/paper family as the existing learner
+   pages. Checked at 375px: no horizontal overflow, printed tables scroll inside their own wrapper. */
+:root {
+  --ink: #20324a; --muted: #607089; --paper: #fffdfa; --navy: #183a63; --blue: #1264c0;
+  --blue-soft: #dcecff; --line: #d8e0ea; --bg: #eef3f8; --good: #167346; --bad: #a53131;
+  --warn: #84570f; --warn-soft: #faf0d9;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { background: var(--bg); }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  overflow-wrap: break-word;
+}
+button, input, textarea, select, a { font: inherit; }
+a { color: #0b5ea8; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  padding: 10px max(14px, calc((100vw - 1100px) / 2)); background: #153a62; color: #fff;
+  box-shadow: 0 2px 12px #0b203944;
+}
+.topbar a, .topbar button {
+  padding: 7px 12px; border: 1px solid #ffffff66; border-radius: 999px; background: transparent;
+  color: #fff; text-decoration: none; cursor: pointer;
+}
+.topbar button:focus-visible, .topbar a:focus-visible, .tab:focus-visible,
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #d39a2b; outline-offset: 2px; }
+
+main { max-width: 1100px; margin: 20px auto 60px; padding: 0 14px; }
+
+.hero {
+  padding: 22px; border-radius: 20px; color: #fff;
+  background: linear-gradient(135deg, #173a63, #2f6f9f); box-shadow: 0 16px 40px #243d5b25;
+}
+.hero h1 { margin: 0 0 6px; font-size: clamp(26px, 6vw, 42px); line-height: 1.08; }
+.hero p { margin: 0; max-width: 760px; }
+
+/* Only ever visible in the teacher's own preview of this page. */
+.preview-note {
+  margin: 14px 0 0; padding: 10px 13px; border-left: 4px solid #84570f;
+  border-radius: 0 12px 12px 0; background: #faf0d9; color: #6f4a0d; font-size: 14px; font-weight: 700;
+}
+
+.gate { margin: 20px 0 0; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+.gate h2 { margin: 0 0 12px; font-size: 19px; color: var(--navy); }
+.gate label { display: block; font-weight: 700; margin-bottom: 5px; }
+.gate input {
+  display: block; width: 100%; max-width: 340px; margin-bottom: 12px; padding: 11px;
+  border: 1px solid #9eb2c9; border-radius: 10px; background: #fff;
+}
+button.primary {
+  min-height: 44px; padding: 11px 22px; border: 0; border-radius: 999px; background: var(--blue);
+  color: #fff; font-weight: 800; cursor: pointer;
+}
+button.primary:disabled { background: #7890a8; cursor: not-allowed; }
+.status { min-height: 1.4em; margin: 10px 0 0; font-weight: 700; color: var(--muted); }
+.status.error { color: var(--bad); }
+.status.good { color: var(--good); }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.tab {
+  padding: 9px 15px; border: 1px solid #9eb2c9; border-radius: 999px; background: #fff;
+  color: var(--navy); font-weight: 700; cursor: pointer;
+}
+.tab[aria-selected="true"] { background: var(--navy); color: #fff; }
+
+.set { padding: 18px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); box-shadow: 0 14px 34px #243d5b17; }
+.set-head { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.set-head h2 { margin: 4px 0 0; font-size: clamp(21px, 4vw, 30px); line-height: 1.15; }
+.set-head p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.badge { display: inline-block; padding: 3px 9px; border-radius: 999px; background: var(--blue-soft); color: #174f7e; font-size: 13px; font-weight: 800; }
+
+.passage { margin: 16px 0 0; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.passage > p:first-child { margin-top: 0; }
+.passage p { margin: 0 0 12px; }
+.passage img { max-width: 100%; height: auto; }
+.passage figure { margin: 14px 0; }
+.passage figcaption { color: var(--muted); font-size: 13px; }
+
+.questions { margin: 18px 0 0; display: grid; gap: 14px; }
+.qcard { padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #fff; break-inside: avoid; }
+.qhead { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 8px; }
+.qnum { padding: 3px 9px; border-radius: 8px; background: var(--navy); color: #fff; font-weight: 800; font-size: 14px; }
+.qmarks { color: var(--muted); font-size: 13px; font-weight: 700; }
+.qcard.optional .qnum { background: #5d7089; }
+.prompt p { margin: 8px 0 0; }
+.prompt > *:first-child { margin-top: 0; }
+.opts { display: grid; gap: 6px; margin: 10px 0 0; }
+.opt { display: flex; gap: 8px; align-items: flex-start; padding: 8px 9px; border: 1px solid var(--line); border-radius: 10px; background: #fcfdff; cursor: pointer; }
+.opt input { margin: 4px 0 0; flex: 0 0 auto; }
+.answer {
+  width: 100%; margin: 10px 0 0; padding: 10px; border: 1px solid #9eb2c9; border-radius: 10px;
+  background: #f8fafc; resize: vertical;
+}
+textarea.answer { min-height: 92px; }
+/* A printed grid scrolls inside its own bounded wrapper; the document itself never gets wider than the
+   screen, and no table text is hidden or cropped. */
+.table-scroll { max-width: 100%; overflow-x: auto; margin: 8px 0; -webkit-overflow-scrolling: touch; }
+.table-scroll table { border-collapse: collapse; min-width: 100%; font-size: 15px; }
+.table-scroll th, .table-scroll td { padding: 7px 9px; border: 1px solid var(--line); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+/* A printed source line carries a full URL: it wraps instead of widening the page. */
+.passage .reading-source, .prompt, .passage p, .receipt span { overflow-wrap: anywhere; }
+
+.optional-block { margin: 18px 0 0; padding: 14px; border: 1px dashed #9eb2c9; border-radius: 14px; background: #fff; }
+.optional-block h3 { margin: 0 0 4px; font-size: 16px; color: var(--navy); }
+.optional-block .note { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+
+.handin { margin: 20px 0 0; padding: 18px; border: 2px solid #86acd3; border-radius: 18px; background: #fff; }
+.handin h3 { margin: 0 0 4px; color: var(--navy); font-size: 18px; }
+.handin p { margin: 0; color: var(--muted); font-size: 14px; }
+.handin .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+.saved { font-size: 13px; font-weight: 700; color: var(--muted); }
+.receipt { margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; background: #e6f3ea; color: var(--good); font-weight: 700; }
+.receipt span { display: block; font-weight: 400; color: var(--ink); font-size: 14px; }
+/* A disabled control still has to be readable: a handed-in attempt stays on screen, not greyed away. */
+.set[data-readonly="1"] .answer, .set[data-readonly="1"] .opt { background: #f2f4f7; color: var(--ink); opacity: 1; }
+.set[data-readonly="1"] .answer:disabled, .set[data-readonly="1"] .opt input:disabled { color: var(--ink); -webkit-text-fill-color: var(--ink); }
+
+/* Both sides changed the same answer: the reader decides, nothing is overwritten. */
+.conflict-box { margin: 0 0 14px; padding: 12px 14px; border: 1px solid #d9b45c; border-radius: 12px; background: var(--warn-soft); }
+.conflict-head { margin: 0 0 8px; font-weight: 800; color: var(--warn); }
+.conflict { margin: 0 0 10px; }
+.conflict-q { margin: 0 0 4px; font-weight: 800; }
+.conflict-opt { display: flex; gap: 8px; align-items: flex-start; padding: 6px 8px; border: 1px solid #e3cfa0; border-radius: 9px; background: #fff; cursor: pointer; }
+.conflict-opt + .conflict-opt { margin-top: 5px; }
+.conflict-opt span { overflow-wrap: anywhere; }
+
+@media (max-width: 430px) {
+  main { margin-top: 12px; padding: 0 10px; }
+  .hero, .set, .gate { padding: 14px; border-radius: 14px; }
+  .passage { padding: 12px; }
+  .topbar { padding: 10px 12px; }
+  .topbar a, .topbar button { padding: 6px 10px; font-size: 14px; }
+  .tab { padding: 8px 12px; font-size: 15px; }
+}
+
+/* Print: the whole current passage and its prompts, nothing else. No receipt, no control, no status. */
+@media print {
+  html, body { background: #fff; }
+  body { font-size: 11.5pt; }
+  .topbar, .tabs, .gate, .handin, .receipt, .status, .saved, .conflict-box, .preview-note, #printBtn, #forgetBtn { display: none !important; }
+  main { max-width: none; margin: 0; padding: 0; }
+  .hero { padding: 0 0 6mm; border-radius: 0; color: var(--ink); background: #fff !important; box-shadow: none; }
+  .set { padding: 0; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
+  .set[hidden] { display: none !important; }
+  .passage, .qcard, .optional-block { border: 0; border-radius: 0; background: #fff; padding: 0; }
+  .passage { max-height: none !important; overflow: visible !important; }
+  .qcard { margin: 0 0 5mm; }
+  .answer { min-height: 16mm; border: 0; border-bottom: 1px solid #99a; background: #fff; }
+  .table-scroll { overflow: visible; }
+}
