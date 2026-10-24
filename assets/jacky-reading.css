@@ -110,7 +110,9 @@ textarea.answer { min-height: 92px; }
    screen, and no table text is hidden or cropped. */
 .table-scroll { max-width: 100%; overflow-x: auto; margin: 8px 0; -webkit-overflow-scrolling: touch; }
 .table-scroll table { border-collapse: collapse; min-width: 100%; font-size: 15px; }
-.table-scroll th, .table-scroll td { padding: 7px 9px; border: 1px solid var(--line); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+.table-scroll th, .table-scroll td { padding: 7px 9px; border: 1px solid var(--line); text-align: left; vertical-align: top; overflow-wrap: break-word; word-break: normal; }
+/* Phones only: a wide grid may break inside a word rather than push the page sideways. */
+@media (max-width: 640px) { .table-scroll th, .table-scroll td { overflow-wrap: anywhere; } }
 /* A printed source line carries a full URL: it wraps instead of widening the page. */
 .passage .reading-source, .prompt, .passage p, .receipt span { overflow-wrap: anywhere; }
 
@@ -168,4 +170,6 @@ textarea.answer { min-height: 92px; }
   .qcard { margin: 0 0 5mm; }
   .answer { min-height: 16mm; border: 0; border-bottom: 1px solid #99a; background: #fff; }
   .table-scroll { overflow: visible; }
+  /* A column is never narrower than its longest word, so words and numbers stay whole on paper. */
+  th, td { overflow-wrap: break-word !important; word-break: normal !important; }
 }
