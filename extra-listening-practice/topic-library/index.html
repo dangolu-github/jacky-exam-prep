@@ -4,7 +4,89 @@
 :root{--ink:#1d2b36;--muted:#62707a;--paper:#f4f1ea;--card:#fff;--line:#d8dcdd;--navy:#173a59;--blue:#1769aa;--orange:#a74818;--green:#17603d;--shadow:0 18px 50px rgba(22,36,45,.11)}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}body{margin:0;color:var(--ink);font:16px/1.58 Arial,"PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--blue)}button,a,summary{font:inherit}.topbar{position:sticky;top:0;z-index:30;display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:10px max(16px,calc((100vw - 1120px)/2));background:var(--navy);box-shadow:0 2px 14px #0a1d2c44}.topbar a,.topbar button{border:1px solid #ffffff55;border-radius:999px;padding:7px 12px;color:#fff;background:transparent;text-decoration:none;cursor:pointer}.topbar .print{margin-left:auto}main{width:min(1120px,calc(100% - 32px));margin:34px auto 70px}.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:24px;padding:34px;border-radius:24px;background:linear-gradient(135deg,#173a59,#245f82);color:#fff;box-shadow:var(--shadow)}.kicker,.topic-no{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.kicker{color:#ffd7ba}.hero h1{margin:7px 0 12px;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:-.045em}.hero p{margin:7px 0;color:#e1edf3}.notice{align-self:end;border-left:3px solid #f1a36e;padding:12px 15px;background:#ffffff11;border-radius:0 12px 12px 0}.notice strong{display:block;color:#fff}.notice span{font-size:13px;color:#dce8ee}.topic-nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 28px}.topic-nav a{padding:7px 11px;border:1px solid #cbd1d2;border-radius:999px;background:#fff;color:var(--navy);text-decoration:none;font-size:13px;font-weight:800}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:24px 0}.controls strong{margin-right:4px;color:var(--navy)}.filter{border:1px solid #9baeb9;border-radius:999px;padding:8px 15px;background:#fff;color:var(--navy);font-weight:850;cursor:pointer}.filter[aria-pressed=true]{background:var(--navy);color:#fff}.topic{scroll-margin-top:76px;margin:22px 0;padding:25px;border:1px solid var(--line);border-radius:21px;background:#fffdfa;box-shadow:0 12px 34px rgba(22,36,45,.07)}.topic-head{display:flex;justify-content:space-between;gap:18px;align-items:start}.topic-no{color:var(--orange)}.topic h2{margin:4px 0 0;color:var(--navy);font-size:clamp(27px,4vw,40px);line-height:1.08;letter-spacing:-.035em}.topic-cn{margin:4px 0;color:var(--muted)}.confidence{flex:none;padding:5px 9px;border-radius:999px;background:#eaf2ed;color:var(--green);font-size:11px;font-weight:900}.rationale{max-width:880px;margin:13px 0 20px;padding-left:12px;border-left:3px solid #d98a57;color:#52616a}.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.listen-card{min-width:0;padding:19px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.listen-card[hidden]{display:none}.card-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.level{padding:4px 9px;border-radius:999px;font-size:12px;font-weight:950}.level.b1{background:#e6f3eb;color:#12603a}.level.b2{background:#fff0e4;color:#914117}.duration{color:var(--muted);font-size:12px;font-weight:750}.listen-card h3{margin:15px 0 3px;color:var(--navy);font-size:23px;line-height:1.14;letter-spacing:-.02em}.title-cn{margin:0;color:var(--muted)}.level-reason{min-height:50px;margin:12px 0;color:#465761;font-size:13px}audio{display:block;width:100%;margin:13px 0}.transcript{margin-top:12px;border:1px solid #b9c8d2;border-radius:12px;overflow:hidden;background:#f5f8fa}.transcript summary{cursor:pointer;padding:11px 13px;background:#e9f0f4;color:var(--navy);font-weight:900}.transcript pre{max-height:380px;overflow:auto;white-space:pre-wrap;margin:0;padding:14px;font:14px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;color:#24333d}.credit{margin:10px 2px 0;color:var(--muted);font-size:11px}footer{margin:28px 4px;color:var(--muted);font-size:12px}
 @media(max-width:760px){.topbar .print{margin-left:0}main{width:min(100% - 20px,1120px);margin-top:12px}.hero{grid-template-columns:1fr;padding:22px;border-radius:17px}.topic{padding:17px;border-radius:15px}.topic-head{display:block}.confidence{display:inline-block;margin-top:10px}.card-grid{grid-template-columns:1fr}.level-reason{min-height:0}.transcript pre{max-height:48vh}}
 @media print{body{background:#fff;font-size:10.5pt}.topbar,.controls,.topic-nav{display:none!important}main{width:auto;margin:0}.hero{display:block;background:#fff!important;color:var(--ink);box-shadow:none;border:1px solid var(--line);padding:12mm}.hero p,.notice span{color:var(--ink)}.notice strong{color:var(--navy)}.topic{box-shadow:none;break-before:page;border:0;padding:0}.card-grid{display:block}.listen-card{break-inside:avoid;margin:0 0 8mm}audio{display:none}.transcript{overflow:visible}.transcript summary{display:none}.transcript pre{max-height:none;overflow:visible;font-size:9pt}}
-</style></head><body>
+</style><style>
+/* responsive-retrofit:core-20261104 */
+/* Window adaptation, screen only: a learner page follows the current window width and height,
+   including resizing an open window and browser zoom.
+   Reference: student-learning-portal-workflow/references/responsive-student-pages.md
+   Nothing here changes content, prompt or option order, question ids, learner answers, storage keys,
+   scoring, release gates, theme colours or the print rules: every rule is inside @media screen and
+   only decides how an existing box is sized. No page-wide transform, zoom or overflow hiding, and
+   nothing changes what is hidden or shown. */
+@media screen {
+  /* A long identifier, file name, URL or code token breaks only when it cannot fit; ordinary
+     words stay whole, in cells as well as in text. */
+  code, kbd, samp, var, a[href]:not([href^="#"]) { overflow-wrap: anywhere; }
+  p, li, dd, dt, td, th, figcaption, blockquote, summary, label { overflow-wrap: break-word; }
+  pre:not([hidden]) { max-width: 100%; overflow-x: auto; }
+
+  /* Figures and embeds stay inside their own container. Annotation ink is drawn at the coordinates
+     it was authored with, so <svg> and <canvas> are deliberately left out of this rule. */
+  img:not([hidden]), picture, video, iframe, embed, object { max-width: 100%; }
+  img:not([hidden]), video { height: auto; }
+
+  /* A table fits its pane: the columns wrap instead of widening the page. A table that is set to
+     span its pane still spans it, so nothing looks different where there was already room. */
+  table { max-width: 100%; }
+
+  /* Fields and buttons stay inside the window and keep a usable size. */
+  input:not([hidden]), select:not([hidden]), textarea:not([hidden]), button:not([hidden]) { max-width: 100%; }
+
+  /* A paper replica or ink overlay is positioned by coordinates inside its own scrolling frame:
+     it must keep its authored width. */
+  #ann-page, #ann-page *, #ann-stage, [id^="html-ink"], [id^="html-ink"] * { max-width: none; }
+}
+
+/* In a narrow window a wide table cannot be made legible by wrapping alone, so the sideways
+   scrolling belongs to the table's own box: neither the pane nor the page widens.
+   :not([hidden]) so that a table the page keeps hidden stays hidden. */
+@media screen and (max-width: 820px) {
+  table:not([hidden]) {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+}
+</style>
+<style>
+/* responsive-retrofit:jacky-20261104 */
+/* Jacky · Sydney Foundation. Screen only; content, order, ids and answers unchanged.
+   Measured 2026-11-04: the module artifacts overflow sideways at 1024x768, 844x390 and
+   768x600 because of (a) source tables that are wider than the page can ever be and
+   (b) card grids with fixed column counts that only collapse below 760px. */
+@media screen {
+  /* Tables written without a class (the source maps, screening matrices and planning
+     tables) are wider than the page at every window, so they scroll inside their own box.
+     Tables that already sit in .note-wrap keep that wrapper's scrolling. */
+  table:not([class]):not([hidden]), table.source-map:not([hidden]), table.tfng:not([hidden]) {
+    display: block; width: max-content; max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain;
+  }
+  /* Card grids follow the space they have instead of a fixed column count, so they also
+     work in the 760-1024px range and inside a narrow pane. */
+  .annotation-key { grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); }
+  .annotation-logic, .essay-plan-strip { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .structure-map { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+  .demo-steps, .source-card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .knowledge-strip { grid-template-columns: minmax(0, max-content) minmax(0, 1fr); }
+  .structure-step { min-width: 0; }
+  .key-card, .structure-step, .knowledge-strip > * { min-width: 0; }
+}
+
+/* A short or narrow window must keep reading space: the sticky toolbar wrapped its pills onto
+   five lines at 320x568 and took 52% of the window. It now stays one scrollable row, and in a
+   short window it scrolls with the page instead of sticking. */
+@media screen and (max-width: 520px), screen and (max-height: 620px) {
+  .topbar { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; gap: 8px; padding-top: 6px; padding-bottom: 6px; }
+  .topbar > * { flex: 0 0 auto; }
+  .topbar .note { width: auto; margin-left: 8px; }
+}
+@media screen and (max-height: 560px) {
+  .topbar { position: static; }
+}
+</style>
+</head><body>
 <nav class="topbar"><a href="../../">← Jacky Learning Home</a><a href="../">Extra 1–3 Practice</a><a href="../../listening-practice/">Listening 1</a><a href="../../listening-round-2/">Listening 2</a><button class="print" id="printBtn" type="button">打印 / Save as PDF</button></nav>
 <main><header class="hero"><div><div class="kicker">B1 → B2 Academic Listening</div><h1>Predicted Topic Listening Library</h1><p>预测主题听力库｜5 个高价值主题，每个主题含一段 B1 衔接材料和一段 B2 挑战材料。</p><p>先听结构，再听细节；最后在本页直接打开完整逐字稿核对。不设练习题。</p></div><div class="notice"><strong>Prediction, not an exam notice</strong><span>这些主题根据现有练习范围扩展，不代表学校已公布或确认考试题目。B1/B2 为课程难度预估，不代表 Jacky 已独立达到该等级。</span></div></header>
 <nav class="topic-nav" aria-label="Predicted topics"><a href="#topic-1">1. 城市系统、交通与宜居性</a><a href="#topic-2">2. 食物系统、浪费与可持续发展</a><a href="#topic-3">3. 公共健康与生活方式科学</a><a href="#topic-4">4. 人工智能、数据与数字系统</a><a href="#topic-5">5. 教育、学习与批判性思维</a></nav><div class="controls" aria-label="Level filter"><strong>Show:</strong><button class="filter" data-filter="all" aria-pressed="true">All 10</button><button class="filter" data-filter="b1" aria-pressed="false">B1 bridge</button><button class="filter" data-filter="b2" aria-pressed="false">B2 challenge</button></div><section class="topic" id="topic-1">

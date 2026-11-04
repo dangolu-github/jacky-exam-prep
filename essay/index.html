@@ -1153,6 +1153,88 @@ break-inside: avoid;
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+<style>
+/* responsive-retrofit:core-20261104 */
+/* Window adaptation, screen only: a learner page follows the current window width and height,
+   including resizing an open window and browser zoom.
+   Reference: student-learning-portal-workflow/references/responsive-student-pages.md
+   Nothing here changes content, prompt or option order, question ids, learner answers, storage keys,
+   scoring, release gates, theme colours or the print rules: every rule is inside @media screen and
+   only decides how an existing box is sized. No page-wide transform, zoom or overflow hiding, and
+   nothing changes what is hidden or shown. */
+@media screen {
+  /* A long identifier, file name, URL or code token breaks only when it cannot fit; ordinary
+     words stay whole, in cells as well as in text. */
+  code, kbd, samp, var, a[href]:not([href^="#"]) { overflow-wrap: anywhere; }
+  p, li, dd, dt, td, th, figcaption, blockquote, summary, label { overflow-wrap: break-word; }
+  pre:not([hidden]) { max-width: 100%; overflow-x: auto; }
+
+  /* Figures and embeds stay inside their own container. Annotation ink is drawn at the coordinates
+     it was authored with, so <svg> and <canvas> are deliberately left out of this rule. */
+  img:not([hidden]), picture, video, iframe, embed, object { max-width: 100%; }
+  img:not([hidden]), video { height: auto; }
+
+  /* A table fits its pane: the columns wrap instead of widening the page. A table that is set to
+     span its pane still spans it, so nothing looks different where there was already room. */
+  table { max-width: 100%; }
+
+  /* Fields and buttons stay inside the window and keep a usable size. */
+  input:not([hidden]), select:not([hidden]), textarea:not([hidden]), button:not([hidden]) { max-width: 100%; }
+
+  /* A paper replica or ink overlay is positioned by coordinates inside its own scrolling frame:
+     it must keep its authored width. */
+  #ann-page, #ann-page *, #ann-stage, [id^="html-ink"], [id^="html-ink"] * { max-width: none; }
+}
+
+/* In a narrow window a wide table cannot be made legible by wrapping alone, so the sideways
+   scrolling belongs to the table's own box: neither the pane nor the page widens.
+   :not([hidden]) so that a table the page keeps hidden stays hidden. */
+@media screen and (max-width: 820px) {
+  table:not([hidden]) {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+}
+</style>
+<style>
+/* responsive-retrofit:jacky-20261104 */
+/* Jacky · Sydney Foundation. Screen only; content, order, ids and answers unchanged.
+   Measured 2026-11-04: the module artifacts overflow sideways at 1024x768, 844x390 and
+   768x600 because of (a) source tables that are wider than the page can ever be and
+   (b) card grids with fixed column counts that only collapse below 760px. */
+@media screen {
+  /* Tables written without a class (the source maps, screening matrices and planning
+     tables) are wider than the page at every window, so they scroll inside their own box.
+     Tables that already sit in .note-wrap keep that wrapper's scrolling. */
+  table:not([class]):not([hidden]), table.source-map:not([hidden]), table.tfng:not([hidden]) {
+    display: block; width: max-content; max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain;
+  }
+  /* Card grids follow the space they have instead of a fixed column count, so they also
+     work in the 760-1024px range and inside a narrow pane. */
+  .annotation-key { grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); }
+  .annotation-logic, .essay-plan-strip { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .structure-map { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+  .demo-steps, .source-card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .knowledge-strip { grid-template-columns: minmax(0, max-content) minmax(0, 1fr); }
+  .structure-step { min-width: 0; }
+  .key-card, .structure-step, .knowledge-strip > * { min-width: 0; }
+}
+
+/* A short or narrow window must keep reading space: the sticky toolbar wrapped its pills onto
+   five lines at 320x568 and took 52% of the window. It now stays one scrollable row, and in a
+   short window it scrolls with the page instead of sticking. */
+@media screen and (max-width: 520px), screen and (max-height: 620px) {
+  .topbar { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; gap: 8px; padding-top: 6px; padding-bottom: 6px; }
+  .topbar > * { flex: 0 0 auto; }
+  .topbar .note { width: auto; margin-left: 8px; }
+}
+@media screen and (max-height: 560px) {
+  .topbar { position: static; }
+}
+</style>
 </head>
 <body>
 <nav class="workspace-resource-nav" aria-label="Jacky learning resources">
