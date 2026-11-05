@@ -1235,7 +1235,7 @@ break-inside: avoid;
   .topbar { position: static; }
 }
 </style>
-</head>
+<style id="writing-demo-toggle-style">details.writing-demo-toggle{min-width:0;max-width:100%;margin:.8em 0;border:1px solid currentColor;border-radius:5px}details.writing-demo-toggle>summary{cursor:pointer;font:inherit;font-weight:600;padding:.55em .75em}details.writing-demo-toggle>.writing-demo-content{min-width:0;padding:.1em .75em .7em}details.writing-demo-toggle>.writing-demo-content>*{max-width:100%;box-sizing:border-box}@media print{details.writing-demo-toggle{border:0;margin:.6em 0}details.writing-demo-toggle>summary{padding:0;font-weight:600}details.writing-demo-toggle>.writing-demo-content{padding:0}}</style></head>
 <body>
 <nav class="workspace-resource-nav" aria-label="Jacky learning resources">
 <a class="workspace-resource-link" href="../">← Jacky Home</a>
@@ -2098,7 +2098,7 @@ break-inside: avoid;
 </div>
 
 <h3 id="paragraph-demo-structure-based-on-table-3-ideas">Paragraph Demo Structure based on Table 3 ideas</h3>
-<div class="paragraph-demo" id="paragraph-demo">
+<details class="writing-demo-toggle" data-writing-demo="v1" id="writing-demo-7162b10a731a"><summary>Writing example</summary><div class="writing-demo-content"><div class="paragraph-demo" id="paragraph-demo">
   <div class="demo-steps" aria-label="Build a paragraph structure from Table 3">
     <button type="button" class="demo-step" data-demo-step="1" data-demo-targets="demo-table3-function" aria-pressed="false">
       <span class="step-number">1</span>
@@ -2167,7 +2167,7 @@ break-inside: avoid;
       </li>
     </ul>
   </div>
-</div>
+</div></div></details>
 
 <script>
 (() => {
@@ -2231,5 +2231,5 @@ break-inside: avoid;
   revealTarget(window.location.hash, Boolean(window.location.hash));
 })();
 </script>
-</body>
+<script id="writing-demo-toggle-script" data-page="f3c88255afa91c8c784f">(()=>{const ds=[...document.querySelectorAll('details[data-writing-demo="v1"]')];if(!ds.length)return;const key='writing-demo:'+document.currentScript.dataset.page;let printing=false,states=[];let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')||{}}catch{}ds.forEach(d=>{d.open=typeof saved[d.id]==='boolean'?saved[d.id]:false;d.addEventListener('toggle',()=>{if(printing)return;try{localStorage.setItem(key,JSON.stringify(Object.fromEntries(ds.map(x=>[x.id,x.open]))))}catch{}})});document.addEventListener('click',e=>{const b=e.target.closest('button');if(b){const t=(b.textContent||'').trim();if(/^(?:Open all|Expand all|展开全部|全部展开)$/i.test(t))ds.forEach(x=>x.open=true);if(/^(?:Close all|Collapse all|收起全部|全部收起)$/i.test(t))ds.forEach(x=>x.open=false)}const a=e.target.closest('a[href^="#"],[data-target]');if(!a)return;const id=a.dataset.target||(a.getAttribute('href')||'').slice(1);let n=document.getElementById(id);while(n){if(n.tagName==='DETAILS')n.open=true;n=n.parentElement}});function reveal(){if(!location.hash)return;let n=document.getElementById(decodeURIComponent(location.hash.slice(1)));while(n){if(n.tagName==='DETAILS')n.open=true;n=n.parentElement}}addEventListener('hashchange',reveal);reveal();addEventListener('beforeprint',()=>{if(printing)return;printing=true;states=ds.map(x=>x.open);ds.forEach(x=>x.open=true)});addEventListener('afterprint',()=>{ds.forEach((x,i)=>x.open=states[i]);setTimeout(()=>printing=false,0)})})();</script></body>
 </html>
