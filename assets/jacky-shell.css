@@ -1,0 +1,93 @@
+/* Shared course navigation and compact resource layout. */
+.jk-header { background:#1c3049; color:#fff; font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+.jk-header * { box-sizing:border-box; }
+.jk-header-inner { max-width:1040px; margin:auto; padding:10px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.jk-header a { color:#fff; text-decoration:none; overflow-wrap:normal; }
+.jk-brand { font-size:16px; font-weight:750; white-space:nowrap; }
+.jk-menu-button { display:none; }
+.jk-nav { display:flex; align-items:center; gap:6px; margin:0; padding:0; }
+.jk-nav a { display:block; padding:9px 14px; border-radius:6px; font-size:14px; font-weight:650; white-space:nowrap; }
+.jk-nav a:hover { background:#304660; }
+.jk-nav a[aria-current] { background:#fff; color:#1c3049; }
+.jk-header :focus-visible { outline:3px solid #f4ba68; outline-offset:3px; }
+.jk-page-tools { max-width:1072px; margin:12px auto 0; padding:0 24px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color:#566477; }
+.jk-page-tools button { min-height:40px; padding:7px 12px; border:1px solid #bdc9d5; border-radius:6px; color:#1c3049; background:#fff; cursor:pointer; font:inherit; }
+.jk-page-tools button:focus-visible { outline:3px solid #1769aa; outline-offset:2px; }
+.jk-page-tools:has(> [hidden]):not(:has(> :not([hidden]))) { display:none; }
+@media screen {
+  html:has(> body.jk-home),html:has(> body.jk-essay) { background:#f4f6f8; }
+  body.jk-home { min-height:100dvh; margin:0; background:#f4f6f8; color:#20324a; font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+  .jk-home .shell { width:min(100%,1040px); margin:auto; padding:30px 24px 40px; }
+  .jk-home .hero { padding:0 0 20px; border:0; }
+  .jk-home .hero h1 { font-size:34px; line-height:1.2; letter-spacing:-.025em; margin:0 0 6px; }
+  .jk-home .hero p { font-size:16px; margin:0; color:#566477; }
+  .jk-library-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+  .jk-library-head h2 { margin:0; font-size:20px; }
+  #class-log { margin-bottom:28px; scroll-margin-top:16px; }
+  .jk-class-heading { margin:0 0 12px; font-size:20px; }
+  .jk-group > summary .jk-class-label { margin-left:12px; color:#20324a; font-size:16px; font-weight:700; }
+  .jk-group > summary .jk-class-topic { display:block; margin:5px 0 0 17px; line-height:1.5; }
+  .jk-class-note { margin:0 0 12px; color:#566477; font-size:15px; }
+  .jk-expand { padding:7px 12px; min-height:40px; border:1px solid #bdc9d5; border-radius:6px; background:#fff; color:#20324a; font:inherit; font-size:14px; cursor:pointer; }
+  .jk-group { margin:0 0 12px; border:1px solid #d8e0e8; border-radius:10px; background:#fff; overflow:clip; scroll-margin-top:16px; }
+  .jk-group > summary { padding:17px 20px; cursor:pointer; color:#20324a; font-size:18px; font-weight:700; }
+  .jk-group > summary span { margin-left:12px; color:#617084; font-size:14px; font-weight:400; }
+  .jk-resources { padding:0 20px 8px; }
+  .jk-resource { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 0; border-top:1px solid #e5eaf0; text-decoration:none; color:#20324a; }
+  .jk-resource strong { display:block; font-size:16px; }
+  .jk-resource small { display:block; margin-top:3px; font-size:14px; color:#617084; line-height:1.5; }
+  .jk-resource > span:last-child { color:#1769aa; font-size:20px; }
+  .jk-resource:hover strong { color:#1769aa; text-decoration:underline; }
+  .jk-group :focus-visible,.jk-expand:focus-visible { outline:3px solid #1769aa; outline-offset:3px; }
+  .jk-home footer { margin-top:24px; color:#617084; font-size:12px; }
+  body.jk-essay { width:auto; margin:0; padding:0; border:0; border-radius:0; box-shadow:none; background:#f4f6f8; }
+  body.jk-essay::before { display:none; }
+  .jk-essay .jk-content { width:min(100%,1040px); margin:24px auto 48px; padding:28px 36px 48px; background:#fffdf8; border:1px solid #e1e6ec; border-radius:10px; }
+  .jk-essay h1 { font-size:32px; line-height:1.2; margin:0 0 8px; }
+  .jk-essay h2 { margin-top:30px; font-size:23px; border-bottom-width:2px; }
+  .jk-essay #module-1--from-essay-prompt-to-research-map { margin:6px 0 22px; padding:0; border:0; font-size:18px; line-height:1.5; font-weight:500; color:#566477; }
+  .jk-essay #cw3-question { margin-top:0; font-size:20px; }
+  .jk-essay blockquote { margin:16px 0 24px; padding:14px 18px; }
+  .jk-essay :target { scroll-margin-top:18px; }
+}
+@media screen and (max-width:800px) {
+  .jk-header-inner { padding:10px 16px; gap:10px; flex-wrap:wrap; }
+  .jk-brand { font-size:15px; }
+  .jk-menu-button { display:block; min-height:40px; padding:7px 12px; border:1px solid #92a2b6; border-radius:6px; background:transparent; color:#fff; font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; cursor:pointer; }
+  .jk-nav { flex-basis:100%; display:flex; flex-wrap:wrap; gap:5px; padding:4px 0 2px; }
+  .jk-header.jk-menu-ready .jk-nav { display:none; }
+  .jk-header.jk-menu-ready.jk-menu-open .jk-nav { display:flex; }
+  .jk-nav a { padding:9px 12px; }
+  .jk-page-tools { padding:0 16px; margin-top:10px; }
+  .jk-home .shell { padding:24px 16px 32px; }
+  .jk-home .hero h1 { font-size:28px; }
+  .jk-home .hero p { font-size:15px; }
+  .jk-group > summary { padding:15px 16px; font-size:17px; }
+  .jk-group > summary span { margin-left:8px; font-size:13px; }
+  .jk-group > summary .jk-class-label { font-size:15px; }
+  .jk-resources { padding:0 16px 6px; }
+  .jk-resource { gap:10px; padding:12px 0; }
+  .jk-essay .jk-content { margin:0 auto 32px; padding:22px 18px 36px; border:0; border-radius:0; }
+  .jk-essay h1 { font-size:26px; }
+  .jk-essay h2 { font-size:21px; margin-top:26px; }
+  .jk-essay #module-1--from-essay-prompt-to-research-map { font-size:16px; margin:6px 0 20px; }
+  .jk-essay #cw3-question { font-size:18px; padding-bottom:8px; }
+  .jk-essay blockquote { padding:12px 14px; margin:14px 0 22px; }
+}
+@media print {
+  .jk-header,.jk-page-tools,.jk-expand { display:none !important; }
+  .jk-essay .jk-content { margin:0; padding:0; border:0; max-width:none; }
+  .jk-home .shell { width:auto; margin:0; padding:0; }
+  .jk-home .hero { padding:0 0 12pt; border:0; }
+  .jk-home .hero h1 { font-size:24pt; line-height:1.2; margin:0 0 6pt; }
+  .jk-home .hero p { font-size:11pt; }
+  .jk-home .jk-class-heading,.jk-home .jk-library-head h2 { font-size:14pt; margin:10pt 0; }
+  .jk-home footer { display:none; }
+  .jk-group { break-inside:avoid; margin-bottom:12pt; }
+  .jk-group > summary { font-weight:bold; }
+  .jk-group > .jk-resources { display:block !important; }
+  .jk-resource { display:block; margin:5pt 0; color:#000; text-decoration:none; }
+  .jk-resource small { display:block; }
+  .jk-resource > span:last-child { display:none; }
+  .jk-class-topic { display:block; }
+}
