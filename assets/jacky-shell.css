@@ -23,6 +23,11 @@
   .jk-home .hero p { font-size:16px; margin:0; color:#566477; }
   .jk-library-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
   .jk-library-head h2 { margin:0; font-size:20px; }
+  #class-log { margin-bottom:28px; scroll-margin-top:16px; }
+  .jk-class-heading { margin:0 0 12px; font-size:20px; }
+  .jk-group > summary .jk-class-label { margin-left:12px; color:#20324a; font-size:16px; font-weight:700; }
+  .jk-group > summary .jk-class-topic { display:block; margin:5px 0 0 17px; line-height:1.5; }
+  .jk-class-note { margin:0 0 12px; color:#566477; font-size:15px; }
   .jk-expand { padding:7px 12px; min-height:40px; border:1px solid #bdc9d5; border-radius:6px; background:#fff; color:#20324a; font:inherit; font-size:14px; cursor:pointer; }
   .jk-group { margin:0 0 12px; border:1px solid #d8e0e8; border-radius:10px; background:#fff; overflow:clip; scroll-margin-top:16px; }
   .jk-group > summary { padding:17px 20px; cursor:pointer; color:#20324a; font-size:18px; font-weight:700; }
@@ -45,7 +50,7 @@
   .jk-essay blockquote { margin:16px 0 24px; padding:14px 18px; }
   .jk-essay :target { scroll-margin-top:18px; }
 }
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
   .jk-header-inner { padding:10px 16px; gap:10px; flex-wrap:wrap; }
   .jk-brand { font-size:15px; }
   .jk-menu-button { display:block; min-height:40px; padding:7px 12px; border:1px solid #92a2b6; border-radius:6px; background:transparent; color:#fff; font:600 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; cursor:pointer; }
@@ -59,6 +64,7 @@
   .jk-home .hero p { font-size:15px; }
   .jk-group > summary { padding:15px 16px; font-size:17px; }
   .jk-group > summary span { margin-left:8px; font-size:13px; }
+  .jk-group > summary .jk-class-label { font-size:15px; }
   .jk-resources { padding:0 16px 6px; }
   .jk-resource { gap:10px; padding:12px 0; }
   .jk-essay .jk-content { margin:0 auto 32px; padding:22px 18px 36px; border:0; border-radius:0; }
@@ -72,10 +78,16 @@
   .jk-header,.jk-page-tools,.jk-expand { display:none !important; }
   .jk-essay .jk-content { margin:0; padding:0; border:0; max-width:none; }
   .jk-home .shell { width:auto; margin:0; padding:0; }
+  .jk-home .hero { padding:0 0 12pt; border:0; }
+  .jk-home .hero h1 { font-size:24pt; line-height:1.2; margin:0 0 6pt; }
+  .jk-home .hero p { font-size:11pt; }
+  .jk-home .jk-class-heading,.jk-home .jk-library-head h2 { font-size:14pt; margin:10pt 0; }
+  .jk-home footer { display:none; }
   .jk-group { break-inside:avoid; margin-bottom:12pt; }
   .jk-group > summary { font-weight:bold; }
   .jk-group > .jk-resources { display:block !important; }
   .jk-resource { display:block; margin:5pt 0; color:#000; text-decoration:none; }
   .jk-resource small { display:block; }
   .jk-resource > span:last-child { display:none; }
+  .jk-class-topic { display:block; }
 }

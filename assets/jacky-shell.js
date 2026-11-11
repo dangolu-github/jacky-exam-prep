@@ -11,7 +11,7 @@
     });
     header.addEventListener('keydown', e => { if (e.key === 'Escape') { close(); menu.focus(); } });
     header.querySelectorAll('.jk-nav a').forEach(a => a.addEventListener('click', close));
-    const wide = matchMedia('(min-width: 701px)');
+    const wide = matchMedia('(min-width: 801px)');
     wide.addEventListener('change', close);
   }
   const groups = [...document.querySelectorAll('details.jk-group')];
@@ -20,8 +20,10 @@
   let printing = false, printState = [];
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem(key) || '{}'); } catch (_) {}
-  const expand = document.querySelector('.jk-expand');
-  const syncLabel = () => { if (expand) expand.textContent = groups.every(g => g.open) ? 'Close all' : 'Open all'; };
+  const expanders = [...document.querySelectorAll('.jk-expand')].map(button => ({
+    button, groups: [...button.closest('section').querySelectorAll('details.jk-group')]
+  }));
+  const syncLabel = () => { expanders.forEach(({button, groups}) => { button.textContent = groups.every(g => g.open) ? 'Close all' : 'Open all'; }); };
   groups.forEach(g => {
     g.open = saved?.[g.id] === true;
     g.addEventListener('toggle', () => {
@@ -30,10 +32,10 @@
       try { localStorage.setItem(key, JSON.stringify(Object.fromEntries(groups.map(d => [d.id, d.open])))); } catch (_) {}
     });
   });
-  expand?.addEventListener('click', () => { const open = !groups.every(g => g.open); groups.forEach(g => g.open = open); syncLabel(); });
+  expanders.forEach(({button, groups}) => button.addEventListener('click', () => { const open = !groups.every(g => g.open); groups.forEach(g => g.open = open); syncLabel(); }));
   const reveal = () => {
-    const target = groups.find(g => '#' + g.id === location.hash);
-    if (target) { target.open = true; requestAnimationFrame(() => target.scrollIntoView({block:'start'})); }
+    const target = document.getElementById(location.hash.slice(1));
+    if (target) { if (target.matches('details.jk-group')) target.open = true; requestAnimationFrame(() => target.scrollIntoView({block:'start'})); }
   };
   addEventListener('hashchange', reveal);
   reveal(); syncLabel();
