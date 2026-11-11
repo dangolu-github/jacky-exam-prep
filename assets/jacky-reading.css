@@ -127,6 +127,20 @@ textarea.answer { min-height: 92px; }
 .saved { font-size: 13px; font-weight: 700; color: var(--muted); }
 .receipt { margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; background: #e6f3ea; color: var(--good); font-weight: 700; }
 .receipt span { display: block; font-weight: 400; color: var(--ink); font-size: 14px; }
+/* The result returned with the receipt (2026-11-11). One column of items that wraps at any width. */
+.result { margin: 12px 0 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); }
+.result h3 { margin: 0 0 6px; color: var(--navy); font-size: 17px; }
+.result .score { margin: 0 0 8px; font-weight: 800; }
+.result ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.result li { display: grid; grid-template-columns: 2em minmax(0, 1fr); gap: 2px 8px; padding: 7px 9px; border-radius: 9px; background: #f4f7fa; overflow-wrap: anywhere; }
+.result .mark { font-weight: 800; text-align: center; }
+.result .correct .mark { color: var(--good); }
+.result .incorrect .mark { color: var(--bad); }
+.result .partial .mark, .result .waiting .mark { color: var(--warn); }
+.result .line { grid-column: 2; font-size: 14px; }
+.result small { color: var(--muted); }
+.result.waiting-note { background: var(--warn-soft); border-color: #e3cfa0; color: var(--warn); font-weight: 700; }
+.result.waiting-note p { margin: 0; }
 /* A disabled control still has to be readable: a handed-in attempt stays on screen, not greyed away. */
 .set[data-readonly="1"] .answer, .set[data-readonly="1"] .opt { background: #f2f4f7; color: var(--ink); opacity: 1; }
 .set[data-readonly="1"] .answer:disabled, .set[data-readonly="1"] .opt input:disabled { color: var(--ink); -webkit-text-fill-color: var(--ink); }
@@ -159,7 +173,7 @@ textarea.answer { min-height: 92px; }
 @media print {
   html, body { background: #fff; }
   body { font-size: 11.5pt; }
-  .topbar, .tabs, .gate, .handin, .receipt, .status, .saved, .conflict-box, .preview-note, #printBtn, #forgetBtn { display: none !important; }
+  .topbar, .tabs, .gate, .handin, .receipt, .result, .status, .saved, .conflict-box, .preview-note, #printBtn, #forgetBtn { display: none !important; }
   main { max-width: none; margin: 0; padding: 0; }
   .hero { padding: 0 0 6mm; border-radius: 0; color: var(--ink); background: #fff !important; box-shadow: none; }
   .set { padding: 0; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
