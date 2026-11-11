@@ -1,7 +1,7 @@
 /* Jacky reading practice (STAGED public script).
    The page ships empty: the passage, the prompts and the choices arrive only after a successful
-   sign-in, from the private course service. Nothing here ever receives a key, a mark or a result —
-   a hand-in is answered with a receipt number only.
+   sign-in, from the private course service. Nothing here ever receives the key itself: a hand-in is
+   answered with its receipt and the result the service prepares for the reader (2026-11-11).
 
    Three rules this file follows carefully:
      1. Answers are written to this device first, then synced. A reply only acknowledges the exact
@@ -684,7 +684,32 @@
       + '<span>回执编号 ' + esc(receipt.receiptId) + '</span>'
       + '<span>' + esc(new Date(receipt.receivedAt).toLocaleString()) + ' · 第 '
         + esc(receipt.attempt) + ' 次</span>'
-      + '<span>这一次已锁定。需要再写一次时，老师会打开下一次。</span></p>';
+      + '<span>这一次已锁定。需要再写一次时，老师会打开下一次。</span></p>'
+      + resultHtml(receipt.result);
+  }
+
+  // The result the service returns with the receipt (2026-11-11): ✓/✗ and the correct answer for a
+  // wrong choice, the score, and what waits for the teacher. Nothing is worked out on this page.
+  var MARKS = { correct: '✓', incorrect: '✗', partial: '½', waiting: '…' };
+  var WORDS = { correct: '正确 · Correct', incorrect: '不正确 · Not correct', partial: '部分正确 · Partly correct',
+    waiting: '等待老师批改 · Waiting for your teacher' };
+  function resultHtml(result) {
+    if (!result) return '';
+    if (result.state !== 'result') {
+      return '<div class="result waiting-note"><p>' + esc(result.messageZh || '已提交，等待老师批改。') + ' '
+        + esc(result.message || 'Submitted. Waiting for your teacher to review.') + '</p></div>';
+    }
+    var s = result.score || {};
+    var rows = (result.items || []).map(function (item) {
+      var lines = '<span class="line"><strong>Q' + esc(item.number) + '</strong> · ' + esc(WORDS[item.status] || '')
+        + (item.points != null ? ' · ' + esc(item.points) + ' / ' + esc(item.outOf) : '') + '</span>'
+        + '<span class="line"><small>你的答案 Your answer:</small> ' + (item.answer ? esc(item.answer) : '—') + '</span>';
+      if (item.correction) lines += '<span class="line"><small>正确答案 Correct answer:</small> ' + esc(item.correction) + '</span>';
+      if (item.comment) lines += '<span class="line"><small>老师 Teacher:</small> ' + esc(item.comment) + '</span>';
+      return '<li class="' + esc(item.status) + '"><span class="mark" aria-hidden="true">' + (MARKS[item.status] || '') + '</span>' + lines + '</li>';
+    }).join('');
+    return '<div class="result"><h3>你的结果 · Your result</h3><p class="score">得分 Score ' + esc(s.points) + ' / ' + esc(s.outOf)
+      + (s.waiting ? ' · ' + esc(s.waiting) + ' 题等待老师批改 waiting for your teacher' : '') + '</p><ol>' + rows + '</ol></div>';
   }
 
   function submit(setId) {
