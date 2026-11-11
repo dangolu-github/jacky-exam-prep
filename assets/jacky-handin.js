@@ -142,12 +142,11 @@
     if (doc.getElementById('jackyResultStyles')) return;
     var style = doc.createElement('style');
     style.id = 'jackyResultStyles';
-    style.textContent = '.jacky-result{margin:12px 0 0;padding:12px 14px;border:1px solid #cfd8dc;border-radius:12px;background:#fff;color:#182732;font-size:15px;line-height:1.5;max-width:100%;box-sizing:border-box}' +
+    style.textContent = '.jacky-result{margin:12px 0 0;padding:12px 14px;border:1px solid #cfd8dc;border-radius:12px;background:#fff;color:#182732;font-size:15px;line-height:1.5;max-width:100%;box-sizing:border-box;flex:1 1 100%;min-width:0}' +
       '.jacky-result h3{margin:0 0 6px;font-size:16px}.jacky-result .jr-score{margin:0 0 8px;font-weight:700}.jacky-result ol{margin:0;padding:0;list-style:none;display:grid;gap:6px}' +
       '.jacky-result li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:2px 8px;padding:6px 8px;border-radius:8px;background:#f5f7f8;overflow-wrap:anywhere}' +
       '.jacky-result .jr-mark{font-weight:800;text-align:center}.jacky-result .correct .jr-mark{color:#17603d}.jacky-result .incorrect .jr-mark{color:#9c2f2f}.jacky-result .partial .jr-mark,.jacky-result .waiting .jr-mark{color:#84570f}' +
       '.jacky-result .jr-line{grid-column:2}.jacky-result small{color:#5d6b75}.jacky-result .jr-note{margin:8px 0 0}' +
-      '@media (prefers-color-scheme:dark){.jacky-result{background:#1d262c;color:#e8eef1;border-color:#3a4850}.jacky-result li{background:#263239}.jacky-result small{color:#a9b7bf}}' +
       '@media print{.jacky-result{break-inside:avoid}}';
     doc.head.appendChild(style);
   }
@@ -178,6 +177,16 @@
       (result.overall ? '<p class="jr-note"><small>Teacher:</small> ' + esc(result.overall) + '</p>' : '') + '<ol>' + rows + '</ol>';
   }
 
+  // The status line often sits in a flex or grid row beside the button: the result gets a row of its own.
+  function fullRow(parent, box) {
+    try {
+      var cs = global.getComputedStyle ? global.getComputedStyle(parent) : null;
+      if (!cs) return;
+      if (/flex/.test(cs.display) && cs.flexWrap === 'nowrap') parent.style.flexWrap = 'wrap';
+      if (/grid/.test(cs.display)) box.style.gridColumn = '1 / -1';
+    } catch (e) { /* layout stays as it is */ }
+  }
+
   function showResult(key, assignmentId, result) {
     if (!global.document) return;
     var at = anchorFor(key, assignmentId);
@@ -190,6 +199,7 @@
       box.setAttribute('data-result-for', key);
       box.setAttribute('aria-live', 'polite');
       at.parent.insertBefore(box, at.after.nextSibling);
+      fullRow(at.parent, box);
     }
     box.innerHTML = resultHtml(result);
   }
